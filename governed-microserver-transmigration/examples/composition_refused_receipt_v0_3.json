@@ -1,0 +1,33 @@
+{
+  "protocol_version": "0.3.0",
+  "request_id": "example-composition-negative-001",
+  "composition": "schema-gate -> ordinary-glue -> graph-gate",
+  "decision": "REFUSED",
+  "disposition": "CANDIDATE_ONLY",
+  "admission": "NOT_ADMITTED",
+  "publication": "NOT_PUBLISHED",
+  "manifest_sha256": "bedb308e3690562f9f4392333dcb154e0d024d2e77f17aa5b3d6f927367d704f",
+  "transcript": [
+    {
+      "service": "schema-gate",
+      "decision": "ACCEPTED",
+      "faults": []
+    },
+    {
+      "service": "graph-gate",
+      "decision": "REFUSED",
+      "faults": [
+        {
+          "code": "GRAPH_VIOLATION",
+          "detail": "edge.extract-to-validate: missing to endpoint ('missing-server', 'validate_candidate')"
+        }
+      ]
+    }
+  ],
+  "faults": [
+    {
+      "code": "GRAPH_REFUSED",
+      "detail": "downstream refusal; composition not accepted"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.2.0",
+  "manifest_id": "illustrative-composition-001",
+  "disposition": "CANDIDATE_ONLY",
+  "intent": {
+    "goal": "Investigate reconstructing decomposed capabilities as API microservers and glue",
+    "current_task": "Describe a candidate composition without activating services",
+    "task_queue": [
+      "Acquire source witnesses",
+      "Independently reconstruct candidate operations",
+      "Validate source-destination semantics",
+      "Review Crete enforcement"
+    ],
+    "finished_task_queue": []
+  },
+  "source_evidence": {
+    "kind": "sentinel",
+    "code": "SENTINEL_UNRESOLVED"
+  },
+  "microservers": [
+    {
+      "server_id": "candidate.extract",
+      "origin_ref": {
+        "kind": "sentinel",
+        "code": "SENTINEL_UNRESOLVED"
+      },
+      "implementation_state": "NOT_IMPLEMENTED",
+      "isolation": "PROCESS_BOUNDARY_UNRESOLVED",
+      "protocol": "TRANSPORT_UNRESOLVED",
+      "authority_ceiling": [
+        "READ_APPROVED_SOURCE",
+        "EMIT_CANDIDATE"
+      ],
+      "refusal_contract": "REQUIRED",
+      "operations": [
+        {
+          "name": "extract_candidate",
+          "input_schema_ref": "contract.source.v1",
+          "output_schema_ref": "contract.candidate.v1",
+          "side_effect": "NONE",
+          "error_contract_ref": "contract.fault.v1"
+        }
+      ]
+    },
+    {
+      "server_id": "candidate.validate",
+      "origin_ref": {
+        "kind": "sentinel",
+        "code": "SENTINEL_UNRESOLVED"
+      },
+      "implementation_state": "NOT_IMPLEMENTED",
+      "isolation": "PROCESS_BOUNDARY_UNRESOLVED",
+      "protocol": "TRANSPORT_UNRESOLVED",
+      "authority_ceiling": [
+        "VALIDATE_CANDIDATE"
+      ],
+      "refusal_contract": "REQUIRED",
+      "operations": [
+        {
+          "name": "validate_candidate",
+          "input_schema_ref": "contract.candidate.v1",
+          "output_schema_ref": "contract.validation.v1",
+          "side_effect": "NONE",
+          "error_contract_ref": "contract.fault.v1"
+        }
+      ]
+    }
+  ],
+  "glue": [
+    {
+      "edge_id": "edge.extract-to-validate",
+      "kind": "CRETE",
+      "from": {
+        "server_id": "candidate.extract",
+        "operation": "extract_candidate"
+      },
+      "to": {
+        "server_id": "missing-server",
+        "operation": "validate_candidate"
+      },
+      "input_schema_ref": "contract.candidate.v1",
+      "output_schema_ref": "contract.candidate.v1",
+      "data_classes": [
+        "CANDIDATE_ONLY"
+      ],
+      "transformation": "IDENTITY_ONLY",
+      "authority_transfer": "FORBIDDEN",
+      "refusal_contract": "REQUIRED",
+      "join_rule": "BREAK_BEFORE_MUTATION",
+      "failure_policy": "FAIL_CLOSED"
+    }
+  ],
+  "validation_receipts": [],
+  "admission": {
+    "decision": "NOT_ADMITTED",
+    "reviewer_ref": {
+      "kind": "sentinel",
+      "code": "SENTINEL_UNRESOLVED"
+    }
+  }
+}

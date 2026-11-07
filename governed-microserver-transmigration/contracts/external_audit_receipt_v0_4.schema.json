@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:work-process:external-audit-receipt:0.4.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "request_id", "decision", "semantic_result", "manifest_sha256", "admission", "publication", "faults", "validator_basis"],
+  "properties": {
+    "protocol_version": {"const": "0.4.0"},
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 180},
+    "decision": {"enum": ["INDEPENDENTLY_CHECKED_CANDIDATE", "REFUSED"]},
+    "semantic_result": {"enum": ["STATIC_PASSED", "REFUSED", "SENTINEL_UNRESOLVED"]},
+    "manifest_sha256": {"type": "string", "pattern": "^([a-f0-9]{64}|SENTINEL_UNRESOLVED)$"},
+    "admission": {"const": "NOT_ADMITTED"},
+    "publication": {"const": "NOT_PUBLISHED"},
+    "faults": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["code"], "properties": {"code": {"type": "string", "minLength": 1}}}},
+    "validator_basis": {"const": "SEPARATE_IMPLEMENTATION_SHARED_SCHEMA"}
+  }
+}

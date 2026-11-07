@@ -1,0 +1,41 @@
+test_external_audit_accepts_correct_candidate_evidence (test_governed_v0_4.IndependentAuditTests.test_external_audit_accepts_correct_candidate_evidence) ... ok
+test_external_audit_refuses_forged_success_on_bad_manifest (test_governed_v0_4.IndependentAuditTests.test_external_audit_refuses_forged_success_on_bad_manifest) ... ok
+test_external_audit_refuses_publication (test_governed_v0_4.IndependentAuditTests.test_external_audit_refuses_publication) ... ok
+test_external_audit_refuses_wrong_authority (test_governed_v0_4.IndependentAuditTests.test_external_audit_refuses_wrong_authority) ... ok
+test_external_checker_independent_graph_path (test_governed_v0_4.IndependentAuditTests.test_external_checker_independent_graph_path) ... ok
+test_policy_digest_binding (test_governed_v0_4.PolicyTests.test_policy_digest_binding) ... ok
+test_policy_json_refuses_duplicate_and_null (test_governed_v0_4.PolicyTests.test_policy_json_refuses_duplicate_and_null) ... ok
+test_policy_refuses_authority_escalation (test_governed_v0_4.PolicyTests.test_policy_refuses_authority_escalation) ... ok
+test_policy_rejects_extra_operation (test_governed_v0_4.PolicyTests.test_policy_rejects_extra_operation) ... ok
+test_policy_valid_is_candidate_only (test_governed_v0_4.PolicyTests.test_policy_valid_is_candidate_only) ... ok
+test_fail_closed_on_unsupported_os (test_governed_v0_4.StrictKernelTests.test_fail_closed_on_unsupported_os) ... ok
+test_forged_authority_before_dispatch_stops_workers (test_governed_v0_4.StrictKernelTests.test_forged_authority_before_dispatch_stops_workers) ... ok
+test_forged_validator_cannot_admit (test_governed_v0_4.StrictKernelTests.test_forged_validator_cannot_admit) ... ok
+test_kernel_denies_writes_remount_and_separates_network (test_governed_v0_4.StrictKernelTests.test_kernel_denies_writes_remount_and_separates_network) ... ok
+test_linux_governed_refuses_bad_graph (test_governed_v0_4.StrictKernelTests.test_linux_governed_refuses_bad_graph) ... ok
+test_linux_governed_valid_chain (test_governed_v0_4.StrictKernelTests.test_linux_governed_valid_chain) ... ok
+test_worker_without_bootstrap_is_denied (test_governed_v0_4.StrictKernelTests.test_worker_without_bootstrap_is_denied) ... ok
+test_composition_happy_path (test_transmigration.GlueTests.test_composition_happy_path) ... ok
+test_contract_schemas_validate_real_ipc (test_transmigration.GlueTests.test_contract_schemas_validate_real_ipc) ... ok
+test_glue_downstream_digest_tamper_refuses (test_transmigration.GlueTests.test_glue_downstream_digest_tamper_refuses) ... ok
+test_glue_payload_tamper_refuses (test_transmigration.GlueTests.test_glue_payload_tamper_refuses) ... ok
+test_graph_refusal_propagates (test_transmigration.GlueTests.test_graph_refusal_propagates) ... ok
+test_no_implicit_crete (test_transmigration.GlueTests.test_no_implicit_crete) ... ok
+test_schema_refusal_blocks_graph_execution (test_transmigration.GlueTests.test_schema_refusal_blocks_graph_execution) ... ok
+test_two_real_microserver_processes_and_separate_outputs (test_transmigration.GlueTests.test_two_real_microserver_processes_and_separate_outputs) ... ok
+test_digest_order_invariant (test_transmigration.ProtocolTests.test_digest_order_invariant) ... ok
+test_duplicate_member (test_transmigration.ProtocolTests.test_duplicate_member) ... ok
+test_nan_forbidden (test_transmigration.ProtocolTests.test_nan_forbidden) ... ok
+test_no_null (test_transmigration.ProtocolTests.test_no_null) ... ok
+test_overflowed_numeric_exponent (test_transmigration.ProtocolTests.test_overflowed_numeric_exponent) ... ok
+test_process_rejects_bad_authority (test_transmigration.ProtocolTests.test_process_rejects_bad_authority) ... ok
+test_process_rejects_malformed_and_duplicate (test_transmigration.ProtocolTests.test_process_rejects_malformed_and_duplicate) ... ok
+test_process_rejects_multiple_messages (test_transmigration.ProtocolTests.test_process_rejects_multiple_messages) ... ok
+test_size_limit (test_transmigration.ProtocolTests.test_size_limit) ... ok
+test_parity_with_source_for_all_manifest_cases (test_transmigration.SourceParityTests.test_parity_with_source_for_all_manifest_cases) ... ok
+test_self_manifest_is_declared_candidate (test_transmigration.SourceParityTests.test_self_manifest_is_declared_candidate) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 74.227s
+
+OK

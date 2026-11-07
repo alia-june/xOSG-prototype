@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:work-process:microserver:request:0.3.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "request_id", "operation", "authority", "payload"],
+  "properties": {
+    "protocol_version": {"const": "0.3.0"},
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 180},
+    "operation": {"enum": ["validate_manifest_schema", "validate_manifest_graph"]},
+    "authority": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "basis"],
+      "properties": {"mode": {"const": "READ_ONLY_CANDIDATE"}, "basis": {"const": "EXPLICIT_LOCAL_INVOKER"}}
+    },
+    "payload": {
+      "type": "object", "additionalProperties": false, "required": ["manifest"],
+      "properties": {"manifest": {"type": "object"}}
+    }
+  },
+  "description": "Only candidate static evaluation; schema validation does not grant authority. Recursive null prohibition and duplicate member rejection are enforced by the runtime parser."
+}

@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+ENV/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local experiments and sensitive artifacts
+.env
+.env.*
+!.env.example
+.local/
+.local_*/
+logs/
+artifacts/
+probe-output/
+run-output/
+*.pid
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.sqlite
+*.db
+
+# Preserve intentionally tracked examples, test reports and witnesses.

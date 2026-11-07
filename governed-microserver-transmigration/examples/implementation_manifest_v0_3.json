@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.2.0",
+  "manifest_id": "work-process-microtrans-0.3-reference",
+  "disposition": "CANDIDATE_ONLY",
+  "intent": {
+    "goal": "Reconstruct source v0.2 candidate manifest validation as bounded JSON microservers with ordinary glue",
+    "current_task": "Run independently callable schema and graph checks and prove tested fail-closed wiring",
+    "task_queue": [
+      "Investigate external admission and attestations",
+      "Evaluate OS-level isolation"
+    ],
+    "finished_task_queue": [
+      "Reconstruct v0.2 static checker",
+      "Connect two local JSON CLI microservers"
+    ]
+  },
+  "source_evidence": [
+    "sha256:c45a747ccca6107cdbc83ad692fc2f984e78502b93ae653b44e68d16d1a402e1",
+    "sha256:901e4572faf66153060c9e01f2b8533faaa3be43fb7963ebf3fda2f44f536afe"
+  ],
+  "microservers": [
+    {
+      "server_id": "schema-gate",
+      "origin_ref": "sha256:901e4572faf66153060c9e01f2b8533faaa3be43fb7963ebf3fda2f44f536afe",
+      "implementation_state": "CANDIDATE",
+      "isolation": "PROCESS_ISOLATED",
+      "protocol": "JSON_CLI",
+      "authority_ceiling": [
+        "READ_CANDIDATE_MANIFEST",
+        "STATIC_SCHEMA_CHECK"
+      ],
+      "refusal_contract": "REQUIRED",
+      "operations": [
+        {
+          "name": "validate_manifest_schema",
+          "input_schema_ref": "contract.manifest.v0.2",
+          "output_schema_ref": "contract.manifest.v0.2",
+          "side_effect": "NONE",
+          "error_contract_ref": "contract.fault.v0.3"
+        }
+      ]
+    },
+    {
+      "server_id": "graph-gate",
+      "origin_ref": "sha256:c45a747ccca6107cdbc83ad692fc2f984e78502b93ae653b44e68d16d1a402e1",
+      "implementation_state": "CANDIDATE",
+      "isolation": "PROCESS_ISOLATED",
+      "protocol": "JSON_CLI",
+      "authority_ceiling": [
+        "READ_CANDIDATE_MANIFEST",
+        "STATIC_GRAPH_CHECK"
+      ],
+      "refusal_contract": "REQUIRED",
+      "operations": [
+        {
+          "name": "validate_manifest_graph",
+          "input_schema_ref": "contract.manifest.v0.2",
+          "output_schema_ref": "contract.static_result.v0.3",
+          "side_effect": "NONE",
+          "error_contract_ref": "contract.fault.v0.3"
+        }
+      ]
+    }
+  ],
+  "glue": [
+    {
+      "edge_id": "schema-to-graph-v0.3",
+      "kind": "ORDINARY_GLUE",
+      "from": {
+        "server_id": "schema-gate",
+        "operation": "validate_manifest_schema"
+      },
+      "to": {
+        "server_id": "graph-gate",
+        "operation": "validate_manifest_graph"
+      },
+      "input_schema_ref": "contract.manifest.v0.2",
+      "output_schema_ref": "contract.manifest.v0.2",
+      "data_classes": [
+        "CANDIDATE_ONLY"
+      ],
+      "transformation": "IDENTITY_ONLY",
+      "authority_transfer": "FORBIDDEN",
+      "refusal_contract": "REQUIRED",
+      "join_rule": "NO_MUTATION",
+      "failure_policy": "FAIL_CLOSED"
+    }
+  ],
+  "validation_receipts": [],
+  "admission": {
+    "decision": "NOT_ADMITTED",
+    "reviewer_ref": {
+      "kind": "sentinel",
+      "code": "SENTINEL_UNRESOLVED"
+    }
+  }
+}

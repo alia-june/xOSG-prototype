@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:work-process:governed-receipt:0.4.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "request_id", "decision", "disposition", "admission", "publication", "manifest_sha256", "boundary", "authority_result", "composition_result", "external_audit", "faults"],
+  "properties": {
+    "protocol_version": {"const": "0.4.0"},
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 180},
+    "decision": {"enum": ["STATIC_PASSED", "REFUSED"]},
+    "disposition": {"const": "CANDIDATE_ONLY"},
+    "admission": {"const": "NOT_ADMITTED"},
+    "publication": {"const": "NOT_PUBLISHED"},
+    "manifest_sha256": {"type": "string", "pattern": "^([a-f0-9]{64}|SENTINEL_UNRESOLVED)$"},
+    "boundary": {"enum": ["STRICT_LINUX_READONLY_MOUNT_NETNS_CAPDROP", "SENTINEL_UNRESOLVED"]},
+    "authority_result": {"enum": ["POLICY_PASSED_CANDIDATE", "SENTINEL_UNRESOLVED"]},
+    "composition_result": {"enum": ["STATIC_PASSED", "REFUSED", "SENTINEL_UNRESOLVED"]},
+    "external_audit": {"enum": ["INDEPENDENTLY_CHECKED_CANDIDATE", "SENTINEL_UNRESOLVED"]},
+    "faults": {
+      "type": "array", "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["code"],
+        "properties": {"code": {"type": "string", "minLength": 1}, "detail": {"type": "string", "minLength": 1}}
+      }
+    }
+  },
+  "allOf": [
+    {"if": {"properties": {"decision": {"const": "STATIC_PASSED"}}},
+     "then": {"properties": {
+       "authority_result": {"const": "POLICY_PASSED_CANDIDATE"},
+       "composition_result": {"const": "STATIC_PASSED"},
+       "external_audit": {"const": "INDEPENDENTLY_CHECKED_CANDIDATE"},
+       "faults": {"maxItems": 0}
+     }}}
+  ]
+}

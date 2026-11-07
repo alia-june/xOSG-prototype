@@ -1,0 +1,23 @@
+{
+  "protocol_version": "0.3.0",
+  "request_id": "example-composition-001",
+  "composition": "schema-gate -> ordinary-glue -> graph-gate",
+  "decision": "STATIC_PASSED",
+  "disposition": "CANDIDATE_ONLY",
+  "admission": "NOT_ADMITTED",
+  "publication": "NOT_PUBLISHED",
+  "manifest_sha256": "fdb77f42170c9d0e2975ecdf4ba8f0d7fbe33e9e73423cabc8df70281404b765",
+  "transcript": [
+    {
+      "service": "schema-gate",
+      "decision": "ACCEPTED",
+      "faults": []
+    },
+    {
+      "service": "graph-gate",
+      "decision": "ACCEPTED",
+      "faults": []
+    }
+  ],
+  "faults": []
+}

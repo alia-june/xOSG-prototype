@@ -1,0 +1,12 @@
+{
+  "policy_version": "0.4.0",
+  "policy_id": "candidate-manifest-readonly-v0.4",
+  "allowed_actor": "EXPLICIT_LOCAL_INVOKER_UNAUTHENTICATED",
+  "allowed_capability": "VALIDATE_MANIFEST_CANDIDATE",
+  "authority_ceiling": "READ_ONLY_CANDIDATE",
+  "allowed_stages": ["schema-gate", "graph-gate"],
+  "max_manifest_bytes": 2097152,
+  "side_effects": "FORBIDDEN",
+  "admission": "NOT_ADMITTED",
+  "publication": "NOT_PUBLISHED"
+}

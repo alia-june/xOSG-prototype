@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:work-process:microserver-glue:0.2.0",
+  "title": "Candidate microserver and glue destination manifest",
+  "description": "Declarative planning/evidence record, never an executable authority grant.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "disposition",
+    "intent",
+    "source_evidence",
+    "microservers",
+    "glue",
+    "validation_receipts",
+    "admission"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "manifest_id": {
+      "$ref": "#/$defs/id"
+    },
+    "disposition": {
+      "const": "CANDIDATE_ONLY"
+    },
+    "intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "goal",
+        "current_task",
+        "task_queue",
+        "finished_task_queue"
+      ],
+      "properties": {
+        "goal": {
+          "$ref": "#/$defs/knownOrSentinel"
+        },
+        "current_task": {
+          "$ref": "#/$defs/knownOrSentinel"
+        },
+        "task_queue": {
+          "$ref": "#/$defs/listOrSentinel"
+        },
+        "finished_task_queue": {
+          "$ref": "#/$defs/listOrSentinel"
+        }
+      }
+    },
+    "source_evidence": {
+      "$ref": "#/$defs/listOrSentinel"
+    },
+    "microservers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/microserver"
+      }
+    },
+    "glue": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "validation_receipts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "reviewer_ref"
+      ],
+      "properties": {
+        "decision": {
+          "const": "NOT_ADMITTED"
+        },
+        "reviewer_ref": {
+          "$ref": "#/$defs/knownOrSentinel"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "sentinel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "code"
+      ],
+      "properties": {
+        "kind": {
+          "const": "sentinel"
+        },
+        "code": {
+          "enum": [
+            "SENTINEL_UNRESOLVED",
+            "SENTINEL_ABSENT",
+            "SENTINEL_NOT_APPLICABLE",
+            "SENTINEL_WITHHELD"
+          ]
+        }
+      }
+    },
+    "knownOrSentinel": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/id"
+        },
+        {
+          "$ref": "#/$defs/sentinel"
+        }
+      ]
+    },
+    "listOrSentinel": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        {
+          "$ref": "#/$defs/sentinel"
+        }
+      ]
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "input_schema_ref",
+        "output_schema_ref",
+        "side_effect",
+        "error_contract_ref"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/id"
+        },
+        "input_schema_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "output_schema_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "side_effect": {
+          "enum": [
+            "NONE",
+            "BOUNDED_WRITE",
+            "SENTINEL_UNRESOLVED"
+          ]
+        },
+        "error_contract_ref": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "microserver": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "server_id",
+        "origin_ref",
+        "implementation_state",
+        "isolation",
+        "protocol",
+        "authority_ceiling",
+        "refusal_contract",
+        "operations"
+      ],
+      "properties": {
+        "server_id": {
+          "$ref": "#/$defs/id"
+        },
+        "origin_ref": {
+          "$ref": "#/$defs/knownOrSentinel"
+        },
+        "implementation_state": {
+          "enum": [
+            "NOT_IMPLEMENTED",
+            "CANDIDATE",
+            "VERIFIED"
+          ]
+        },
+        "isolation": {
+          "enum": [
+            "PROCESS_ISOLATED",
+            "MODULE_LOCAL",
+            "REMOTE_ISOLATED",
+            "PROCESS_BOUNDARY_UNRESOLVED"
+          ]
+        },
+        "protocol": {
+          "enum": [
+            "JSON_CLI",
+            "JSON_IPC",
+            "HTTP_JSON",
+            "TRANSPORT_UNRESOLVED"
+          ]
+        },
+        "authority_ceiling": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "refusal_contract": {
+          "const": "REQUIRED"
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/operation"
+          }
+        }
+      }
+    },
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "server_id",
+        "operation"
+      ],
+      "properties": {
+        "server_id": {
+          "$ref": "#/$defs/id"
+        },
+        "operation": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge_id",
+        "kind",
+        "from",
+        "to",
+        "input_schema_ref",
+        "output_schema_ref",
+        "data_classes",
+        "transformation",
+        "authority_transfer",
+        "refusal_contract",
+        "join_rule",
+        "failure_policy"
+      ],
+      "properties": {
+        "edge_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "ORDINARY_GLUE",
+            "CRETE"
+          ]
+        },
+        "from": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "to": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "input_schema_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "output_schema_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "data_classes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "transformation": {
+          "const": "IDENTITY_ONLY"
+        },
+        "authority_transfer": {
+          "const": "FORBIDDEN"
+        },
+        "refusal_contract": {
+          "const": "REQUIRED"
+        },
+        "join_rule": {
+          "enum": [
+            "NO_MUTATION",
+            "BREAK_BEFORE_MUTATION"
+          ]
+        },
+        "failure_policy": {
+          "const": "FAIL_CLOSED"
+        }
+      }
+    }
+  }
+}

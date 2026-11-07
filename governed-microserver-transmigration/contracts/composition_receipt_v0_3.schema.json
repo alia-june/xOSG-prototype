@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:work-process:microserver:composition-receipt:0.3.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "request_id", "composition", "decision", "disposition", "admission", "publication", "manifest_sha256", "transcript", "faults"],
+  "properties": {
+    "protocol_version": {"const": "0.3.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "composition": {"const": "schema-gate -> ordinary-glue -> graph-gate"},
+    "decision": {"enum": ["STATIC_PASSED", "REFUSED"]},
+    "disposition": {"const": "CANDIDATE_ONLY"},
+    "admission": {"const": "NOT_ADMITTED"},
+    "publication": {"const": "NOT_PUBLISHED"},
+    "manifest_sha256": {"type": "string", "pattern": "^([a-f0-9]{64}|SENTINEL_UNRESOLVED)$"},
+    "transcript": {"type": "array", "maxItems": 2, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["service", "decision", "faults"],
+      "properties": {"service": {"enum": ["schema-gate", "graph-gate"]}, "decision": {"enum": ["ACCEPTED", "REFUSED"]}, "faults": {"type": "array"}}
+    }},
+    "faults": {"type": "array", "items": {
+       "type": "object", "additionalProperties": false, "required": ["code", "detail"],
+       "properties": {"code": {"type": "string", "minLength": 1}, "detail": {"type": "string", "minLength": 1}}
+    }}
+  }
+}

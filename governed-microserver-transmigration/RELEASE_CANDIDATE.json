@@ -1,0 +1,31 @@
+{
+  "artifact_type": "PUBLIC_REPOSITORY_SOURCE_CANDIDATE",
+  "candidate_full_suite": "NOT_COMPLETED_EXECUTION_LIMIT",
+  "copyright": "Copyright (c) 2026 Alia June",
+  "independent_attestation": "NOT_IMPLEMENTED",
+  "license": "MIT",
+  "license_file": "LICENSE",
+  "native_windows_verification": "NOT_VERIFIED",
+  "project": "xosg-prototype",
+  "public_push": "NOT_PERFORMED",
+  "publication_decisions": "docs/PUBLICATION_DECISIONS.md",
+  "publication_rights_review": "REQUIRED_BEFORE_PUBLIC_PUSH",
+  "publication_status": "NOT_PUBLISHED",
+  "recorded_historical_test_methods_passed": 43,
+  "repository_name": "xosg-prototype",
+  "repository_owner": "alia-june",
+  "repository_review_status": "SOURCE_RIGHTS_REVIEW_PENDING",
+  "repository_url": "https://github.com/alia-june/xosg-prototype",
+  "runtime_admission": "NOT_ADMITTED",
+  "runtime_disposition": "CANDIDATE_ONLY",
+  "security_audit": "NOT_PERFORMED",
+  "source_baseline": "v0.5 Windows AppContainer Microservers archive",
+  "source_file_changes": [
+    "README.md",
+    "PROVENANCE.md",
+    "PROVENANCE_v0_5.md"
+  ],
+  "verification_date": "2026-11-07",
+  "verified_contract_tests": 22,
+  "verified_glue_tests": 8
+}

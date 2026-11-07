@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:work-process:authority-request:0.4.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "request_id", "actor", "capability", "authority_ceiling", "manifest_sha256", "manifest"],
+  "properties": {
+    "protocol_version": {"const": "0.4.0"},
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 180},
+    "actor": {"const": "EXPLICIT_LOCAL_INVOKER_UNAUTHENTICATED"},
+    "capability": {"const": "VALIDATE_MANIFEST_CANDIDATE"},
+    "authority_ceiling": {"const": "READ_ONLY_CANDIDATE"},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "manifest": {"type": "object"}
+  }
+}

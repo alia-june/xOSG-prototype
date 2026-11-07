@@ -1,0 +1,6 @@
+test_independent_checker_matches_source_corpus (tests.test_governed_v0_4.IndependentAuditTests.test_independent_checker_matches_source_corpus) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.049s
+
+OK
