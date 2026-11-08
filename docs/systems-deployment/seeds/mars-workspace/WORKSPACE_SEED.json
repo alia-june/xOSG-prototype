@@ -1,0 +1,143 @@
+{
+  "schema": "mars-tool-less-core-seed/0.3.0",
+  "version": "0.3.0",
+  "status": "UNINSTANTIATED_TEMPLATE",
+  "requires_external_execution": false,
+  "identity": {
+    "referents": [
+      "user",
+      "agent",
+      "workspace",
+      "prompt",
+      "history"
+    ],
+    "separate_from_intent": true
+  },
+  "intent": {
+    "elements": [
+      "goal",
+      "current_task",
+      "task_queue",
+      "finished_task_queue"
+    ],
+    "referents": {
+      "user": {
+        "goal": "SENTINEL_UNRESOLVED",
+        "current_task": "SENTINEL_UNRESOLVED",
+        "task_queue": "SENTINEL_UNRESOLVED",
+        "finished_task_queue": "SENTINEL_UNRESOLVED"
+      },
+      "agent": {
+        "goal": "SENTINEL_UNRESOLVED",
+        "current_task": "SENTINEL_UNRESOLVED",
+        "task_queue": "SENTINEL_UNRESOLVED",
+        "finished_task_queue": "SENTINEL_UNRESOLVED"
+      },
+      "workspace": {
+        "goal": "SENTINEL_UNRESOLVED",
+        "current_task": "SENTINEL_UNRESOLVED",
+        "task_queue": "SENTINEL_UNRESOLVED",
+        "finished_task_queue": "SENTINEL_UNRESOLVED"
+      },
+      "prompt": {
+        "goal": "SENTINEL_UNRESOLVED",
+        "current_task": "SENTINEL_UNRESOLVED",
+        "task_queue": "SENTINEL_UNRESOLVED",
+        "finished_task_queue": "SENTINEL_UNRESOLVED"
+      },
+      "history": {
+        "goal": "SENTINEL_UNRESOLVED",
+        "current_task": "SENTINEL_UNRESOLVED",
+        "task_queue": "SENTINEL_UNRESOLVED",
+        "finished_task_queue": "SENTINEL_UNRESOLVED"
+      }
+    }
+  },
+  "state": [
+    {
+      "id": "S1",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "S2",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "S3",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "S4",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "S5",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "S6",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "S7",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "S8",
+      "value": "SENTINEL_UNKNOWN"
+    }
+  ],
+  "orchestration": [
+    {
+      "id": "O1",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O2",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O3",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O4",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O5",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O6",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O7",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O8",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O9",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O10",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O11",
+      "value": "SENTINEL_UNKNOWN"
+    },
+    {
+      "id": "O12",
+      "value": "SENTINEL_UNKNOWN"
+    }
+  ],
+  "tools_implemented": false,
+  "automatic_execution": false,
+  "resource_bindings": "SENTINEL_UNRESOLVED"
+}
