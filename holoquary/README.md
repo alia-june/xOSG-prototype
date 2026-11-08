@@ -9,6 +9,20 @@ Holoquary is a bounded C99 research substrate for deterministic logic, typed num
 
 > The original October 2, 2026 v1.3 source archive is not available in the current source set. This repository line was reconstructed from the complete preserved v1.2 source plus the surviving v1.3 contract, historical test report, error log, and TODO material. It is **not claimed to be byte-identical** to the lost original.
 
+## Downloads
+
+The complete artifacts are stored in this repository and can be downloaded directly:
+
+- **[Holoquary v1.3 — reconstituted source ZIP](releases/holoquary_nonrecursive_v1_3_RECONSTITUTED_2026-11-08_source.zip)**  
+  580,705 bytes · SHA-256 `df9ca9d4543e85537525c9237a002bdfb1b61c1a1b522058f239011dc621a9d0`  
+  Complete reconstituted v1.3 source package; 186 ZIP entries.
+
+- **[Holoquary UPTI handoff v0.2 — candidate ZIP](releases/holoquary_upti_handoff_v0_2_candidate.zip)**  
+  53,254 bytes · SHA-256 `72dca130208f12a4dd226b128ace15db5f153b0c93bcd09c0975f8064abf0d04`  
+  Local-only application handoff adapter and payload contract material. It is **not** evidence of live UPTI transport, authenticated peer communication, or Sisterhood integration.
+
+Both repository ZIP blobs were transferred byte-for-byte and their Git blob hashes were checked against the uploaded local files before publication.
+
 ## Purpose
 
 Holoquary explores a small computational foundation in which:
