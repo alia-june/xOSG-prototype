@@ -1,0 +1,35 @@
+{
+  "handoff_id": "catalog.modular-nlp-capability-handoff/0.1",
+  "authority_effect": "NONE",
+  "execution_allowed": false,
+  "required_capabilities": [
+    "NLP-CAP-01",
+    "NLP-CAP-02",
+    "NLP-CAP-03",
+    "NLP-CAP-04",
+    "NLP-CAP-05",
+    "NLP-CAP-06",
+    "NLP-CAP-07",
+    "NLP-CAP-08",
+    "NLP-CAP-09",
+    "NLP-CAP-10"
+  ],
+  "statuses": ["parsed_single", "collision", "unparsed", "conflict", "invalid_input"],
+  "current_operations": {
+    "read": ["catalog.inbox", "catalog.ls", "catalog.show", "catalog.find", "catalog.project.inspect"],
+    "proposal_only": ["catalog.collect", "catalog.relate", "catalog.file.move"]
+  },
+  "candidate_invariants": {
+    "admitted": false,
+    "execution_allowed": false,
+    "authority_effect": "NONE"
+  },
+  "explicit_non_capabilities": [
+    "command execution",
+    "catalog state mutation",
+    "filesystem mutation",
+    "semantic admission",
+    "collision suppression",
+    "authority derivation from confidence"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "nlp-development-successor-baseline/1",
+  "successor_id": "nlp-offline-interpreter/0.1",
+  "status": "development",
+  "authority_effect": "NONE",
+  "production_ready": false,
+  "source_export": "NLP_DEVELOPMENT_SUITE_2026-09-28_v1",
+  "source_archive_sha256": "5207aa7eb326ffb1010431819789d9ae790b479fb19e14fb53b0f138437755e4",
+  "source_manifest_sha256": "d8a81f1e6000ffb899bc13cbc9b6ec2a8ce68c81440a8155515694cdcb5ba62d",
+  "source_projects": [
+    "projects/lexicon-core",
+    "projects/natural-language-front-end"
+  ],
+  "note": "The source projects remain covered by the historical export manifest; successor files are separate generated development material."
+}

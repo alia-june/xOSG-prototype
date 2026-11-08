@@ -1,0 +1,28 @@
+{
+  "schema": "nlp-p06-provenance/1",
+  "project": "nlp-offline-interpreter/0.1.0",
+  "status": "verified-pre-candidate-provenance",
+  "production_ready": false,
+  "source_commit": "3388f57854f6f693732149dc3e4039558fc2a551",
+  "historical_source": {
+    "archive_sha256": "5207aa7eb326ffb1010431819789d9ae790b479fb19e14fb53b0f138437755e4",
+    "manifest_sha256": "d8a81f1e6000ffb899bc13cbc9b6ec2a8ce68c81440a8155515694cdcb5ba62d"
+  },
+  "successor_source": {
+    "manifest": "development/nlp-offline-interpreter/DEVELOPMENT_MANIFEST.json",
+    "manifest_sha256": "9731633fc25c81a31b1ab382cb582c1b6a40f25d081a9adf67363076d32e2a46",
+    "member_count": 20,
+    "schema_sha256": "117dfe43df001ccde734c431b9137931e7600b765f56ea75f3afdd6b2d59784b"
+  },
+  "canonical_build_evidence": {
+    "runtime": "CPython 3.11",
+    "receipt": "production/reports/p04-stage-2026-10-02-authorized-py311.json",
+    "wheel_sha256": "f624914598b98115dda294d0e34bee3e722326dcecfad2082ca437c957f138e2"
+  },
+  "verification_wheel": {
+    "path": "production/p06/artifacts/nlp_offline_interpreter-0.1.0-py3-none-any.whl",
+    "size": 12549,
+    "sha256": "f624914598b98115dda294d0e34bee3e722326dcecfad2082ca437c957f138e2",
+    "immutable_release_candidate": false
+  }
+}

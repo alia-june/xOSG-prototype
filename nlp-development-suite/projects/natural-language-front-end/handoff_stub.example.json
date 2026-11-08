@@ -1,0 +1,48 @@
+{
+  "schema_version": "handoff-stub/0.1",
+  "producer": "natural-language-front-end",
+  "consumer_contract_status": "unconfirmed",
+  "execution_allowed": false,
+  "source": {
+    "archive_sha256": "41B9C72FBDDC9B1296F842FAF47A555EFCF3078FBD366273F13A3121CB70408A",
+    "member_path": "synthetic_os_project_redux_2026-09-16/snapshot/llm_prompt_hardening_modular_kit_v1_6_candidate/builds/full_prompt.md",
+    "member_sha256": "14AE8D438D672C0E51B3065F3A5307230494FA291D90159392447CCC73A424B8",
+    "authority_status": "candidate_unadopted"
+  },
+  "entries": [
+    {
+      "id": "P1-L26-candidate-1",
+      "source_span": {"start_line": 26, "end_line": 26},
+      "source_text": "If the assembled prompt states `INSTANCE READY: false`, treat it as an inert template. Identify the unresolved required values and do not begin the dependent task.",
+      "kind": "rule",
+      "interpretation_status": "candidate_partial",
+      "adoption_status": "unadopted",
+      "logic_candidates": [
+        {
+          "id": "P1-L26-logic-1",
+          "language": "stub-typed-ir/0.1",
+          "ast": {
+            "op": "implies",
+            "condition": {"op": "equals", "left": "assembled_prompt.instance_ready", "right": false},
+            "consequence": {"op": "and", "items": [
+              {"op": "state", "target": "assembled_prompt", "value": "inert_template"},
+              {"op": "prohibit", "action": "begin_dependent_task"}
+            ]}
+          },
+          "review_status": "unreviewed"
+        }
+      ],
+      "unresolved": ["The separate instruction to identify unresolved required values is not represented in this partial candidate."]
+    },
+    {
+      "id": "P1-L73-unparsed-1",
+      "source_span": {"start_line": 73, "end_line": 73},
+      "source_text": "Capability is not authority. Evidence is not authority. Inference is not authorization.",
+      "kind": "unparsed",
+      "interpretation_status": "unparsed",
+      "adoption_status": "unadopted",
+      "logic_candidates": [],
+      "unresolved": ["The intended formal relation for 'is not' is not specified by this sentence alone."]
+    }
+  ]
+}

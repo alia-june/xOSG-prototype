@@ -1,0 +1,110 @@
+{
+  "schema": "sense-aboutness-baseline-decision/1",
+  "status": "AUTHORIZED_TEST_SCHEMA_AND_EVALUATION_BASELINE",
+  "accepted_at": "2026-10-06",
+  "authority_source": "direct user continuation after the recorded RLX-N01 and RLX-N02 roadmap",
+  "authority_effect": "TEST_SCHEMA_AND_BASELINE_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "content_ingestion_authorized": false,
+  "semantic_generation_authorized": false,
+  "baseline_commit": "b365c25110a7770df89642f53b0153986221b589",
+  "evaluation_scope": {
+    "objective": "Freeze the post-repair evidence inputs and define a sense-scoped aboutness candidate contract before sampling or semantic generation.",
+    "included": [
+      "exact artifact and receipt identity",
+      "sense-candidate scope",
+      "aboutness facet vocabulary",
+      "evidence references",
+      "ambiguity and conflict representation",
+      "explicit abstention",
+      "negative contract fixtures"
+    ],
+    "excluded": [
+      "population sampling",
+      "reviewer disposition",
+      "automatic sense disambiguation",
+      "definition generation",
+      "lexical validity assignment",
+      "canon admission",
+      "source ingestion",
+      "publication or deployment"
+    ]
+  },
+  "prohibited_inferences": [
+    "surface equality establishes sense identity",
+    "normalization establishes semantic equivalence",
+    "historical category placement is a timeless definition",
+    "a form-level observation applies to every sense",
+    "absence from a source proves nonexistence",
+    "a generated candidate is reviewed or accepted canon",
+    "confidence without a recorded method is evidential support"
+  ],
+  "baseline_inputs": [
+    {
+      "path": "development/generative-relational-lexicon/pilot/tier-zero/raw/project-gutenberg-ebook-22.txt",
+      "bytes": 1539638,
+      "sha256": "ac6bdc2d616ecf0d7994e987f5aabb46855459368132e4e03fc80dbe3c88c095",
+      "truth_state": "SOURCE",
+      "authority_boundary": "Pinned electronic source artifact; historical date and semantic correctness are not inferred from file identity."
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/tier-zero/output/PILOT_RECEIPT.json",
+      "bytes": 1528,
+      "sha256": "f3d8e3308c766ef37d76f9741cd7924fb365f465fca5f018fbe64e5d73c9b9af",
+      "truth_state": "DERIVED",
+      "authority_boundary": "Structural parse receipt only."
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/COMPARISON_RECEIPT.json",
+      "bytes": 1582,
+      "sha256": "c7daf610f4a68aaddcf839c35c51c32b32ae57a8df23d157729d3732cd202236",
+      "truth_state": "DERIVED",
+      "authority_boundary": "Exact-form discrepancy evidence only; no sense equivalence."
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/NORMALIZATION_AUDIT_RECEIPT.json",
+      "bytes": 1846,
+      "sha256": "f4ec7ffd3ffc75f07c4485506bc0db624a7fb25baab4b133f5e0ee7718d02230",
+      "truth_state": "DERIVED",
+      "authority_boundary": "Layered surface candidates only; no semantic equivalence."
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/unresolved-shapes/UNRESOLVED_SHAPE_AUDIT_RECEIPT.json",
+      "bytes": 1849,
+      "sha256": "9a655eb10a4b4ad7d5c77e75caf050c61201d1d261890aa9ecadc764f37e789e",
+      "truth_state": "DERIVED",
+      "authority_boundary": "Visible-shape partition only; lexical validity and cause remain unknown."
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/review-sample/dispositions/REVIEW_DISPOSITION_RECEIPT.json",
+      "bytes": 1877,
+      "sha256": "85aefda01f90ca9ed00027c541051901cf257c569124de0b95bb3b6d85e1ce0f",
+      "truth_state": "DERIVED",
+      "authority_boundary": "Bounded parser-review sample only; unsampled records receive no disposition."
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/parser-repair/PARSER_REPAIR_RECEIPT.json",
+      "bytes": 2308,
+      "sha256": "379a0ebaaf890f82dfc654e269c355fa80d01153370549eb43c76518704d0d5f",
+      "truth_state": "DERIVED",
+      "authority_boundary": "Test-only parser repair result; no canon or production effect."
+    },
+    {
+      "path": "development/generative-relational-lexicon/SOURCE_LANGUAGE_MAP.json",
+      "bytes": 46029,
+      "sha256": "10ecc2b0c79d8695318f8c2c75f87e737526086988c136aefdf55111d2ce2d62",
+      "truth_state": "GENERATED_SYNTHESIS_WITH_VERIFIED_EXTERNAL_FIELDS",
+      "authority_boundary": "Research map and source capability inventory; not content-ingestion authority."
+    }
+  ],
+  "exit_criteria": [
+    "every baseline input matches its pinned byte count and SHA-256",
+    "the Draft 2020-12 schema passes meta-validation",
+    "valid supported ambiguous conflicted and abstaining fixtures pass",
+    "form-level aboutness and unsupported truth-state fixtures fail",
+    "form-only and normalization-only evidence cannot support an aboutness assertion",
+    "a deterministic receipt records all schema and fixture hashes"
+  ]
+}

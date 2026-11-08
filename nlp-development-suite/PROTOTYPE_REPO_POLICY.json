@@ -1,0 +1,66 @@
+{
+  "schema": "nlp-suite-prototype-repo-policy/1",
+  "status": "accepted-working-policy",
+  "mode": "code-only-anonymized-prototype",
+  "authority_effect": "LOCAL_STAGING_ONLY",
+  "publication_allowed": false,
+  "deployment_allowed": false,
+  "default_destination_name": "NLP_SUITE_PROTOTYPE_REPO_2026-11-08",
+  "max_file_bytes": 2097152,
+  "excluded_prefixes": [
+    ".artifact-work-basic-20261001",
+    ".git",
+    ".test-tmp",
+    "development/generative-relational-lexicon/pilot",
+    "production/p04/.stage-work",
+    "production/p04/wheelhouse",
+    "production/p08/artifacts",
+    "production/reports",
+    "projects/file-atlas/.openai",
+    "projects/lexicon-atlas",
+    "projects/natural-language-front-end/.wn_data",
+    "projects/natural-language-front-end/sister_handshake_needs_package_2026-09-28",
+    "projects/natural-language-front-end/sister_handoff_2026-09-16_v1",
+    "projects/natural-language-front-end/vendor"
+  ],
+  "excluded_exact_paths": [
+    "PACKAGE_MANIFEST.json",
+    "PREPARE_PROTOTYPE_REPO.py",
+    "PROTOTYPE_REPO_PLAN.md",
+    "PROTOTYPE_REPO_REPORT_2026-11-08.md",
+    "PROJECT_INVENTORY.json",
+    "VERIFY_PROTOTYPE_REPO.py",
+    "shared-registry/registry.json"
+  ],
+  "excluded_suffixes": [
+    ".db",
+    ".dict",
+    ".gz",
+    ".idx",
+    ".ifo",
+    ".jsonl",
+    ".odict",
+    ".odxml",
+    ".p12",
+    ".pem",
+    ".pfx",
+    ".pyc",
+    ".sqlite",
+    ".sqlite3",
+    ".tar",
+    ".whl",
+    ".xz",
+    ".zip"
+  ],
+  "atlas_source": "../github-exports/lexicon-atlas",
+  "atlas_excluded_prefixes": [
+    ".git",
+    ".openai",
+    "dist/assets",
+    "dist/data"
+  ],
+  "atlas_excluded_exact_paths": [
+    "CODE_ONLY_MANIFEST.json"
+  ],
+  "license_identity_exception": "projects/lexicon-atlas/LICENSE"
+}

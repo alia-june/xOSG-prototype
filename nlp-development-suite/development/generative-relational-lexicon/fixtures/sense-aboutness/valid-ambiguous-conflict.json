@@ -1,0 +1,84 @@
+{
+  "schema": "sense-aboutness-candidate/0.1",
+  "record_id": "record-precision-ambiguous",
+  "status": "REVIEW_REQUIRED",
+  "form": {
+    "text": "precision",
+    "normalized_text": "precision",
+    "language": "eng",
+    "variety": null
+  },
+  "evidence": [
+    {
+      "evidence_id": "ev-precision-exactness",
+      "source_id": "project-gutenberg-roget-22",
+      "artifact_sha256": "ac6bdc2d616ecf0d7994e987f5aabb46855459368132e4e03fc80dbe3c88c095",
+      "source_span": {"kind": "LINE", "start": 3113, "end": 3113},
+      "evidence_kind": "CATEGORY_PLACEMENT",
+      "truth_state": "SOURCE",
+      "observed_value": "The source line cross-references precision to exactness."
+    },
+    {
+      "evidence_id": "ev-precision-regularity",
+      "source_id": "project-gutenberg-roget-22",
+      "artifact_sha256": "ac6bdc2d616ecf0d7994e987f5aabb46855459368132e4e03fc80dbe3c88c095",
+      "source_span": {"kind": "LINE", "start": 11447, "end": 11447},
+      "evidence_kind": "CATEGORY_PLACEMENT",
+      "truth_state": "SOURCE",
+      "observed_value": "A separate source line cross-references precision to regularity."
+    }
+  ],
+  "sense_candidates": [
+    {
+      "sense_candidate_id": "sense-precision-exactness",
+      "scope": {
+        "language": "eng",
+        "time_scope": null,
+        "community": null,
+        "register": null,
+        "domain": null
+      },
+      "scope_evidence_refs": ["ev-precision-exactness"],
+      "candidate_state": "AMBIGUOUS_CANDIDATE",
+      "distinguished_from": ["sense-precision-regularity"],
+      "aboutness_assertions": [
+        {
+          "assertion_id": "as-precision-exactness",
+          "facet": "QUALITY",
+          "value": "exactness",
+          "candidate_state": "CONFLICTED_CANDIDATE",
+          "truth_state": "GENERATED_SYNTHESIS",
+          "evidence_refs": ["ev-precision-exactness"],
+          "conflicts_with": ["as-precision-regularity"]
+        }
+      ]
+    },
+    {
+      "sense_candidate_id": "sense-precision-regularity",
+      "scope": {
+        "language": "eng",
+        "time_scope": null,
+        "community": null,
+        "register": null,
+        "domain": null
+      },
+      "scope_evidence_refs": ["ev-precision-regularity"],
+      "candidate_state": "CONFLICTED_CANDIDATE",
+      "distinguished_from": ["sense-precision-exactness"],
+      "aboutness_assertions": [
+        {
+          "assertion_id": "as-precision-regularity",
+          "facet": "QUALITY",
+          "value": "regularity",
+          "candidate_state": "CONFLICTED_CANDIDATE",
+          "truth_state": "INFERENCE",
+          "evidence_refs": ["ev-precision-regularity"],
+          "conflicts_with": ["as-precision-exactness"]
+        }
+      ]
+    }
+  ],
+  "abstention": null,
+  "review_state": "UNREVIEWED",
+  "authority_effect": "PROPOSAL_ONLY"
+}

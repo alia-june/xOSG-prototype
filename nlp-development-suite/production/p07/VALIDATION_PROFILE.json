@@ -1,0 +1,37 @@
+{
+  "schema": "nlp-p07-validation-profile/1",
+  "scope": "internal-testbed-no-publication",
+  "truth_state": "GENERATED_SYNTHESIS",
+  "production_ready": false,
+  "artifact": "production/p06/artifacts/nlp_offline_interpreter-0.1.0-py3-none-any.whl",
+  "artifact_sha256": "f624914598b98115dda294d0e34bee3e722326dcecfad2082ca437c957f138e2",
+  "security": {
+    "forbidden_runtime_import_roots": ["aiohttp", "httpx", "requests", "socket", "subprocess", "urllib"],
+    "forbidden_runtime_calls": ["compile", "eval", "exec", "open"],
+    "authority_effect": "NONE",
+    "execution_allowed": false
+  },
+  "performance": {
+    "typical_iterations": 5000,
+    "typical_total_seconds_max": 5.0,
+    "maximum_input_iterations": 50,
+    "maximum_input_total_seconds_max": 5.0,
+    "tracked_peak_bytes_max": 33554432,
+    "maximum_canonical_output_bytes": 262144
+  },
+  "compatibility": {
+    "windows_cpython_versions": ["3.11", "3.12", "3.13", "3.14"],
+    "command": "python -m nlp_offline_interpreter --basic testbed compatibility"
+  },
+  "recovery": {
+    "method": "detect corrupted working copy and restore exact wheel from verified backup",
+    "data_loss_window": "not applicable; package has no persistent runtime state"
+  },
+  "limitations": [
+    "thresholds are internal testbed criteria and not service-level objectives",
+    "measurements are host-specific",
+    "no graphical user interface is in the accepted product scope",
+    "no external provider process is accepted",
+    "publication deployment and independent security certification are excluded"
+  ]
+}

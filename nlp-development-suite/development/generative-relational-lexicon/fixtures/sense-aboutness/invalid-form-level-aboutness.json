@@ -1,0 +1,31 @@
+{
+  "schema": "sense-aboutness-candidate/0.1",
+  "record_id": "record-invalid-form-aboutness",
+  "status": "ABSTAINED",
+  "form": {
+    "text": "bank",
+    "normalized_text": "bank",
+    "language": "eng",
+    "variety": null,
+    "aboutness": "finance"
+  },
+  "evidence": [
+    {
+      "evidence_id": "ev-bank-form",
+      "source_id": "fixture",
+      "artifact_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "source_span": {"kind": "RECORD", "start": 1, "end": 1},
+      "evidence_kind": "FORM_ATTESTATION",
+      "truth_state": "SOURCE",
+      "observed_value": "The spelling occurs."
+    }
+  ],
+  "sense_candidates": [],
+  "abstention": {
+    "reason": "FORM_ONLY_EVIDENCE",
+    "evidence_refs": ["ev-bank-form"],
+    "needed_evidence": ["Sense-scoped evidence"]
+  },
+  "review_state": "UNREVIEWED",
+  "authority_effect": "PROPOSAL_ONLY"
+}

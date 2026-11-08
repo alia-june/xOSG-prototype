@@ -1,0 +1,2 @@
+-r requirements-handoff.txt
+./vendor/aprompt-1.1.0-py3-none-any.whl

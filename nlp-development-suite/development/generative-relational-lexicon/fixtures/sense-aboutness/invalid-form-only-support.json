@@ -1,0 +1,45 @@
+{
+  "schema": "sense-aboutness-candidate/0.1",
+  "record_id": "record-invalid-form-support",
+  "status": "CANDIDATES_PROPOSED",
+  "form": {
+    "text": "bank",
+    "normalized_text": "bank",
+    "language": "eng",
+    "variety": null
+  },
+  "evidence": [
+    {
+      "evidence_id": "ev-bank-form-match",
+      "source_id": "fixture",
+      "artifact_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "source_span": {"kind": "RECORD", "start": 1, "end": 1},
+      "evidence_kind": "FORM_MATCH",
+      "truth_state": "DERIVED",
+      "observed_value": "The spelling matches a modern index."
+    }
+  ],
+  "sense_candidates": [
+    {
+      "sense_candidate_id": "sense-bank-finance",
+      "scope": {"language": "eng", "time_scope": null, "community": null, "register": null, "domain": "finance"},
+      "scope_evidence_refs": ["ev-bank-form-match"],
+      "candidate_state": "SUPPORTED_CANDIDATE",
+      "distinguished_from": [],
+      "aboutness_assertions": [
+        {
+          "assertion_id": "as-bank-finance",
+          "facet": "DOMAIN",
+          "value": "finance",
+          "candidate_state": "SUPPORTED_CANDIDATE",
+          "truth_state": "INFERENCE",
+          "evidence_refs": ["ev-bank-form-match"],
+          "conflicts_with": []
+        }
+      ]
+    }
+  ],
+  "abstention": null,
+  "review_state": "UNREVIEWED",
+  "authority_effect": "PROPOSAL_ONLY"
+}

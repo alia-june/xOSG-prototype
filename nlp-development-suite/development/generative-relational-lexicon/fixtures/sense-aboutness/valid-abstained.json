@@ -1,0 +1,30 @@
+{
+  "schema": "sense-aboutness-candidate/0.1",
+  "record_id": "record-quux-form-only",
+  "status": "ABSTAINED",
+  "form": {
+    "text": "quux",
+    "normalized_text": "quux",
+    "language": "eng",
+    "variety": null
+  },
+  "evidence": [
+    {
+      "evidence_id": "ev-quux-form-match",
+      "source_id": "comparison-fixture",
+      "artifact_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "source_span": {"kind": "RECORD", "start": 1, "end": 1},
+      "evidence_kind": "FORM_MATCH",
+      "truth_state": "DERIVED",
+      "observed_value": "Only a surface-form match is available."
+    }
+  ],
+  "sense_candidates": [],
+  "abstention": {
+    "reason": "FORM_ONLY_EVIDENCE",
+    "evidence_refs": ["ev-quux-form-match"],
+    "needed_evidence": ["A sense-scoped usage context or reviewed relation"]
+  },
+  "review_state": "UNREVIEWED",
+  "authority_effect": "PROPOSAL_ONLY"
+}

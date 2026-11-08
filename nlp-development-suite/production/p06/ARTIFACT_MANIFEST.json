@@ -1,0 +1,27 @@
+{
+  "schema": "nlp-p06-wheel-manifest/1",
+  "artifact": "production/p06/artifacts/nlp_offline_interpreter-0.1.0-py3-none-any.whl",
+  "status": "verified-pre-candidate-artifact",
+  "production_ready": false,
+  "execution_allowed": false,
+  "size": 12549,
+  "sha256": "f624914598b98115dda294d0e34bee3e722326dcecfad2082ca437c957f138e2",
+  "member_count": 10,
+  "members": [
+    {"path": "nlp_offline_interpreter/__init__.py", "size": 821, "sha256": "1fdd5520d7160479762e66ed887b139e8637e3fe243c9cb9aa75a33f51784ad5"},
+    {"path": "nlp_offline_interpreter/__main__.py", "size": 156, "sha256": "d660222289e2c82c70ec19c0b9f850740c9f867c4f40ddf5c0788db39343687b"},
+    {"path": "nlp_offline_interpreter/basic.py", "size": 3010, "sha256": "6bbde47662325dd894d682213a822ae0916b60d4d0d37e468955183975beecec"},
+    {"path": "nlp_offline_interpreter/core.py", "size": 28145, "sha256": "b97aebc78e17393b749c5d1f112ac5083253d86b79d0c69e38f3387be312f210"},
+    {"path": "nlp_offline_interpreter/integration.py", "size": 11949, "sha256": "1224b7b5ec8e8e8765ec3c6da05e438a43289be97359d2eed0588cec61bfb191"},
+    {"path": "nlp_offline_interpreter-0.1.0.dist-info/METADATA", "size": 166, "sha256": "51a62778b269124dba302121b91b3dc7d75fa84f6b034efec14fda7abde4f393"},
+    {"path": "nlp_offline_interpreter-0.1.0.dist-info/WHEEL", "size": 91, "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1"},
+    {"path": "nlp_offline_interpreter-0.1.0.dist-info/entry_points.txt", "size": 85, "sha256": "8a64f3224d6d4d275ec31771c7590be17cba1ed7336a1eded9ac1c7a421e3f32"},
+    {"path": "nlp_offline_interpreter-0.1.0.dist-info/top_level.txt", "size": 24, "sha256": "c141bce996fec9df70cc7bdb64fbbd1ba7fd3fb01ca7ba303f031f62fde5f068"},
+    {"path": "nlp_offline_interpreter-0.1.0.dist-info/RECORD", "size": 928, "sha256": "f46fbbe38781fa2bac718ec5a3f5f042b4e5a63e2d6f6dffd702f08fd04b425c"}
+  ],
+  "content_assertions": {
+    "runtime_dependencies": 0,
+    "oewn_or_wordnet_data_bundled": false,
+    "license_or_notice_bundled": false
+  }
+}

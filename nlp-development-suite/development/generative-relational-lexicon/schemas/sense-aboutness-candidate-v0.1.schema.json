@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nlp-development-suite:sense-aboutness-candidate:0.1",
+  "title": "Sense-scoped aboutness candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "record_id",
+    "status",
+    "form",
+    "evidence",
+    "sense_candidates",
+    "abstention",
+    "review_state",
+    "authority_effect"
+  ],
+  "properties": {
+    "schema": {"const": "sense-aboutness-candidate/0.1"},
+    "record_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._:-]{2,127}$"},
+    "status": {
+      "enum": ["CANDIDATES_PROPOSED", "REVIEW_REQUIRED", "ABSTAINED"]
+    },
+    "form": {"$ref": "#/$defs/form"},
+    "evidence": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidence"},
+      "minItems": 1
+    },
+    "sense_candidates": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/senseCandidate"}
+    },
+    "abstention": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/abstention"}
+      ]
+    },
+    "review_state": {"const": "UNREVIEWED"},
+    "authority_effect": {"const": "PROPOSAL_ONLY"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "ABSTAINED"}}, "required": ["status"]},
+      "then": {
+        "properties": {
+          "sense_candidates": {"maxItems": 0},
+          "abstention": {"$ref": "#/$defs/abstention"}
+        }
+      },
+      "else": {
+        "properties": {
+          "sense_candidates": {"minItems": 1},
+          "abstention": {"type": "null"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "normalized_text", "language", "variety"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1, "maxLength": 256},
+        "normalized_text": {"type": "string", "minLength": 1, "maxLength": 256},
+        "language": {"type": "string", "pattern": "^[a-z]{2,3}$"},
+        "variety": {"type": ["string", "null"], "maxLength": 128}
+      }
+    },
+    "sourceSpan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "start", "end"],
+      "properties": {
+        "kind": {"enum": ["LINE", "CHARACTER", "RECORD"]},
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 0}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "source_id",
+        "artifact_sha256",
+        "source_span",
+        "evidence_kind",
+        "truth_state",
+        "observed_value"
+      ],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^ev-[a-z0-9][a-z0-9._:-]{1,95}$"},
+        "source_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "source_span": {"$ref": "#/$defs/sourceSpan"},
+        "evidence_kind": {
+          "enum": [
+            "FORM_ATTESTATION",
+            "FORM_MATCH",
+            "SURFACE_NORMALIZATION",
+            "CATEGORY_PLACEMENT",
+            "SOURCE_DOMAIN_LABEL",
+            "USAGE_CONTEXT",
+            "REVIEWED_SENSE_RELATION"
+          ]
+        },
+        "truth_state": {"enum": ["SOURCE", "DERIVED"]},
+        "observed_value": {"type": "string", "minLength": 1, "maxLength": 512}
+      }
+    },
+    "senseScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "time_scope", "community", "register", "domain"],
+      "properties": {
+        "language": {"type": "string", "pattern": "^[a-z]{2,3}$"},
+        "time_scope": {"type": ["string", "null"], "maxLength": 128},
+        "community": {"type": ["string", "null"], "maxLength": 128},
+        "register": {"type": ["string", "null"], "maxLength": 128},
+        "domain": {"type": ["string", "null"], "maxLength": 128}
+      }
+    },
+    "aboutnessAssertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assertion_id", "facet", "value", "candidate_state", "truth_state", "evidence_refs", "conflicts_with"],
+      "properties": {
+        "assertion_id": {"type": "string", "pattern": "^as-[a-z0-9][a-z0-9._:-]{1,95}$"},
+        "facet": {"enum": ["SUBJECT", "DOMAIN", "OPERATION", "QUALITY", "OBJECT", "PERIOD", "COMMUNITY", "REGISTER"]},
+        "value": {"type": "string", "minLength": 1, "maxLength": 128},
+        "candidate_state": {"enum": ["SUPPORTED_CANDIDATE", "CONFLICTED_CANDIDATE", "INSUFFICIENT_EVIDENCE"]},
+        "truth_state": {"enum": ["INFERENCE", "GENERATED_SYNTHESIS"]},
+        "evidence_refs": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^ev-"},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "conflicts_with": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^as-"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "senseCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sense_candidate_id", "scope", "scope_evidence_refs", "candidate_state", "distinguished_from", "aboutness_assertions"],
+      "properties": {
+        "sense_candidate_id": {"type": "string", "pattern": "^sense-[a-z0-9][a-z0-9._:-]{1,95}$"},
+        "scope": {"$ref": "#/$defs/senseScope"},
+        "scope_evidence_refs": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^ev-"},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "candidate_state": {"enum": ["SUPPORTED_CANDIDATE", "AMBIGUOUS_CANDIDATE", "CONFLICTED_CANDIDATE"]},
+        "distinguished_from": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^sense-"},
+          "uniqueItems": true
+        },
+        "aboutness_assertions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/aboutnessAssertion"},
+          "minItems": 1
+        }
+      }
+    },
+    "abstention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason", "evidence_refs", "needed_evidence"],
+      "properties": {
+        "reason": {"enum": ["NO_SENSE_EVIDENCE", "FORM_ONLY_EVIDENCE", "CONFLICT_UNRESOLVED", "SCOPE_UNRESOLVED", "SOURCE_BOUNDARY"]},
+        "evidence_refs": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^ev-"},
+          "uniqueItems": true
+        },
+        "needed_evidence": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1, "maxLength": 256},
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

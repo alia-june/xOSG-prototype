@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/natural-language/handoff-stub-0.1.schema.json",
+  "title": "Natural-English to logic candidate handoff (unconfirmed stub)",
+  "description": "Structural contract only. Valid JSON does not establish faithful translation, accepted authority, or executable permission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "producer", "consumer_contract_status", "execution_allowed", "source", "entries"],
+  "properties": {
+    "schema_version": {"const": "handoff-stub/0.1"},
+    "producer": {"const": "natural-language-front-end"},
+    "consumer_contract_status": {"const": "unconfirmed"},
+    "execution_allowed": {"const": false},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["archive_sha256", "member_path", "member_sha256", "authority_status"],
+      "properties": {
+        "archive_sha256": {"$ref": "#/$defs/sha256"},
+        "member_path": {"type": "string", "minLength": 1},
+        "member_sha256": {"$ref": "#/$defs/sha256"},
+        "authority_status": {"enum": ["candidate_unadopted", "accepted", "unknown"]}
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/entry"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"},
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "source_span", "source_text", "kind", "interpretation_status", "adoption_status", "logic_candidates", "unresolved"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "source_span": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start_line", "end_line"],
+          "properties": {
+            "start_line": {"type": "integer", "minimum": 1},
+            "end_line": {"type": "integer", "minimum": 1}
+          }
+        },
+        "source_text": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["axiom", "rule", "definition", "constraint", "transition", "unparsed"]},
+        "interpretation_status": {"enum": ["unparsed", "candidate_partial", "candidate_complete", "reviewed"]},
+        "adoption_status": {"enum": ["unadopted", "accepted", "unknown"]},
+        "logic_candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "language", "ast", "review_status"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "language": {"const": "stub-typed-ir/0.1"},
+              "ast": {"type": "object"},
+              "review_status": {"enum": ["unreviewed", "reviewed", "rejected"]}
+            }
+          }
+        },
+        "unresolved": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

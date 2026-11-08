@@ -1,0 +1,74 @@
+{
+  "schema": "nlp-p05-requirement-trace/1",
+  "slice_id": "nlp-offline-interpreter/0.1",
+  "status": "accepted-implementation-slice",
+  "authority_effect": "NONE",
+  "execution_allowed": false,
+  "production_ready": false,
+  "decision_sources": [
+    "production/P03_SCOPE_ACCEPTANCE_2026-10-01.md",
+    "production/Q003_CATALOG_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+    "production/Q004_SISTER_SCHEMA_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+    "production/Q005_RUNTIME_OPERATING_MODEL_ACCEPTANCE_2026-10-02.md",
+    "production/Q006_DATA_POLICY_ACCEPTANCE_2026-10-02.md",
+    "production/Q007_ACCOUNTABILITY_MODEL_ACCEPTANCE_2026-10-02.md",
+    "production/PRODUCTION_PLAN_ACCEPTANCE_2026-10-02.md"
+  ],
+  "requirements": [
+    {
+      "id": "P05-REQ-001",
+      "requirement": "Provide a generic deterministic interpretation API and plan-only CLI.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py", "development/nlp-offline-interpreter/src/nlp_offline_interpreter/integration.py"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_core.py", "development/nlp-offline-interpreter/tests/test_integration.py"]
+    },
+    {
+      "id": "P05-REQ-002",
+      "requirement": "Preserve exact source text, SHA-256, spans, provenance, layer traces, collisions, and unresolved regions.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_core.py", "development/nlp-offline-interpreter/tests/test_fuzzy.py"]
+    },
+    {
+      "id": "P05-REQ-003",
+      "requirement": "Expose no execution or mutation authority and fix authority_effect to NONE.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py", "development/nlp-offline-interpreter/src/nlp_offline_interpreter/integration.py"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_core.py", "development/nlp-offline-interpreter/tests/test_integration.py", "development/nlp-offline-interpreter/tests/test_fuzzy.py"]
+    },
+    {
+      "id": "P05-REQ-004",
+      "requirement": "Return typed invalid, unsupported, ambiguous, conflicting, or partial states without silently resolving them.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_core.py", "development/nlp-offline-interpreter/tests/test_integration.py"]
+    },
+    {
+      "id": "P05-REQ-005",
+      "requirement": "Keep lexical candidate evidence local, optional, pinned by the suite, and non-authoritative.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/integration.py"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_integration.py", "development/nlp-offline-interpreter/tests/test_fuzzy.py"]
+    },
+    {
+      "id": "P05-REQ-006",
+      "requirement": "Provide a dependency-free bounded basic function with versioned JSON output.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/basic.py", "development/nlp-offline-interpreter/schemas/generic-interpretation-v1.schema.json", "development/nlp-offline-interpreter/pyproject.toml"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_integration.py", "development/nlp-offline-interpreter/tests/test_torture.py"]
+    },
+    {
+      "id": "P05-REQ-007",
+      "requirement": "Enforce explicit input, layer, candidate, diagnostic, depth, item, and metadata bounds.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py", "development/nlp-offline-interpreter/src/nlp_offline_interpreter/basic.py"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_core.py", "development/nlp-offline-interpreter/tests/test_fuzzy.py", "development/nlp-offline-interpreter/tests/test_torture.py"]
+    },
+    {
+      "id": "P05-REQ-008",
+      "requirement": "Operate without network access, telemetry, background collection, or automatic input retention.",
+      "implementation": ["development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py", "development/nlp-offline-interpreter/src/nlp_offline_interpreter/basic.py", "development/nlp-offline-interpreter/src/nlp_offline_interpreter/integration.py"],
+      "tests": ["development/nlp-offline-interpreter/tests/test_integration.py", "development/nlp-offline-interpreter/tests/test_fuzzy.py"]
+    }
+  ],
+  "excluded": [
+    "operation execution",
+    "filesystem or catalog mutation",
+    "network providers, telemetry, and background collection",
+    "receiving-system or unavailable sister-schema compatibility claims",
+    "deployment and production-readiness claims"
+  ]
+}

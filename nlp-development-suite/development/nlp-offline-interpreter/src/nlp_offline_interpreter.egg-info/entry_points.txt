@@ -1,0 +1,2 @@
+[console_scripts]
+nlp-offline-interpreter = nlp_offline_interpreter.integration:main

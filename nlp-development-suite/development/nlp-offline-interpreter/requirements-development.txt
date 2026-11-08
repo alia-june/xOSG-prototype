@@ -1,0 +1,4 @@
+jsonschema==4.26.0
+setuptools==84.0.0
+wn==1.1.1
+-e ../../projects/lexicon-core

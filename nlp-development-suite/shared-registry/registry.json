@@ -1,0 +1,8 @@
+{
+  "schema": "lexicon-atlas-registry/1",
+  "language": "en",
+  "root": null,
+  "access": "Set LEXICON_DATA_ROOT to a separately managed policy-approved registry",
+  "sources": {},
+  "browser_build": null
+}

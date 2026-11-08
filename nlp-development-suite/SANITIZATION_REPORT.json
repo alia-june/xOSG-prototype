@@ -1,0 +1,19 @@
+{
+  "schema": "nlp-suite-prototype-sanitization/1",
+  "status": "GENERATED_UNVERIFIED",
+  "authority_effect": "LOCAL_STAGING_ONLY",
+  "publication_allowed": false,
+  "deployment_allowed": false,
+  "counts": {
+    "suite": {
+      "copied": 283,
+      "excluded_prefix": 3398,
+      "excluded_data_suffix": 47,
+      "excluded_exact_path": 7
+    },
+    "atlas": {
+      "copied": 23,
+      "excluded": 79
+    }
+  }
+}

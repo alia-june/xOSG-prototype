@@ -1,0 +1,39 @@
+{
+  "schema": "nlp-successor-build-validation/1",
+  "project": "nlp-offline-interpreter/0.1",
+  "status": "passed-development-build",
+  "authority_effect": "NONE",
+  "production_ready": false,
+  "python": "3.14.4",
+  "build_backend": "setuptools.build_meta",
+  "build_requirement": "setuptools==84.0.0",
+  "source_date_epoch": 1704067200,
+  "wheel": {
+    "filename": "nlp_offline_interpreter-0.1.0-py3-none-any.whl",
+    "size": 12534,
+    "sha256": "a3ef932ef0832716a17628d5318ac36175796fa2e2d80950079b6d149b59d9b3",
+    "location": "bundled in the user-directed local basic artifact"
+  },
+  "checks": [
+    "isolated PEP 517 wheel build passed",
+    "two isolated builds with the recorded SOURCE_DATE_EPOCH were byte-identical",
+    "wheel installed into a new temporary virtual environment with no index and no dependencies",
+    "installed generic core imported successfully",
+    "installed result retained schema generic-interpretation/1",
+    "installed result retained execution_allowed false",
+    "isolated optional integration module imported without suite dependencies",
+    "isolated integration status named all three missing modules and returned exit code 4",
+    "isolated integration status retained execution_allowed false",
+    "installed package -m entry point returned structured unavailable status with exit code 4",
+    "installed console-script entry point returned the same status with exit code 4",
+    "dependency-free basic mode returned generic-interpretation/1 with text.analyze",
+    "basic mode retained authority_effect NONE and execution_allowed false",
+    "installed package -m and console-script basic entry points returned byte-identical JSON"
+  ],
+  "limits": [
+    "The wheel is a development build, not an immutable release candidate.",
+    "The optional suite integration still relies on the separately packaged Lexicon Core and Natural Language source modules; absence is now reported as a structured non-executing status instead of an import traceback.",
+    "Python 3.11 through 3.13 compatibility has not yet been reproduced.",
+    "Reproducibility was demonstrated twice on one Windows host and has not yet been reproduced across independent hosts."
+  ]
+}

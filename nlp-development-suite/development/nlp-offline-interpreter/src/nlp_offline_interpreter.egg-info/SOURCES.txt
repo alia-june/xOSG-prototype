@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/nlp_offline_interpreter/__init__.py
+src/nlp_offline_interpreter/__main__.py
+src/nlp_offline_interpreter/basic.py
+src/nlp_offline_interpreter/core.py
+src/nlp_offline_interpreter/integration.py
+src/nlp_offline_interpreter.egg-info/PKG-INFO
+src/nlp_offline_interpreter.egg-info/SOURCES.txt
+src/nlp_offline_interpreter.egg-info/dependency_links.txt
+src/nlp_offline_interpreter.egg-info/entry_points.txt
+src/nlp_offline_interpreter.egg-info/top_level.txt
+tests/test_core.py
+tests/test_fuzzy.py
+tests/test_integration.py
+tests/test_torture.py

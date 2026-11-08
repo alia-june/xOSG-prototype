@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lexicon-atlas.invalid/catalog-interpretation-result/v0.1/schema.json",
+  "title": "Catalog InterpretationResult v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_id", "status", "source", "module", "registry", "candidates", "layer_trace", "unresolved", "authority_effect", "execution_allowed"],
+  "properties": {
+    "contract_id": {"const": "catalog.modular-nlp-capability-handoff/0.1"},
+    "status": {"enum": ["parsed_single", "collision", "unparsed", "conflict", "invalid_input"]},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_text", "sha256", "char_length"],
+      "properties": {
+        "exact_text": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "char_length": {"type": "integer", "minimum": 0}
+      }
+    },
+    "module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["module_id", "module_version", "capabilities", "ruleset_digest", "configuration_digest"],
+      "properties": {
+        "module_id": {"type": "string", "minLength": 1},
+        "module_version": {"type": "string", "minLength": 1},
+        "capabilities": {"type": "array", "items": {"pattern": "^NLP-CAP-[0-9]{2}$"}, "uniqueItems": true},
+        "ruleset_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "configuration_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "digest"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["operation", "arguments", "source_spans", "origin_class", "origin_ref", "confidence", "evidence", "constraints", "admitted", "execution_allowed", "authority_effect"],
+        "properties": {
+          "operation": {"type": "string", "minLength": 1},
+          "arguments": {"type": "object"},
+          "source_spans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["start", "end", "text"],
+              "properties": {
+                "start": {"type": "integer", "minimum": 0},
+                "end": {"type": "integer", "minimum": 0},
+                "text": {"type": "string"}
+              }
+            }
+          },
+          "origin_class": {"enum": ["DETERMINISTIC_RULE", "STATISTICAL_MODEL", "LLM_INFERENCE", "EXTERNAL_LOOKUP", "ADAPTER_NORMALIZATION"]},
+          "origin_ref": {"type": "string", "minLength": 1},
+          "confidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value", "semantics"],
+            "properties": {
+              "value": {"type": "number"},
+              "semantics": {"type": "string", "minLength": 1}
+            }
+          },
+          "evidence": {"type": "array", "items": {"type": "object"}},
+          "constraints": {"type": "array", "items": {"type": "object"}},
+          "admitted": {"const": false},
+          "execution_allowed": {"const": false},
+          "authority_effect": {"const": "NONE"}
+        }
+      }
+    },
+    "layer_trace": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["layer_id", "layer_version", "status", "candidate_contribution", "rule_or_model_ids"],
+        "properties": {
+          "layer_id": {"type": "string", "minLength": 1},
+          "layer_version": {"type": "string", "minLength": 1},
+          "status": {"type": "string", "minLength": 1},
+          "candidate_contribution": {"type": "integer", "minimum": 0},
+          "rule_or_model_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["start", "end", "text", "reason"],
+        "properties": {
+          "start": {"type": "integer", "minimum": 0},
+          "end": {"type": "integer", "minimum": 0},
+          "text": {"type": "string"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "authority_effect": {"const": "NONE"},
+    "execution_allowed": {"const": false}
+  }
+}

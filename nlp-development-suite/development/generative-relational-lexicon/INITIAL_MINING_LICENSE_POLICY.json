@@ -1,0 +1,88 @@
+{
+  "schema": "generative-relational-lexicon-initial-mining-license-policy/1",
+  "status": "generated-policy-proposal",
+  "as_of": "2026-10-03",
+  "authority_effect": "NONE",
+  "content_ingestion_authorized": false,
+  "policy_id": "tier-zero-cc0-public-domain",
+  "purpose": "Expose evidence holes using only the least restrictive copyright classes before considering attribution, share-alike, copyleft, noncommercial, mixed, or ambiguous sources.",
+  "allowed_rights_classes": [
+    "CC0-1.0",
+    "PUBLIC_DOMAIN"
+  ],
+  "excluded_rights_classes": [
+    "ATTRIBUTION_LICENSE",
+    "SHARE_ALIKE",
+    "SOFTWARE_COPYLEFT",
+    "NONCOMMERCIAL",
+    "NO_DERIVATIVES",
+    "MIXED_OR_COMPONENT_SPECIFIC",
+    "CONFLICTING_OR_AMBIGUOUS",
+    "FREE_ACCESS_WITHOUT_STANDARD_GRANT",
+    "UNDERLYING_RIGHTS_UNRESOLVED"
+  ],
+  "required_before_mining": [
+    "exact artifact, release, branch, or dated export is identified",
+    "SHA-256 is recorded",
+    "the license applies to the content fields used, not merely packaging or software",
+    "component filters are machine-enforced where only a subset is eligible",
+    "source, language, variety, date, register, and upstream provenance are retained",
+    "privacy, publicity, trademark, community, sacred-text, and endorsement constraints are reviewed separately",
+    "an accepted mining execution decision is recorded separately from this policy"
+  ],
+  "eligible_units": [
+    {
+      "source_id": "wikidata-lexemes",
+      "unit_id": "structured-lexeme-data",
+      "rights_class": "CC0-1.0",
+      "scope": "Structured data in the Lexeme namespace and referenced structured entities only; exclude prose/documentation namespaces.",
+      "eligible_dimensions": ["ROOT", "ETYMOLOGY", "DERIVATION", "MEANING"],
+      "selection_status": "license_eligible_not_pinned",
+      "license_evidence": "https://www.wikidata.org/wiki/Wikidata:Copyright",
+      "caution": "CC0 permits reuse but does not make community statements correct, complete, or accepted canon."
+    },
+    {
+      "source_id": "un-parallel-corpus-v1",
+      "unit_id": "official-public-domain-parallel-corpus-v1",
+      "rights_class": "PUBLIC_DOMAIN",
+      "scope": "UN Parallel Corpus v1.0 official records and supplied alignments only.",
+      "eligible_dimensions": ["TRANSLATION_EQUIVALENCE", "ABOUTNESS", "DOMAIN", "PERIOD", "REGISTER"],
+      "selection_status": "license_eligible_not_pinned",
+      "license_evidence": "https://www.un.org/dgacm/en/node/5471",
+      "obligations": ["acknowledge the United Nations as source", "retain the corpus disclaimer and citation"],
+      "caution": "Public-domain status does not make diplomatic and parliamentary language representative of general usage."
+    },
+    {
+      "source_id": "tatoeba-sentence-pairs",
+      "unit_id": "cc0-sentences-export-only",
+      "rights_class": "CC0-1.0",
+      "scope": "The separately identified Sentences (CC0) export only; exclude the general sentences, links, audio, transcriptions, tags, lists, and pair exports unless separately proven eligible.",
+      "eligible_dimensions": ["REGISTER"],
+      "selection_status": "license_eligible_not_pinned",
+      "license_evidence": "https://tatoeba.org/en/downloads",
+      "caution": "The CC0 sentence file alone does not establish which sentence pairs are translations; translation equivalence remains a hole under this tier."
+    },
+    {
+      "source_id": "project-gutenberg-roget-22",
+      "unit_id": "ebook-22-pinned-plain-text-body",
+      "rights_class": "PUBLIC_DOMAIN",
+      "scope": "The exact pinned plain-text body of Ebook 22 as a dated electronic edition; retain the original file and Project Gutenberg license separately, and do not label the extracted content a faithful 1911 transcription.",
+      "eligible_dimensions": ["MEANING", "ABOUTNESS", "DOMAIN", "OPERATION", "QUALITY", "PERIOD", "REGISTER"],
+      "selection_status": "license_eligible_not_pinned",
+      "license_evidence": "https://www.gutenberg.org/ebooks/22",
+      "obligations": ["check governing jurisdiction", "preserve the artifact header and provenance", "comply with Project Gutenberg trademark terms if its name remains associated"],
+      "caution": "The electronic edition contains later additions, rearrangements, markup, and transcription errors. Mine source structure as evidence from this electronic edition, not as recovered original Roget canon."
+    },
+    {
+      "source_id": "suttacentral-bilara",
+      "unit_id": "published-cc0-translation-files-only",
+      "rights_class": "CC0-1.0",
+      "scope": "Published translation files whose publication metadata identifies CC0 and SuttaCentral support; exclude root, variant, comment, HTML, reference, and other layers until separately verified.",
+      "eligible_dimensions": ["MEANING", "ABOUTNESS", "DOMAIN", "PERIOD", "REGISTER"],
+      "selection_status": "license_eligible_not_pinned",
+      "license_evidence": "https://github.com/suttacentral/bilara-data/blob/published/LICENSE.md",
+      "caution": "A CC0 translation without an independently eligible source-text layer cannot by itself supply a licensed Pali-English alignment. Preserve religious and historical register."
+    }
+  ],
+  "deferred_dimension": "GEIST"
+}

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/generic-interpretation-v1.schema.json",
+  "title": "Generic non-executing interpretation result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_text",
+    "source_sha256",
+    "source_length",
+    "status",
+    "candidates",
+    "unresolved",
+    "layer_trace",
+    "metadata",
+    "authority_effect",
+    "execution_allowed"
+  ],
+  "properties": {
+    "schema": {"const": "generic-interpretation/1"},
+    "source_text": {"type": "string"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_length": {"type": "integer", "minimum": 0},
+    "status": {
+      "enum": ["parsed_single", "collision", "partial", "unparsed", "invalid_input"]
+    },
+    "candidates": {
+      "type": "array",
+      "maxItems": 16384,
+      "items": {"$ref": "#/$defs/candidate"}
+    },
+    "unresolved": {
+      "type": "array",
+      "maxItems": 16384,
+      "items": {"$ref": "#/$defs/unresolved"}
+    },
+    "layer_trace": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {"$ref": "#/$defs/layerTrace"}
+    },
+    "metadata": {"type": "object"},
+    "authority_effect": {"const": "NONE"},
+    "execution_allowed": {"const": false}
+  },
+  "$defs": {
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "label"],
+      "properties": {
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 0},
+        "label": {"type": "string", "minLength": 1, "maxLength": 256}
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "operation",
+        "arguments",
+        "layer_id",
+        "provenance_class",
+        "evidence",
+        "spans",
+        "confidence",
+        "authority_effect",
+        "execution_allowed"
+      ],
+      "properties": {
+        "candidate_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "operation": {"type": "string", "minLength": 1, "maxLength": 256},
+        "arguments": {"type": "object"},
+        "layer_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "provenance_class": {"type": "string", "minLength": 1, "maxLength": 256},
+        "evidence": {"type": "array", "maxItems": 256, "items": {"type": "string", "minLength": 1, "maxLength": 256}},
+        "spans": {"type": "array", "items": {"$ref": "#/$defs/span"}},
+        "confidence": {"type": ["object", "null"]},
+        "authority_effect": {"const": "NONE"},
+        "execution_allowed": {"const": false}
+      }
+    },
+    "unresolved": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "reason", "layer_id"],
+      "properties": {
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 0},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 256},
+        "layer_id": {"type": "string", "minLength": 1, "maxLength": 256}
+      }
+    },
+    "layerTrace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "layer_id",
+        "layer_version",
+        "status",
+        "candidate_count",
+        "unresolved_count",
+        "diagnostics"
+      ],
+      "properties": {
+        "layer_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "layer_version": {"type": "string", "minLength": 1, "maxLength": 256},
+        "status": {
+          "enum": [
+            "no_match",
+            "candidates",
+            "collision",
+            "partial",
+            "invalid_input",
+            "error",
+            "not_consulted"
+          ]
+        },
+        "candidate_count": {"type": "integer", "minimum": 0},
+        "unresolved_count": {"type": "integer", "minimum": 0},
+        "diagnostics": {"type": "array", "maxItems": 256, "items": {"type": "string", "minLength": 1, "maxLength": 4096}}
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "contract_id": "catalog.modular-nlp-capability-handoff/0.1",
+  "status": "generated-test-fixture",
+  "cases": [
+    {
+      "input": "find recovery",
+      "expected_status": "parsed_single",
+      "expected_operations": ["catalog.find"]
+    },
+    {
+      "input": "show inbox",
+      "expected_status": "parsed_single",
+      "expected_operations": ["catalog.inbox"]
+    },
+    {
+      "input": "show object abc123",
+      "expected_status": "parsed_single",
+      "expected_operations": ["catalog.show"]
+    },
+    {
+      "input": "move report into MageCore",
+      "expected_status": "collision",
+      "expected_operations": ["catalog.collect", "catalog.file.move"]
+    },
+    {
+      "input": "put report with MageCore, don't move the actual files",
+      "expected_status": "parsed_single",
+      "expected_operations": ["catalog.collect"],
+      "expected_arguments": {"physical_move": false}
+    },
+    {
+      "input": "unsupported prose",
+      "expected_status": "unparsed",
+      "expected_operations": []
+    },
+    {
+      "input": "",
+      "expected_status": "invalid_input",
+      "expected_operations": []
+    }
+  ]
+}

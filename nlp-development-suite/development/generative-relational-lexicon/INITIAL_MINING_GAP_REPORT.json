@@ -1,0 +1,649 @@
+{
+  "schema": "generative-relational-lexicon-initial-mining-gap-report/1",
+  "status": "generated-license-gap-analysis",
+  "authority_effect": "NONE",
+  "content_ingestion_authorized": false,
+  "test_mining_authorized": true,
+  "production_ingestion_authorized": false,
+  "policy_id": "tier-zero-cc0-public-domain",
+  "source_count": 44,
+  "eligible_source_count": 5,
+  "eligible_unit_count": 5,
+  "excluded_source_count": 39,
+  "eligible_sources": [
+    "project-gutenberg-roget-22",
+    "suttacentral-bilara",
+    "tatoeba-sentence-pairs",
+    "un-parallel-corpus-v1",
+    "wikidata-lexemes"
+  ],
+  "excluded_sources": [
+    "ai4bharat-bpcc",
+    "althobaiti-ar-en-wikipedia",
+    "anglo-norman-dictionary",
+    "bosworth-toller-online",
+    "cleasby-vigfusson-1874",
+    "clics3",
+    "cologne-sanskrit-lexicons",
+    "concepticon-3.4",
+    "etymwn-2013",
+    "fao-agrovoc-ar-en",
+    "freedict-eng-ara-0.6.3",
+    "freedict-eng-hin-1.6",
+    "gcide-0.54",
+    "glottolog-5.3",
+    "grambank",
+    "hplt-ar-en-hi-en",
+    "ids-cldf",
+    "iecor",
+    "iitb-en-hi-3.1",
+    "india-ogd-godl",
+    "lila-lemma-bank",
+    "loc-chronicling-america",
+    "loc-collections-api",
+    "madar-parallel",
+    "middle-english-corpus",
+    "oewn-2025",
+    "open-library-catalog",
+    "panlex",
+    "perseus",
+    "phoible-2.0",
+    "project-gutenberg-historical-reference",
+    "qcri-waw-corpus",
+    "samanantar-0.3",
+    "tdil-ilci-hin-eng",
+    "unimorph-eng",
+    "universal-dependencies",
+    "wiktionary-en",
+    "wipo-pearl",
+    "wold"
+  ],
+  "excluded_source_details": [
+    {
+      "source_id": "ai4bharat-bpcc",
+      "license": "CC0 packaging declarations plus underlying-source rights caveat; CC-BY-4.0 for newly authored human subsets",
+      "license_status": "component-and-underlying-rights-review",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "althobaiti-ar-en-wikipedia",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_status": "verified-current-repository-statement",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "anglo-norman-dictionary",
+      "license": "All substantive/digital rights reserved with explicit copying restrictions",
+      "license_status": "verified-current",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "bosworth-toller-online",
+      "license": "Data stated free for any purpose; academic citation requested",
+      "license_status": "verified-current-site-statement",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "cleasby-vigfusson-1874",
+      "license": "Public-domain historical edition; digitization-specific terms unresolved",
+      "license_status": "exact-artifact-review-required",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "clics3",
+      "license": "CC-BY-4.0",
+      "license_status": "verified-current",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "cologne-sanskrit-lexicons",
+      "license": "Project guides state CC-BY-SA-4.0",
+      "license_status": "exact-artifact-review-required",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "concepticon-3.4",
+      "license": "CC-BY-4.0",
+      "license_status": "verified-current-site-statement",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "etymwn-2013",
+      "license": "Reported CC-BY-SA-3.0",
+      "license_status": "direct-license-not-yet-verified",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "fao-agrovoc-ar-en",
+      "license": "Official pages identify CC-BY-IGO-3.0 or CC-BY-4.0 for FAO-language content",
+      "license_status": "official-license-version-conflict",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "freedict-eng-ara-0.6.3",
+      "license": "GPL-2.0-or-later",
+      "license_status": "verified-in-tei-header",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "freedict-eng-hin-1.6",
+      "license": "GPL-2.0-or-later",
+      "license_status": "verified-in-tei-header",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "gcide-0.54",
+      "license": "GPL-3.0-or-later",
+      "license_status": "verified-current",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "glottolog-5.3",
+      "license": "CC-BY-4.0",
+      "license_status": "verified-current",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "grambank",
+      "license": "CC-BY-4.0",
+      "license_status": "verified-current-site-statement",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "hplt-ar-en-hi-en",
+      "license": "CC0 for packaging; project disclaims ownership of extracted web text",
+      "license_status": "underlying-rights-unresolved",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "ids-cldf",
+      "license": "CC-BY-4.0",
+      "license_status": "verified-current-site-and-repository-statement",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "iecor",
+      "license": "CC-BY-4.0",
+      "license_status": "verified-current",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "iitb-en-hi-3.1",
+      "license": "CC-BY-NC-4.0 for newly compiled work; included corpora retain their respective licenses",
+      "license_status": "verified-current-composite",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "india-ogd-godl",
+      "license": "Government Open Data License - India",
+      "license_status": "verified-current-license",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "lila-lemma-bank",
+      "license": "CC-BY-SA-4.0",
+      "license_status": "verified-current-repository-statement",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "loc-chronicling-america",
+      "license": "Library of Congress states public domain or no known restrictions; item-level assessment remains required",
+      "license_status": "verified-current-collection-statement",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "loc-collections-api",
+      "license": "Collection and item specific",
+      "license_status": "item-level-review-required",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "madar-parallel",
+      "license": "Noncommercial research terms; English and French source sentences withheld for copyright reasons",
+      "license_status": "verified-current-restrictions",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "middle-english-corpus",
+      "license": "Generally unrestricted reuse; identified OTA subset remains share-alike",
+      "license_status": "mixed-components",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "oewn-2025",
+      "license": "CC-BY-4.0 plus Princeton WordNet notice",
+      "license_status": "verified-current",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "open-library-catalog",
+      "license": "Internet Archive asserts no new rights in the database; existing contribution and jurisdictional rights may remain",
+      "license_status": "verified-current-with-rights-caveat",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "panlex",
+      "license": "Conflicting current site statements: English data page says CC0; localized page says CC-BY-NC-SA-4.0",
+      "license_status": "conflict",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "perseus",
+      "license": "Component-specific and mixed",
+      "license_status": "mixed-components",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "phoible-2.0",
+      "license": "Site states CC-BY-SA-3.0; current derived distributions may state different terms",
+      "license_status": "version-conflict",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "project-gutenberg-historical-reference",
+      "license": "Exact ebook and jurisdiction specific under the Project Gutenberg license",
+      "license_status": "exact-artifact-review-required",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "qcri-waw-corpus",
+      "license": "Apache-2.0",
+      "license_status": "verified-current-site-statement",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "samanantar-0.3",
+      "license": "Official project page says CC0 packaging; current Hugging Face dataset metadata says CC-BY-NC-4.0",
+      "license_status": "conflict",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "tdil-ilci-hin-eng",
+      "license": "Commercial or research license offered; no blanket open grant shown",
+      "license_status": "specific-license-required",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "unimorph-eng",
+      "license": "CC-BY-SA-3.0",
+      "license_status": "verified-current",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "universal-dependencies",
+      "license": "Treebank-specific and mixed",
+      "license_status": "mixed-components",
+      "source_admission_status": "review_required",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "wiktionary-en",
+      "license": "CC-BY-SA-4.0 and GFDL; local Kaikki snapshot records CC-BY-SA-3.0 and GFDL",
+      "license_status": "version-conflict",
+      "source_admission_status": "isolated_adapter_only",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "wipo-pearl",
+      "license": "Free lookup under restrictive database terms",
+      "license_status": "verified-current-restrictions",
+      "source_admission_status": "blocked",
+      "tier_zero_decision": "excluded"
+    },
+    {
+      "source_id": "wold",
+      "license": "CC-BY-3.0-DE",
+      "license_status": "verified-current-site-statement",
+      "source_admission_status": "admitted_for_mapping",
+      "tier_zero_decision": "excluded"
+    }
+  ],
+  "candidate_dimensions": [
+    "ABOUTNESS",
+    "DERIVATION",
+    "DOMAIN",
+    "ETYMOLOGY",
+    "MEANING",
+    "OPERATION",
+    "PERIOD",
+    "QUALITY",
+    "REGISTER",
+    "ROOT",
+    "TRANSLATION_EQUIVALENCE"
+  ],
+  "global_evidence_holes": [
+    "GRAMMAR",
+    "PHONOLOGY"
+  ],
+  "intentionally_deferred_dimensions": [
+    "GEIST"
+  ],
+  "mining_ready_unit_count": 1,
+  "test_execution_ready_units": [
+    "ebook-22-pinned-plain-text-body"
+  ],
+  "readiness_blocker": "Readiness is test-only. Every other eligible unit still requires an exact version or dated export, SHA-256, enforced scope filter, and a separate execution decision; no unit is production-ready.",
+  "language_coverage": [
+    {
+      "language_id": "proto-indo-european",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "proto-germanic",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "west-germanic",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "ETYMOLOGY",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "old-english",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "middle-english",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "modern-english",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "project-gutenberg-roget-22",
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "ABOUTNESS",
+        "DERIVATION",
+        "DOMAIN",
+        "ETYMOLOGY",
+        "MEANING",
+        "OPERATION",
+        "PERIOD",
+        "QUALITY",
+        "REGISTER",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "old-norse",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": [
+        "PERIOD",
+        "REGISTER"
+      ]
+    },
+    {
+      "language_id": "anglo-norman",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "old-french",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "latin",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": [
+        "GRAMMAR"
+      ]
+    },
+    {
+      "language_id": "ancient-greek",
+      "status": "candidate_for_all_declared_dimensions",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": []
+    },
+    {
+      "language_id": "sanskrit-pali",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "suttacentral-bilara",
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "ABOUTNESS",
+        "DERIVATION",
+        "DOMAIN",
+        "ETYMOLOGY",
+        "MEANING",
+        "PERIOD",
+        "REGISTER",
+        "ROOT"
+      ],
+      "unserved_dimensions": [
+        "GRAMMAR",
+        "TRANSLATION_EQUIVALENCE"
+      ]
+    },
+    {
+      "language_id": "semitic-comparison",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "un-parallel-corpus-v1",
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "ABOUTNESS",
+        "DERIVATION",
+        "DOMAIN",
+        "ETYMOLOGY",
+        "MEANING",
+        "PERIOD",
+        "REGISTER",
+        "ROOT",
+        "TRANSLATION_EQUIVALENCE"
+      ],
+      "unserved_dimensions": [
+        "GRAMMAR"
+      ]
+    },
+    {
+      "language_id": "persian-urdu",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": [
+        "ABOUTNESS",
+        "DOMAIN",
+        "GRAMMAR",
+        "PERIOD",
+        "REGISTER",
+        "TRANSLATION_EQUIVALENCE"
+      ]
+    },
+    {
+      "language_id": "celtic-languages",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": [
+        "ABOUTNESS",
+        "GRAMMAR",
+        "PERIOD",
+        "PHONOLOGY",
+        "REGISTER"
+      ]
+    },
+    {
+      "language_id": "structural-diversity-panel",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": [
+        "ABOUTNESS",
+        "DOMAIN",
+        "GRAMMAR",
+        "PERIOD",
+        "PHONOLOGY",
+        "REGISTER",
+        "TRANSLATION_EQUIVALENCE"
+      ]
+    },
+    {
+      "language_id": "later-contact-languages",
+      "status": "partial_candidate_coverage",
+      "eligible_source_candidates": [
+        "wikidata-lexemes"
+      ],
+      "candidate_dimensions": [
+        "DERIVATION",
+        "ETYMOLOGY",
+        "MEANING",
+        "ROOT"
+      ],
+      "unserved_dimensions": [
+        "GRAMMAR",
+        "PHONOLOGY"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "generative-relational-lexicon-parser-repair-decision/1",
+  "status": "AUTHORIZED_TEST_PARSER_REPAIR",
+  "accepted_at": "2026-10-06",
+  "authority_source": "direct user continuation after the evidence-bounded review disposition pass",
+  "authority_summary": "Encode repeated parser-boundary defects as regressions, make the minimum supported parser changes, and regenerate all downstream evidence.",
+  "authority_effect": "TEST_PARSER_REPAIR_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "baseline_commit": "5d670d0",
+  "baseline_artifacts": [
+    {
+      "path": "development/generative-relational-lexicon/pilot/tier-zero/output/PILOT_RECEIPT.json",
+      "bytes": 1528,
+      "sha256": "f155d264b940319aa8277af961af95eee6ad31d3cf4d65daf417892ec0692b7e"
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/DISCREPANCY_SHAPE_REPORT.json",
+      "bytes": 35661,
+      "sha256": "854cdf50f2078aa971bed8ad4bc8bc0d330b3f937a0824e736f3754653f8f440"
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/NORMALIZATION_SHAPE_REPORT.json",
+      "bytes": 1655,
+      "sha256": "ee35183b68ebe47aa5ee1e38935d5923de37be175f8ef26298e900a60023db45"
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/unresolved-shapes/UNRESOLVED_SHAPE_REPORT.json",
+      "bytes": 3576,
+      "sha256": "87f8df1736343c3264845a4dec5b0605090a03a326594cbdf70cbbf78a8d327f"
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/review-sample/REVIEW_SAMPLE_REPORT.json",
+      "bytes": 8839,
+      "sha256": "735328d1955af19bed6adcc9ed4a4931e9ce56f9b4ffd6a261e5c6f38d00ad1a"
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/review-sample/dispositions/REVIEW_DISPOSITION_REPORT.json",
+      "bytes": 1168,
+      "sha256": "a68576d65920c6ee14faf87734d2fb66ba83a62505feb813dfeb05992679f465"
+    },
+    {
+      "path": "development/generative-relational-lexicon/pilot/modern-comparison/normalization-audit/review-sample/dispositions/PARSER_REGRESSION_CANDIDATES.json",
+      "bytes": 3682,
+      "sha256": "460048d9471f952d2dfdfff493fef515dec6196eef63faeb31697eb00b2fb685"
+    }
+  ],
+  "baseline_evidence": {
+    "review_disposition_receipt": {
+      "bytes": 1880,
+      "sha256": "b332f3c0c79c9463e6856b87b9f275849d4c6f8328f89123f785c441081ece87"
+    },
+    "regression_candidates": {
+      "bytes": 3682,
+      "sha256": "460048d9471f952d2dfdfff493fef515dec6196eef63faeb31697eb00b2fb685"
+    },
+    "sample_record_count": 286,
+    "confirmed_boundary_defect_count": 46
+  },
+  "authorized_repeated_patterns": [
+    "BARE_HEAD_NUMBER_SUFFIX_CAPTURE",
+    "BRACE_CROSS_REFERENCE_FRAGMENT",
+    "BRACKET_ANNOTATION_SPLIT",
+    "SQUARE_BRACKET_FRAGMENT",
+    "STANDALONE_HEADING_CAPTURE",
+    "SUFFIXED_HEAD_HEADING_CAPTURE"
+  ],
+  "held_patterns": [
+    "BARE_SUFFIXED_HEAD_MARKER_CAPTURE",
+    "GROUPED_NUMBER_SPLIT",
+    "LEADING_FOOTNOTE_MARKER_CAPTURE"
+  ],
+  "downstream_regeneration_required": true,
+  "excluded_operations": [
+    "repair of held below-threshold patterns",
+    "lexical validity assignment",
+    "semantic reinterpretation",
+    "silent deletion without regenerated evidence",
+    "canon admission",
+    "production or publication approval"
+  ]
+}

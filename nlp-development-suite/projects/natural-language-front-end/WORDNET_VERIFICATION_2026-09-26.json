@@ -1,0 +1,30 @@
+{
+  "wordnet_release": "oewn:2025",
+  "data_directory": "<USER_HOME>\\Documents\\Workbench\\Natural Language\\.wn_data",
+  "resource_url": [
+    "https://en-word.net/static/english-wordnet-2025.xml.gz"
+  ],
+  "source_archive": "<USER_HOME>\\Documents\\Workbench\\Natural Language\\.wn_data\\downloads\\e25af66e46775b00d689619787013e6a35e5cbf7",
+  "source_archive_sha256": "9ca6d1dcb75f822fdd66617f7d9da48142ace38dd544d6ad5e2feca1674ad3fe",
+  "release": "oewn:2025",
+  "counts": {
+    "words": 135969,
+    "synsets": 107519,
+    "senses": 185129
+  },
+  "expected_counts": {
+    "words": 135969,
+    "synsets": 107519,
+    "senses": 185129
+  },
+  "complete": true,
+  "checks": {
+    "release_installed": true,
+    "database_counts_match": true,
+    "source_archive_present": true,
+    "source_archive_sha256_matches": true,
+    "source_archive_is_readable_lmf": true,
+    "resource_url_matches": true
+  },
+  "verified_complete": true
+}
