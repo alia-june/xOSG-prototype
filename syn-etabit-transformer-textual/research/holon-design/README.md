@@ -30,10 +30,10 @@ Repository image:
 
 `assets/crystalline-holon-evolution-timeline.jpg`
 
-- repository representation: JPEG, 1200 × 675
-- repository JPEG SHA-256: `88c3225edfb32a87d5d15db998c5c9f9dc51617bc13f462703d116097db31a67`
+- repository representation: JPEG display derivative, 300 × 169
+- repository JPEG SHA-256: `580284794072d09d4a754f93998b613a22e82c5f8585c5a2a22c03741eb37e8e`
 - source supplied in the working conversation: PNG, 1672 × 941
 - source PNG SHA-256: `b260006484468f82284a12dd51d09cfaba32feda8a89f88e634640e5992dd7a9`
-- repository copy is a downscaled JPEG derivative for practical repository display; it is not byte-identical to the supplied PNG.
+- repository copy is a bounded downscaled JPEG derivative for repository display; it is not byte-identical to the supplied PNG.
 
 No authorship claim is inferred from possession or upload of the source image.
