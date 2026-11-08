@@ -10,7 +10,7 @@ This directory gathers Holon/Holoquary design research, source mining, and bound
 
 `GEN 0 → GEN 1 → GEN 2 → GEN 3 → GEN 4+`
 
-The visual suggests a progression from a high-capacity, high-authority, resource-rich holon under extreme stress through progressively reduced/streamlined descendants, followed by retained growth potential and possible re-expansion.
+The visual suggests a progression from a high-capacity, high-authority, resource-rich holon under extreme stress through progressively reduced or streamlined descendants, followed by retained growth potential and possible re-expansion.
 
 ### Evidence boundary
 
@@ -31,7 +31,9 @@ Repository image:
 `assets/crystalline-holon-evolution-timeline.jpg`
 
 - repository representation: JPEG display derivative, 300 × 169
-- repository JPEG SHA-256: `580284794072d09d4a754f93998b613a22e82c5f8585c5a2a22c03741eb37e8e`
+- repository JPEG size: 6,676 bytes
+- repository JPEG SHA-256: `17584db8293dac4b04b7c9b0e036a37f921a0d2ba9eb109f43f59800f4376e06`
+- repository Git blob SHA-1: `d118ce2f44e9f91b97e024451dfd68cba9f85e5f`
 - source supplied in the working conversation: PNG, 1672 × 941
 - source PNG SHA-256: `b260006484468f82284a12dd51d09cfaba32feda8a89f88e634640e5992dd7a9`
 - repository copy is a bounded downscaled JPEG derivative for repository display; it is not byte-identical to the supplied PNG.
