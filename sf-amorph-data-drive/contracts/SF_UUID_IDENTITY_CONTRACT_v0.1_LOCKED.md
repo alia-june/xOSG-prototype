@@ -1,8 +1,10 @@
 # sf-UUID Member Identity Contract v0.1
 
-**Status:** PROPOSED — review artifact, not a specification lock
+**Status:** LOCKED — accepted sf-AmorphDataDrive member identity contract
 
-**Date:** 2026-11-05
+**Proposed:** 2026-11-05
+
+**Accepted and locked:** 2026-11-08
 
 **Applies to:** sf-AmorphDataDrive member identity
 
@@ -10,11 +12,11 @@
 
 ## 1. Purpose and authority
 
-This contract defines the proposed meaning, representation, issuance, comparison, and continuity rules for a member `sf-UUID`. It resolves only the member-identity portion of the current open architecture.
+This contract defines the meaning, representation, issuance, comparison, and continuity rules for a member `sf-UUID`. It resolves only the member-identity portion of the architecture.
 
-This document does not amend locked v0.3 merely by existing. It becomes controlling only through an explicit owner decision that accepts or locks it. Until then, implementations and other contracts must label it as a proposal.
+This contract was accepted and locked through explicit owner direction on 2026-11-08. It is a controlling member-identity supplement to locked sf-AmorphDataDrive v0.3; it does not rewrite v0.3, create v0.4, or settle the residual contracts listed in section 16.
 
-The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** express requirements within this proposal. They do not grant execution, publication, attestation, or operating authority.
+The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** express controlling requirements within this locked member-identity scope. They do not grant execution, publication, attestation, or operating authority.
 
 ## 2. Scope
 
@@ -231,7 +233,7 @@ This contract imposes the following requirements on later bitmap and topology co
 
 ## 14. Contract-local failure outcomes
 
-These labels describe outcomes in this proposal. They are not registered sf operations and do not modify the separate sf-Registry candidate.
+These labels describe outcomes in this locked member-identity contract. They are not registered sf operations and do not modify the separate sf-Registry candidate.
 
 | Outcome | Required condition |
 | --- | --- |
@@ -265,7 +267,7 @@ Failures MUST preserve the conflicting evidence needed for review. A failure lab
 
 ## 16. Residual open decisions
 
-Acceptance of this contract would resolve the member sf-UUID representation and identity-lifecycle rules proposed here. It would not close:
+This contract resolves the member sf-UUID representation and identity-lifecycle rules defined here. It does not close:
 
 1. physical and logical ID/data/metadata topology;
 2. bitmap and ordered-occurrence grammar;
@@ -277,4 +279,4 @@ Acceptance of this contract would resolve the member sf-UUID representation and 
 8. any future 64-bit identifier and mapping;
 9. Etabit qualification or cross-map.
 
-Until an explicit owner decision accepts or locks this proposal, those boundaries and the proposal status MUST remain visible.
+Those residual boundaries and this contract's limited lock scope MUST remain visible. Changing a residual decision or this locked member-identity contract requires a separately reviewed and approved scope.

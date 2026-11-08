@@ -1,6 +1,6 @@
 # sf-Edabit / sf-AmorphDataDrive
 
-**Status:** locked baseline v0.3 with open successor direction  
+**Status:** locked baseline v0.3 with locked sf-UUID member identity contract v0.1 and open successor direction  
 **Environment:** non-production research  
 **Integration:** separate from Etabit; candidate substrate relationship only
 
@@ -14,7 +14,7 @@ D0 contains raw, flat, ordered, enumerated values. Identity, metadata, datatype,
 
 ## Current direction
 
-- Member sf-UUID is needed now. A bounded [sf-UUID member identity contract v0.1](contracts/SF_UUID_IDENTITY_CONTRACT_v0.1_PROPOSED.md) now records the review proposal for format, issuance, scope, duplicate/collision handling, and copy/replacement matching. It is not yet a specification lock.
+- Member sf-UUID identity is governed by the locked [sf-UUID member identity contract v0.1](contracts/SF_UUID_IDENTITY_CONTRACT_v0.1_LOCKED.md), covering format, issuance, scope, duplicate/collision handling, continuity, and copy/replacement matching.
 - A separate 64-bit identifier is deferred as a possible later addition.
 - Drive-level sf-UUID is optional and discouraged.
 - A touple can become a gestalt or gesple containing identity, y-bit value information represented in x bits, datatype, and data.
@@ -30,7 +30,8 @@ These statements are current direction, not a new specification lock or complete
 - [Historical locked baseline v0.2](specifications/sf_edabit_amorph_data_drive_locked_spec_v0_2.md)
 - [Current direction](docs/CURRENT_DIRECTION.md)
 - [Open decisions](docs/OPEN_DECISIONS.md)
-- [Proposed sf-UUID member identity contract v0.1](contracts/SF_UUID_IDENTITY_CONTRACT_v0.1_PROPOSED.md)
+- [Locked sf-UUID member identity contract v0.1](contracts/SF_UUID_IDENTITY_CONTRACT_v0.1_LOCKED.md)
+- [sf-UUID v0.1 lock decision](decisions/SF_UUID_IDENTITY_CONTRACT_v0.1_LOCK_2026-11-08.md)
 - [Relation to Etabit](docs/ETABIT_RELATION.md)
 - [Source and proof boundary](docs/SOURCE_BOUNDARY.md)
 - [Coherence summary](evidence/COHERENCE_SUMMARY.md)
@@ -41,6 +42,6 @@ These statements are current direction, not a new specification lock or complete
 
 ## Boundaries
 
-This project does not claim a formatted disk, accepted or on-media sf-UUID contract, bitmap grammar, gestalt/gesple runtime, Etabit implementation, Experience Orchestration Drive, Cypher Disk, deployed service, physical medium, optical isolation, recovery proof, or production conformance.
+The locked member-identity contract does not claim a formatted disk, on-media sf-UUID placement, bitmap grammar, gestalt/gesple runtime, Etabit implementation, Experience Orchestration Drive, Cypher Disk, deployed service, physical medium, optical isolation, recovery proof, or production conformance.
 
 The sf-Registry working candidate is deliberately excluded. It is a separate operation/preservation registry candidate, not this storage architecture. Read locked v0.3 before proposing changes, and apply the production gate to each new scope.
