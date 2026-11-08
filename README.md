@@ -246,6 +246,16 @@ The current higher-assurance wall is explicit: independent compiled MPFR verific
 
 ---
 
+## Holoquary — nonrecursive logic, uncertainty, and local state
+
+**[Open project →](holoquary/README.md)** · **[Reconstitution record →](holoquary/RECONSTITUTION.md)**
+
+Holoquary v1.3 is a C99 research substrate for deterministic three-valued logic, typed numerical domains, explicit possibility sets, uncertainty-aware comparisons and selectors, bounded local correlation, and staged transactions over small caller-owned state cells. Computational data, knowledge metadata, execution status, and provenance are kept separate.
+
+The repository line is explicitly **RECONSTITUTED**: the original October 2 v1.3 source archive is unavailable, so the November 8 source is not claimed byte-identical. Current reconstruction tests and the preserved historical test report remain separate evidence classes. General mixed recursion, durable concurrency, authenticated provenance, Knowledge/Error Nets, bare-metal deployment, and live UPTI/SSMI/Sisterhood integration remain open.
+
+---
+
 # Shared design language
 
 | Principle | Meaning here |

@@ -30,7 +30,15 @@
           "path": "ai.landing.pad.json"
         },
         "front_door": "https://github.com/alia-june/this-repository-machine-interface/blob/main/ai.ingress.json",
-        "first_step": "Pass the xOSG repository as target context when following shared ingress."
+        "first_step": "Pass the xOSG repository as target context when following shared ingress.",
+        "project_entrypoints": {
+          "holoquary": {
+            "path": "holoquary/README.md",
+            "status": "RECONSTITUTED_V1_3_CANDIDATE",
+            "provenance": "Original 2026-10-02 v1.3 source unavailable; 2026-11-08 reconstitution is not claimed byte-identical.",
+            "source_package_sha256": "df9ca9d4543e85537525c9237a002bdfb1b61c1a1b522058f239011dc621a9d0"
+          }
+        }
       }
     },
     "block-3": {
