@@ -16,6 +16,24 @@ This grant is limited to the three listed files. Project documentation,
 examples, tests, archives, data, and other repository materials fall outside
 this grant.
 
+## NLP Offline Interpreter implementation
+
+Copyright (c) 2026 Alia June
+
+The five source files listed below are available under **MIT OR Apache-2.0**.
+Recipients may choose either the [MIT License](LICENSES/MIT.txt) or the
+[Apache License, Version 2.0](LICENSES/Apache-2.0.txt).
+
+- [__init__.py](nlp-development-suite/development/nlp-offline-interpreter/src/nlp_offline_interpreter/__init__.py)
+- [__main__.py](nlp-development-suite/development/nlp-offline-interpreter/src/nlp_offline_interpreter/__main__.py)
+- [basic.py](nlp-development-suite/development/nlp-offline-interpreter/src/nlp_offline_interpreter/basic.py)
+- [core.py](nlp-development-suite/development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py)
+- [integration.py](nlp-development-suite/development/nlp-offline-interpreter/src/nlp_offline_interpreter/integration.py)
+
+This grant identifies the five listed source paths. Retained build copies,
+packaged artifacts, and other NLP Development Suite material fall outside this
+entry.
+
 ## Existing component licenses and notices
 
 Consult the applicable component license and attribution notices when reusing
