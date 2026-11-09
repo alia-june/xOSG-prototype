@@ -1,0 +1,25 @@
+name: proposed-nlp-offline-ci
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Verify staged controls
+        run: python production/p04/VERIFY_P04_STAGE.py
+      - name: Run offline clean stage
+        run: python production/p04/RUN_CLEAN_STAGE.py --report production/reports/p04-${{ matrix.python-version }}.json

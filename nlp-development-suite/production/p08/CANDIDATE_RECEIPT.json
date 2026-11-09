@@ -1,0 +1,16 @@
+{
+  "archive": "production/p08/artifacts/nlp-offline-interpreter-0.1.0-test.20261003.zip",
+  "authority_effect": "NONE",
+  "candidate_id": "nlp-offline-interpreter-0.1.0-test.20261003",
+  "control_baseline_commit": "5902224eab0f870540d8e2a584800456d3b1ad3c",
+  "members": 6,
+  "package_source_commit": "3388f57854f6f693732149dc3e4039558fc2a551",
+  "production_ready": false,
+  "publication_allowed": false,
+  "repeated_builds_byte_identical": true,
+  "schema": "nlp-p08-candidate-receipt/1",
+  "scope": "internal-testbed-no-publication",
+  "sha256": "3281a1f1b3ca92afccda219165136cbb449ba0e0e10ab30c57ecd3ee2665323f",
+  "size": 16389,
+  "status": "built-unaccepted-internal-test-candidate"
+}

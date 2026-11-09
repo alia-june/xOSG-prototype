@@ -1,0 +1,5 @@
+input is empty.
+request is not approved.
+If input is empty, then request is blocked.
+request is blocked and input is empty.
+request is approved or request is blocked.

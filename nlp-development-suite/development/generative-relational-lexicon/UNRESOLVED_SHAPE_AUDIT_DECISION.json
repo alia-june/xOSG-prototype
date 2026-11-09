@@ -1,0 +1,36 @@
+{
+  "schema": "generative-relational-lexicon-unresolved-shape-audit-decision/1",
+  "status": "AUTHORIZED_TEST_AUDIT",
+  "accepted_at": "2026-10-04",
+  "authority_source": "direct user continuation after the proposed unresolved-population shape map",
+  "authority_summary": "Classify visible structures in unresolved Roget candidates without assigning lexical validity, error, citation status, or semantic cause.",
+  "authority_effect": "TEST_AUDIT_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "lexical_validity_assignment_allowed": false,
+  "cause_assignment_allowed": false,
+  "normalization_receipt": {
+    "relative_path": "pilot/modern-comparison/normalization-audit/NORMALIZATION_AUDIT_RECEIPT.json",
+    "bytes": 1846,
+    "sha256": "f4ec7ffd3ffc75f07c4485506bc0db624a7fb25baab4b133f5e0ee7718d02230"
+  },
+  "exclusive_primary_shapes": [
+    "REFERENCE_MARKER_SHAPED",
+    "DELIMITER_OR_MARKUP_SHAPED",
+    "NUMERIC_MIXED_SHAPED",
+    "SINGLE_TOKEN_LETTER_SHAPED",
+    "MULTI_TOKEN_LETTER_SHAPED",
+    "OTHER_SURFACE_SHAPED"
+  ],
+  "review_queue_effect": "PROPOSAL_ONLY",
+  "excluded_claims": [
+    "the candidate is or is not an English word",
+    "the candidate is extraction noise",
+    "a bracket label is necessarily a citation",
+    "a long sequence is necessarily a quotation",
+    "absence from OEWN proves obsolescence",
+    "a review queue is canon admission",
+    "production or publication approval"
+  ]
+}

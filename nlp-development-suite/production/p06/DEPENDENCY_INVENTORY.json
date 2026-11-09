@@ -1,0 +1,36 @@
+{
+  "schema": "nlp-p06-dependency-inventory/1",
+  "project": "nlp-offline-interpreter/0.1.0",
+  "status": "verified-pre-candidate-inventory",
+  "production_ready": false,
+  "runtime": {
+    "requires_python": ">=3.11",
+    "dependencies": [],
+    "dependency_count": 0
+  },
+  "build": {
+    "backend": "setuptools.build_meta",
+    "dependencies": ["setuptools==84.0.0"],
+    "distributed_with_runtime_artifact": false
+  },
+  "staging_and_test": {
+    "lock": "production/p04/requirements-py311.lock",
+    "package_count": 15,
+    "wheelhouse_manifest": "production/p04/WHEELHOUSE_MANIFEST.json",
+    "distributed_with_runtime_artifact": false
+  },
+  "optional_suite_adapters": {
+    "bundled": false,
+    "components": [
+      "projects/lexicon-core",
+      "projects/natural-language-front-end"
+    ]
+  },
+  "lexical_data": {
+    "bundled": false,
+    "optional_local_source": "oewn:2025",
+    "database_sha256": "11f762438e6928ff5d2d86bb35d5f714322aebe519bb742d9a3b4467fded0a62",
+    "recorded_license": "CC BY 4.0",
+    "license_evidence": "shared-registry/registry.json"
+  }
+}

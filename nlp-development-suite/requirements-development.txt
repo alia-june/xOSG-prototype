@@ -1,0 +1,2 @@
+-r projects/natural-language-front-end/requirements.txt
+-r projects/natural-language-front-end/requirements-sister.txt

@@ -1,0 +1,4 @@
+.venv/
+.wn_data/
+__pycache__/
+*.pyc

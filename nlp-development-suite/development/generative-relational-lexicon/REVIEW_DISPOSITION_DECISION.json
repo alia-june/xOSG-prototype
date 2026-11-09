@@ -1,0 +1,32 @@
+{
+  "schema": "generative-relational-lexicon-review-disposition-decision/1",
+  "status": "AUTHORIZED_TEST_REVIEW_DISPOSITIONS",
+  "accepted_at": "2026-10-06",
+  "authority_source": "direct user continuation after the stratified raw-source review sample",
+  "authority_summary": "Assign evidence-bounded parser review dispositions and design regression candidates for repeated demonstrated boundary patterns.",
+  "authority_effect": "TEST_REVIEW_DISPOSITIONS_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "parser_repair_allowed": false,
+  "lexical_validity_assignment_allowed": false,
+  "review_sample_receipt": {
+    "relative_path": "pilot/modern-comparison/normalization-audit/review-sample/REVIEW_SAMPLE_RECEIPT.json",
+    "bytes": 1638,
+    "sha256": "52a04d79cc41cc54de80f22bdd630ff6119962beb045ca97843c7fd72c2d16a9"
+  },
+  "allowed_dispositions": [
+    "PARSER_BOUNDARY_DEFECT_CONFIRMED",
+    "RAW_LITERAL_PRESENT_NO_LISTED_DEFECT",
+    "REVIEW_REQUIRED"
+  ],
+  "regression_candidate_minimum_occurrences": 2,
+  "excluded_claims": [
+    "literal source presence proves lexical validity",
+    "absence from the sample proves parser correctness",
+    "a defect disposition determines semantic meaning",
+    "a regression candidate authorizes parser repair",
+    "canon admission",
+    "production or publication approval"
+  ]
+}

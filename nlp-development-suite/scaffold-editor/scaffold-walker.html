@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A compact, standalone tree-shaped text editor.">
+  <meta name="color-scheme" content="light dark">
+  <title>Scaffold Walker</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c1d20'/%3E%3Cpath d='M9 8v16m0-11h7m-7 8h7m0-8v8m0-4h7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f5f3;
+      --panel: #ffffff;
+      --panel-2: #ededeb;
+      --ink: #1c1d20;
+      --muted: #676a70;
+      --line: #d8d8d4;
+      --line-strong: #b5b6b2;
+      --focus: #1c1d20;
+      --selected: #e5e5e1;
+      --danger: #a92b2b;
+      --radius: 8px;
+      --shadow: 0 12px 36px rgb(20 20 18 / 8%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    button, input { font: inherit; }
+
+    button {
+      min-height: 2.2rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--ink);
+      padding: .38rem .62rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    button:hover:not(:disabled) { border-color: var(--line-strong); background: var(--panel-2); }
+    button:active:not(:disabled) { transform: translateY(1px); }
+    button:disabled { cursor: not-allowed; opacity: .38; }
+    button:focus-visible, input:focus-visible, .tree-row:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .app {
+      width: min(100%, 1120px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: clamp(.65rem, 2vw, 1.25rem);
+      display: grid;
+      grid-template-rows: auto minmax(20rem, 1fr) auto;
+      gap: .65rem;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      min-width: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      min-width: max-content;
+      margin-right: .25rem;
+    }
+
+    .brand-mark {
+      width: 1.85rem;
+      height: 1.85rem;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: var(--ink);
+      color: var(--panel);
+      font: 700 .9rem/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    h1 { margin: 0; font-size: 1rem; letter-spacing: .01em; }
+
+    .menubar {
+      display: flex;
+      align-items: center;
+      gap: .1rem;
+      min-width: 0;
+    }
+
+    .menu { position: relative; }
+    .menu > summary {
+      list-style: none;
+      padding: .32rem .52rem;
+      border-radius: 5px;
+      color: var(--ink);
+      cursor: pointer;
+      user-select: none;
+      font-size: .9rem;
+    }
+
+    .menu > summary::-webkit-details-marker { display: none; }
+    .menu > summary:hover,
+    .menu > summary:focus-visible,
+    .menu[open] > summary { background: var(--selected); outline: none; }
+
+    .menu-panel {
+      position: absolute;
+      z-index: 50;
+      top: calc(100% + .3rem);
+      left: 0;
+      width: max-content;
+      min-width: 15rem;
+      padding: .35rem;
+      border: 1px solid var(--line-strong);
+      border-radius: 7px;
+      background: var(--panel);
+      box-shadow: 0 14px 38px rgb(0 0 0 / 18%);
+    }
+
+    .menu-panel button {
+      width: 100%;
+      min-height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: .35rem .55rem;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      text-align: left;
+    }
+
+    .menu-panel button:hover:not(:disabled),
+    .menu-panel button:focus-visible { background: var(--selected); outline: none; }
+    .menu-panel button.danger { color: var(--danger); }
+    .menu-panel button.stub { color: var(--muted); }
+    .menu-panel button:disabled { opacity: .42; }
+    .menu-panel kbd { margin: 0; border: 0; background: transparent; color: var(--muted); }
+    .menu-separator { height: 1px; margin: .3rem .25rem; background: var(--line); }
+    .menu-note { margin-left: auto; color: var(--muted); font-size: .72rem; }
+
+    .menu:last-child .menu-panel {
+      right: 0;
+      left: auto;
+    }
+
+    .surface {
+      min-height: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .tree-scroll {
+      overflow: auto;
+      min-height: 0;
+      padding: .6rem;
+      scrollbar-gutter: stable;
+    }
+
+    .tree {
+      min-width: min-content;
+      width: 100%;
+      padding-bottom: 18vh;
+    }
+
+    .tree-row {
+      --depth: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 1.88rem;
+      margin: 0;
+      padding-left: calc(var(--depth) * 1.05rem);
+      border: 1px solid transparent;
+      border-radius: 4px;
+      outline: none;
+      cursor: default;
+    }
+
+    .tree-row::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--depth) * 1.05rem + .68rem);
+      top: -1px;
+      bottom: -1px;
+      width: 2px;
+      background: var(--line-strong);
+      opacity: min(var(--depth), 1);
+      transform: translateX(-1.05rem);
+    }
+
+    .tree-row:hover { background: color-mix(in srgb, var(--selected) 55%, transparent); }
+    .tree-row[aria-selected="true"] { background: var(--selected); border-color: var(--line); }
+    .tree-row[aria-selected="true"] .node-text { font-weight: 610; }
+
+    .twist {
+      width: 1.32rem;
+      height: 1.32rem;
+      min-height: 0;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      border-color: transparent;
+      background: transparent;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .twist.leaf { cursor: default; opacity: .38; }
+    .node-text {
+      flex: 0 1 auto;
+      max-width: min(62ch, calc(100% - 5.2rem));
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: .12rem .25rem;
+    }
+
+    .node-actions {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex: none;
+      gap: .3rem;
+      margin-left: .16rem;
+      margin-right: .28rem;
+    }
+
+    .node-actions::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--line-strong);
+      transform: translateY(-50%);
+      opacity: 1;
+      transition: opacity 100ms ease;
+    }
+
+    .node-action {
+      position: relative;
+      z-index: 1;
+      width: 1.35rem;
+      height: 1.35rem;
+      min-height: 0;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      border: 2px solid #111214;
+      border-radius: 50%;
+      background: var(--panel);
+      color: #111214;
+      font-size: .86rem;
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0;
+      transform: scale(1);
+      transform-origin: center;
+      transition: transform 120ms ease, opacity 120ms ease, color 120ms ease, background-color 120ms ease;
+    }
+
+    .tree-row:hover .node-action,
+    .node-actions:focus-within .node-action,
+    .node-action:hover,
+    .node-action:focus-visible {
+      opacity: 1;
+    }
+
+    .tree-row:hover .node-actions::before,
+    .node-actions:focus-within::before {
+      opacity: 0;
+    }
+
+    .node-action:hover,
+    .node-action:focus-visible {
+      color: #ffffff;
+      background: #111214;
+      transform: scale(1.12);
+    }
+
+    .node-action.child-action { font-size: .78rem; }
+
+    .node-input {
+      width: calc(100% - .2rem);
+      min-width: 10rem;
+      flex: 0 1 min(38rem, calc(100% - 5.2rem));
+      height: 1.62rem;
+      border: 2px solid var(--ink);
+      border-radius: 4px;
+      background: var(--panel);
+      color: var(--ink);
+      padding: .1rem .28rem;
+    }
+
+    .surface-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      min-height: 2.15rem;
+      padding: .36rem .65rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .8rem;
+      background: var(--panel);
+    }
+
+    #status { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #count { flex: none; font-variant-numeric: tabular-nums; }
+
+    .keymap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .45rem 1rem;
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    kbd {
+      display: inline-block;
+      min-width: 1.35rem;
+      margin-right: .18rem;
+      padding: .05rem .26rem;
+      border: 1px solid var(--line-strong);
+      border-bottom-width: 2px;
+      border-radius: 4px;
+      background: var(--panel);
+      color: var(--ink);
+      font: .72rem/1.35 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    dialog {
+      width: min(42rem, calc(100vw - 1.5rem));
+      max-height: calc(100vh - 1.5rem);
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      background: var(--panel);
+      color: var(--ink);
+      box-shadow: 0 24px 80px rgb(0 0 0 / 26%);
+    }
+
+    dialog::backdrop { background: rgb(0 0 0 / 44%); }
+
+    .dialog-form {
+      display: grid;
+      grid-template-rows: auto minmax(12rem, 52vh) auto;
+      gap: .75rem;
+      padding: 1rem;
+    }
+
+    .dialog-head h2 { margin: 0 0 .25rem; font-size: 1rem; }
+    .dialog-head p { margin: 0; color: var(--muted); font-size: .85rem; }
+
+    #textTreeInput {
+      width: 100%;
+      min-height: 12rem;
+      resize: vertical;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--ink);
+      padding: .7rem;
+      font: .875rem/1.45 ui-monospace, SFMono-Regular, Consolas, monospace;
+      tab-size: 4;
+    }
+
+    .dialog-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .dialog-actions .primary { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+    .dialog-actions .primary:hover:not(:disabled) { background: var(--ink); filter: contrast(.85); }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 720px) {
+      .app { padding: .45rem; gap: .45rem; }
+      .topbar { align-items: flex-start; flex-wrap: wrap; }
+      .menubar { width: 100%; flex-wrap: wrap; overflow: visible; padding-bottom: .15rem; }
+      .menu { flex: none; }
+      .surface { min-height: calc(100vh - 13rem); }
+      .tree-scroll { padding: .4rem; }
+      .node-action { opacity: 1; }
+      .node-actions::before { opacity: 0; }
+      .keymap { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: .1rem; }
+      .keymap span { white-space: nowrap; }
+    }
+
+    @media (hover: none) {
+      .node-action { opacity: 1; }
+      .node-actions::before { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #151618;
+        --panel: #1e2023;
+        --panel-2: #292b2f;
+        --ink: #f0f0ed;
+        --muted: #a8aaae;
+        --line: #37393d;
+        --line-strong: #55585e;
+        --focus: #f0f0ed;
+        --selected: #303237;
+        --danger: #ff8b8b;
+        --shadow: 0 12px 36px rgb(0 0 0 / 28%);
+      }
+      .brand-mark { background: #f0f0ed; color: #18191b; }
+    }
+
+    @media print {
+      .topbar, .surface-foot, .keymap { display: none !important; }
+      .app, .surface, .tree-scroll { display: block; min-height: 0; overflow: visible; border: 0; box-shadow: none; padding: 0; }
+      .tree { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">└─</span>
+        <h1>Scaffold Walker</h1>
+      </div>
+      <nav class="menubar" id="menubar" aria-label="Application menu">
+        <details class="menu">
+          <summary role="menuitem">File</summary>
+          <div class="menu-panel" role="menu" aria-label="File">
+            <button type="button" role="menuitem" id="newBtn"><span>New scaffold</span><kbd>—</kbd></button>
+            <div class="menu-separator" role="separator"></div>
+            <button type="button" role="menuitem" id="importBtn"><span>Import JSON…</span></button>
+            <button type="button" role="menuitem" id="importTextBtn"><span>Import text tree…</span></button>
+            <button type="button" role="menuitem" class="stub" data-stub="Open recent scaffolds"><span>Open recent</span><span class="menu-note">planned</span></button>
+            <div class="menu-separator" role="separator"></div>
+            <button type="button" role="menuitem" id="exportJsonBtn"><span>Export JSON</span></button>
+            <button type="button" role="menuitem" id="exportTextBtn"><span>Export text tree</span></button>
+          </div>
+        </details>
+
+        <details class="menu">
+          <summary role="menuitem">Edit</summary>
+          <div class="menu-panel" role="menu" aria-label="Edit">
+            <button type="button" role="menuitem" id="undoBtn"><span>Undo</span><kbd>Ctrl Z</kbd></button>
+            <button type="button" role="menuitem" id="redoBtn"><span>Redo</span><kbd>Ctrl Y</kbd></button>
+            <div class="menu-separator" role="separator"></div>
+            <button type="button" role="menuitem" id="renameBtn"><span>Edit selected node</span><kbd>F2</kbd></button>
+            <button type="button" role="menuitem" class="stub" data-stub="Find nodes"><span>Find node…</span><span class="menu-note">planned</span></button>
+            <div class="menu-separator" role="separator"></div>
+            <button type="button" role="menuitem" class="danger" id="deleteBtn"><span>Delete branch</span><kbd>Del</kbd></button>
+          </div>
+        </details>
+
+        <details class="menu">
+          <summary role="menuitem">Insert</summary>
+          <div class="menu-panel" role="menu" aria-label="Insert">
+            <button type="button" role="menuitem" id="addChildBtn"><span>Add child</span><kbd>Ins</kbd></button>
+            <button type="button" role="menuitem" id="addSiblingBtn"><span>Add sibling</span><kbd>Shift Ins</kbd></button>
+          </div>
+        </details>
+
+        <details class="menu">
+          <summary role="menuitem">Arrange</summary>
+          <div class="menu-panel" role="menu" aria-label="Arrange">
+            <button type="button" role="menuitem" id="moveUpBtn"><span>Move up</span><kbd>Alt ↑</kbd></button>
+            <button type="button" role="menuitem" id="moveDownBtn"><span>Move down</span><kbd>Alt ↓</kbd></button>
+            <div class="menu-separator" role="separator"></div>
+            <button type="button" role="menuitem" id="outdentBtn"><span>Outdent</span><kbd>Ctrl ←</kbd></button>
+            <button type="button" role="menuitem" id="indentBtn"><span>Indent</span><kbd>Ctrl →</kbd></button>
+          </div>
+        </details>
+
+        <details class="menu">
+          <summary role="menuitem">View</summary>
+          <div class="menu-panel" role="menu" aria-label="View">
+            <button type="button" role="menuitem" id="expandBtn"><span>Expand all</span></button>
+            <button type="button" role="menuitem" id="collapseBtn"><span>Collapse all</span></button>
+            <button type="button" role="menuitem" id="focusSelectedBtn"><span>Focus selected node</span></button>
+          </div>
+        </details>
+
+        <details class="menu">
+          <summary role="menuitem">Tools</summary>
+          <div class="menu-panel" role="menu" aria-label="Tools">
+            <button type="button" role="menuitem" id="validateBtn"><span>Validate structure</span></button>
+            <button type="button" role="menuitem" class="stub" data-stub="Preferences"><span>Preferences…</span><span class="menu-note">planned</span></button>
+          </div>
+        </details>
+
+        <details class="menu">
+          <summary role="menuitem">Help</summary>
+          <div class="menu-panel" role="menu" aria-label="Help">
+            <button type="button" role="menuitem" id="keyboardHelpBtn"><span>Keyboard reference</span></button>
+            <button type="button" role="menuitem" class="stub" data-stub="Documentation"><span>Documentation</span><span class="menu-note">planned</span></button>
+            <div class="menu-separator" role="separator"></div>
+            <button type="button" role="menuitem" id="aboutBtn"><span>About Scaffold Walker</span></button>
+          </div>
+        </details>
+      </nav>
+      <input class="sr-only" type="file" id="fileInput" accept=".json,application/json">
+    </header>
+
+    <section class="surface" aria-label="Scaffold editor">
+      <div class="tree-scroll" id="treeScroll">
+        <div class="tree" id="tree" role="tree" aria-label="Scaffold nodes" aria-describedby="treeHelp"></div>
+      </div>
+
+      <div class="surface-foot">
+        <span id="status">Ready</span>
+        <span id="count"></span>
+      </div>
+    </section>
+
+    <div class="keymap" id="treeHelp" aria-label="Keyboard shortcuts">
+      <span><kbd>↑↓</kbd>walk</span>
+      <span><kbd>←→</kbd>fold / enter</span>
+      <span><kbd>Enter</kbd>edit</span>
+      <span><kbd>Ins</kbd>child</span>
+      <span><kbd>⇧ Ins</kbd>sibling</span>
+      <span><kbd>Del</kbd>remove</span>
+      <span><kbd>Alt ↑↓</kbd>reorder</span>
+      <span><kbd>Ctrl ←→</kbd>level</span>
+    </div>
+    <div class="sr-only" id="live" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <dialog id="textImportDialog" aria-labelledby="textImportTitle">
+    <form class="dialog-form" method="dialog">
+      <div class="dialog-head">
+        <h2 id="textImportTitle">Import text tree</h2>
+        <p>Paste a tree made with │, ├──, and └──. Blank connector lines are ignored.</p>
+      </div>
+      <textarea id="textTreeInput" spellcheck="false" aria-label="Text tree" placeholder="| Scale Explorer&#10;├── Set Browser&#10;│   ├── General&#10;│   └── Physical&#10;└── SQL / Search"></textarea>
+      <div class="dialog-actions">
+        <input class="sr-only" type="file" id="textFileInput" accept=".txt,text/plain">
+        <button type="button" id="chooseTextBtn">Choose .txt</button>
+        <button type="button" id="cancelTextBtn">Cancel</button>
+        <button type="button" class="primary" id="loadTextBtn">Import tree</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const STORAGE_KEY = "scaffold-walker-slim:v1";
+      const MAX_NODES = 5000;
+      const MAX_DEPTH = 200;
+      const MAX_HISTORY = 100;
+
+      const $ = (selector) => document.querySelector(selector);
+      const treeEl = $("#tree");
+      const liveEl = $("#live");
+      const statusEl = $("#status");
+      const countEl = $("#count");
+      const fileInput = $("#fileInput");
+      const textFileInput = $("#textFileInput");
+      const textImportDialog = $("#textImportDialog");
+      const textTreeInput = $("#textTreeInput");
+
+      function makeId() {
+        if (globalThis.crypto?.randomUUID) return crypto.randomUUID();
+        return `n-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+      }
+
+      function makeNode(text = "New node") {
+        return { id: makeId(), text, expanded: true, children: [] };
+      }
+
+      function makeForest(nodes = [makeNode("ROOT")]) {
+        return { id: "__scaffold_forest__", text: "", expanded: true, children: nodes };
+      }
+
+      function forestData() {
+        return root.children.length === 1 ? root.children[0] : root.children;
+      }
+
+      let root = makeForest();
+      let selectedId = root.children[0].id;
+      let editingId = null;
+      let editOriginal = "";
+      let undoStack = [];
+      let redoStack = [];
+      let statusTimer = 0;
+
+      function snapshot() {
+        return JSON.stringify({ roots: root.children, selectedId });
+      }
+
+      function restore(serialized) {
+        const state = JSON.parse(serialized);
+        root = makeForest(state.roots || (state.root ? [state.root] : [makeNode("ROOT")]));
+        selectedId = findNode(state.selectedId) ? state.selectedId : root.children[0].id;
+        editingId = null;
+      }
+
+      function remember() {
+        undoStack.push(snapshot());
+        if (undoStack.length > MAX_HISTORY) undoStack.shift();
+        redoStack = [];
+      }
+
+      function undo() {
+        if (!undoStack.length) return announce("Nothing to undo");
+        redoStack.push(snapshot());
+        restore(undoStack.pop());
+        render({ focus: true, scroll: true });
+        announce("Undid last change");
+      }
+
+      function redo() {
+        if (!redoStack.length) return announce("Nothing to redo");
+        undoStack.push(snapshot());
+        restore(redoStack.pop());
+        render({ focus: true, scroll: true });
+        announce("Redid last change");
+      }
+
+      function findNode(id, node = root) {
+        if (node.id === id) return node;
+        for (const child of node.children) {
+          const found = findNode(id, child);
+          if (found) return found;
+        }
+        return null;
+      }
+
+      function findParent(id, node = root) {
+        for (const child of node.children) {
+          if (child.id === id) return node;
+          const found = findParent(id, child);
+          if (found) return found;
+        }
+        return null;
+      }
+
+      function visibleNodes(node = null, depth = 0, parent = null, result = []) {
+        if (node === null) {
+          for (const topLevelNode of root.children) visibleNodes(topLevelNode, 0, root, result);
+          return result;
+        }
+        result.push({ node, depth, parent });
+        if (node.expanded) {
+          for (const child of node.children) visibleNodes(child, depth + 1, node, result);
+        }
+        return result;
+      }
+
+      function allNodeCount(node = null) {
+        if (node === null) {
+          return root.children.reduce((sum, topLevelNode) => sum + allNodeCount(topLevelNode), 0);
+        }
+        let count = 1;
+        for (const child of node.children) count += allNodeCount(child);
+        return count;
+      }
+
+      function selectionInfo() {
+        const node = findNode(selectedId) || root.children[0];
+        const parent = findParent(node.id);
+        const index = parent ? parent.children.findIndex((child) => child.id === node.id) : -1;
+        return { node, parent, index };
+      }
+
+      function announce(message) {
+        statusEl.textContent = message;
+        liveEl.textContent = "";
+        requestAnimationFrame(() => { liveEl.textContent = message; });
+        clearTimeout(statusTimer);
+        statusTimer = setTimeout(() => {
+          statusEl.textContent = "Saved locally";
+        }, 2600);
+      }
+
+      function saveLocal() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(forestData()));
+        } catch (error) {
+          statusEl.textContent = "Local saving unavailable";
+        }
+      }
+
+      function loadLocal() {
+        try {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          if (!stored) return;
+          root = makeForest(normalizeTree(JSON.parse(stored)));
+          selectedId = root.children[0].id;
+          statusEl.textContent = "Restored local scaffold";
+        } catch (error) {
+          root = makeForest();
+          selectedId = root.children[0].id;
+          statusEl.textContent = "Started with a blank scaffold";
+        }
+      }
+
+      function normalizeTree(input) {
+        const inputs = Array.isArray(input) ? input : [input];
+        if (!inputs.length) throw new Error("The JSON root array cannot be empty.");
+
+        let count = 0;
+        const usedIds = new Set(["__scaffold_forest__"]);
+
+        function walk(raw, depth) {
+          if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+            throw new Error("Every node must be an object.");
+          }
+          if (depth > MAX_DEPTH) throw new Error(`The tree exceeds the ${MAX_DEPTH}-level safety limit.`);
+          count += 1;
+          if (count > MAX_NODES) throw new Error(`The tree exceeds the ${MAX_NODES}-node safety limit.`);
+
+          let id = typeof raw.id === "string" && raw.id.trim() ? raw.id.trim() : makeId();
+          if (usedIds.has(id)) id = makeId();
+          usedIds.add(id);
+
+          const legacyText = typeof raw.name === "string" ? raw.name : null;
+          const text = typeof raw.text === "string" ? raw.text : (legacyText ?? "Unnamed");
+          const expanded = typeof raw.expanded === "boolean" ? raw.expanded : true;
+          const rawChildren = raw.children == null ? [] : raw.children;
+          if (!Array.isArray(rawChildren)) throw new Error(`Children of “${text || "Unnamed"}” must be an array.`);
+
+          return {
+            id,
+            text: text.trim() || "Unnamed",
+            expanded,
+            children: rawChildren.map((child) => walk(child, depth + 1))
+          };
+        }
+
+        return inputs.map((item) => walk(item, 0));
+      }
+
+      function parseTextTree(source) {
+        if (typeof source !== "string" || !source.trim()) {
+          throw new Error("Paste a text tree first.");
+        }
+
+        const meaningful = source
+          .replace(/\r\n?/g, "\n")
+          .split("\n")
+          .map((line, index) => ({ line: line.replace(/\t/g, "    ").replace(/\s+$/g, ""), number: index + 1 }))
+          .filter(({ line }) => line.trim() && !/^[\s│|]+$/.test(line));
+
+        if (!meaningful.length) throw new Error("No nodes were found in the pasted text.");
+        if (meaningful.length > MAX_NODES) throw new Error(`The tree exceeds the ${MAX_NODES}-node safety limit.`);
+
+        const forestFormat = /^(?:├──|└──)\s*/.test(meaningful[0].line.trim());
+        const importedRoots = [];
+        const stack = [];
+
+        if (!forestFormat) {
+          const first = meaningful.shift();
+          const rootText = first.line.trim().replace(/^[|│]\s*/, "").trim();
+          if (!rootText) throw new Error(`Line ${first.number} does not contain a root name.`);
+          const importedRoot = makeNode(rootText);
+          importedRoots.push(importedRoot);
+          stack[0] = importedRoot;
+        }
+
+        for (const { line, number } of meaningful) {
+          const match = line.match(/^((?:(?:│|\|) {3}| {4})*)(?:├──|└──)\s*(.+?)\s*$/);
+          if (!match) {
+            throw new Error(`Line ${number} is not a recognized tree branch: ${line.trim()}`);
+          }
+
+          const depth = (match[1].length / 4) + (forestFormat ? 0 : 1);
+          const text = match[2].trim();
+          if (!text) throw new Error(`Line ${number} contains an empty node.`);
+          if (depth > MAX_DEPTH) throw new Error(`Line ${number} exceeds the ${MAX_DEPTH}-level safety limit.`);
+
+          const node = makeNode(text);
+          if (depth === 0) {
+            importedRoots.push(node);
+          } else {
+            const parent = stack[depth - 1];
+            if (!parent) {
+              throw new Error(`Line ${number} jumps to level ${depth} without a parent at level ${depth - 1}.`);
+            }
+            parent.children.push(node);
+          }
+          stack[depth] = node;
+          stack.length = depth + 1;
+        }
+
+        if (!importedRoots.length) throw new Error("No top-level nodes were found.");
+        return importedRoots;
+      }
+
+      function render(options = {}) {
+        const { focus = false, scroll = false } = options;
+        if (!findNode(selectedId)) selectedId = root.children[0].id;
+        treeEl.replaceChildren();
+        const rows = visibleNodes();
+
+        for (const { node, depth } of rows) {
+          const row = document.createElement("div");
+          row.className = "tree-row";
+          row.dataset.id = node.id;
+          row.style.setProperty("--depth", depth);
+          row.setAttribute("role", "treeitem");
+          row.setAttribute("aria-level", depth + 1);
+          row.setAttribute("aria-selected", String(node.id === selectedId));
+          row.setAttribute("aria-label", node.text || "Unnamed");
+          if (node.children.length) row.setAttribute("aria-expanded", String(node.expanded));
+          row.tabIndex = node.id === selectedId ? 0 : -1;
+
+          const twist = document.createElement("button");
+          twist.type = "button";
+          twist.className = `twist${node.children.length ? "" : " leaf"}`;
+          twist.tabIndex = -1;
+          if (node.children.length) {
+            twist.textContent = node.expanded ? "▼" : "▶";
+            twist.setAttribute("aria-label", `${node.expanded ? "Collapse" : "Expand"} ${node.text}`);
+            twist.addEventListener("click", (event) => {
+              event.stopPropagation();
+              selectNode(node.id, false);
+              toggleNode(node.id);
+            });
+          } else {
+            twist.textContent = "·";
+            twist.disabled = true;
+            twist.setAttribute("aria-hidden", "true");
+          }
+
+          row.appendChild(twist);
+
+          if (node.id === editingId) {
+            const input = document.createElement("input");
+            input.className = "node-input";
+            input.type = "text";
+            input.value = node.text;
+            input.maxLength = 1000;
+            input.setAttribute("aria-label", `Edit ${editOriginal || "node"}`);
+            input.addEventListener("keydown", editKeydown);
+            input.addEventListener("blur", () => finishEdit(true));
+            row.appendChild(input);
+            requestAnimationFrame(() => {
+              input.focus();
+              if (input.dataset.keepSelection !== "true") input.select();
+            });
+          } else {
+            const text = document.createElement("span");
+            text.className = "node-text";
+            text.textContent = node.text;
+            row.appendChild(text);
+
+            const actions = document.createElement("span");
+            actions.className = "node-actions";
+
+            const siblingButton = document.createElement("button");
+            siblingButton.type = "button";
+            siblingButton.className = "node-action sibling-action";
+            siblingButton.textContent = "+";
+            siblingButton.title = `Add sibling after ${node.text}`;
+            siblingButton.setAttribute("aria-label", `Add sibling after ${node.text}`);
+            siblingButton.addEventListener("click", (event) => {
+              event.stopPropagation();
+              addSibling(node.id);
+            });
+            actions.appendChild(siblingButton);
+
+            const childButton = document.createElement("button");
+            childButton.type = "button";
+            childButton.className = "node-action child-action";
+            childButton.textContent = "↓";
+            childButton.title = `Add child to ${node.text}`;
+            childButton.setAttribute("aria-label", `Add child to ${node.text}`);
+            childButton.addEventListener("click", (event) => {
+              event.stopPropagation();
+              addChild(node.id);
+            });
+            actions.appendChild(childButton);
+
+            row.appendChild(actions);
+            row.insertBefore(actions, text);
+          }
+
+          row.addEventListener("click", () => selectNode(node.id, true));
+          row.addEventListener("dblclick", (event) => {
+            if (!event.target.closest(".twist, .node-actions")) beginEdit(node.id);
+          });
+          row.addEventListener("keydown", treeKeydown);
+          treeEl.appendChild(row);
+        }
+
+        updateButtons();
+        const total = allNodeCount();
+        countEl.textContent = `${total} node${total === 1 ? "" : "s"} · ${rows.length} visible`;
+        saveLocal();
+
+        if (editingId) return;
+        if (focus) {
+          requestAnimationFrame(() => {
+            const row = rowFor(selectedId);
+            row?.focus({ preventScroll: true });
+            if (scroll) row?.scrollIntoView({ block: "nearest", inline: "nearest" });
+          });
+        }
+      }
+
+      function rowFor(id) {
+        return [...treeEl.querySelectorAll(".tree-row")].find((row) => row.dataset.id === id) || null;
+      }
+
+      function selectNode(id, focus = true) {
+        if (!findNode(id) || id === selectedId) {
+          if (focus) rowFor(id)?.focus();
+          return;
+        }
+        selectedId = id;
+        render({ focus, scroll: focus });
+      }
+
+      function updateButtons() {
+        const { parent, index } = selectionInfo();
+        const isOnlyTopLevelNode = parent === root && root.children.length === 1;
+        $("#addSiblingBtn").disabled = false;
+        $("#deleteBtn").disabled = isOnlyTopLevelNode;
+        $("#moveUpBtn").disabled = !parent || index <= 0;
+        $("#moveDownBtn").disabled = !parent || index >= parent.children.length - 1;
+        $("#indentBtn").disabled = !parent || index <= 0;
+        $("#outdentBtn").disabled = !parent || parent === root;
+        $("#undoBtn").disabled = !undoStack.length;
+        $("#redoBtn").disabled = !redoStack.length;
+      }
+
+      function beginEdit(id, initialText = null) {
+        const node = findNode(id);
+        if (!node || editingId) return;
+        selectedId = id;
+        editingId = id;
+        editOriginal = node.text;
+        if (initialText !== null) node.text = initialText;
+        render();
+        const input = rowFor(id)?.querySelector(".node-input");
+        if (input && initialText !== null) {
+          input.dataset.keepSelection = "true";
+          requestAnimationFrame(() => input.setSelectionRange(input.value.length, input.value.length));
+        }
+      }
+
+      function editKeydown(event) {
+        event.stopPropagation();
+        if (event.key === "Enter") {
+          event.preventDefault();
+          finishEdit(true);
+        } else if (event.key === "Escape") {
+          event.preventDefault();
+          finishEdit(false);
+        }
+      }
+
+      function finishEdit(commit) {
+        if (!editingId) return;
+        const id = editingId;
+        const node = findNode(id);
+        const input = rowFor(id)?.querySelector(".node-input");
+        const nextText = input?.value.trim() || "Unnamed";
+        editingId = null;
+
+        if (node) {
+          if (commit && nextText !== editOriginal) {
+            node.text = editOriginal;
+            remember();
+            node.text = nextText;
+            announce(`Renamed to “${nextText}”`);
+          } else {
+            node.text = editOriginal;
+            if (!commit) announce("Edit cancelled");
+          }
+        }
+        editOriginal = "";
+        render({ focus: true, scroll: true });
+      }
+
+      function moveSelection(delta) {
+        const rows = visibleNodes();
+        const index = rows.findIndex(({ node }) => node.id === selectedId);
+        const target = rows[Math.max(0, Math.min(rows.length - 1, index + delta))];
+        if (target) selectNode(target.node.id, true);
+      }
+
+      function goLeft() {
+        const node = findNode(selectedId);
+        if (node.children.length && node.expanded) {
+          remember();
+          node.expanded = false;
+          render({ focus: true, scroll: true });
+          announce(`Collapsed “${node.text}”`);
+        } else {
+          const parent = findParent(selectedId);
+          if (parent && parent !== root) selectNode(parent.id, true);
+        }
+      }
+
+      function goRight() {
+        const node = findNode(selectedId);
+        if (!node.children.length) return;
+        if (!node.expanded) {
+          remember();
+          node.expanded = true;
+          render({ focus: true, scroll: true });
+          announce(`Expanded “${node.text}”`);
+        } else {
+          selectNode(node.children[0].id, true);
+        }
+      }
+
+      function treeKeydown(event) {
+        if (editingId || event.target.closest("button, input")) return;
+
+        const ctrl = event.ctrlKey || event.metaKey;
+        if (ctrl && event.key.toLowerCase() === "z") {
+          event.preventDefault();
+          event.shiftKey ? redo() : undo();
+          return;
+        }
+        if (ctrl && event.key.toLowerCase() === "y") {
+          event.preventDefault();
+          redo();
+          return;
+        }
+        if (event.altKey && event.key === "ArrowUp") {
+          event.preventDefault();
+          moveNode(-1);
+          return;
+        }
+        if (event.altKey && event.key === "ArrowDown") {
+          event.preventDefault();
+          moveNode(1);
+          return;
+        }
+        if (ctrl && event.key === "ArrowLeft") {
+          event.preventDefault();
+          outdent();
+          return;
+        }
+        if (ctrl && event.key === "ArrowRight") {
+          event.preventDefault();
+          indent();
+          return;
+        }
+
+        switch (event.key) {
+          case "ArrowUp": event.preventDefault(); moveSelection(-1); break;
+          case "ArrowDown": event.preventDefault(); moveSelection(1); break;
+          case "ArrowLeft": event.preventDefault(); goLeft(); break;
+          case "ArrowRight": event.preventDefault(); goRight(); break;
+          case "Enter":
+          case "F2": event.preventDefault(); beginEdit(selectedId); break;
+          case "Insert": event.preventDefault(); event.shiftKey ? addSibling() : addChild(); break;
+          case "Delete": event.preventDefault(); deleteSelected(); break;
+          case "Home": event.preventDefault(); selectNode(visibleNodes()[0].node.id, true); break;
+          case "End": {
+            event.preventDefault();
+            const rows = visibleNodes();
+            selectNode(rows[rows.length - 1].node.id, true);
+            break;
+          }
+          default:
+            if (!ctrl && !event.altKey && !event.metaKey && event.key.length === 1) {
+              event.preventDefault();
+              beginEdit(selectedId, event.key);
+            }
+        }
+      }
+
+      function addChild(parentId = selectedId) {
+        const parent = findNode(parentId);
+        if (!parent) return;
+        selectedId = parent.id;
+        remember();
+        const child = makeNode();
+        parent.children.push(child);
+        parent.expanded = true;
+        selectedId = child.id;
+        render({ focus: true, scroll: true });
+        announce(`Added child to “${parent.text}”`);
+        beginEdit(child.id);
+      }
+
+      function addSibling(nodeId = selectedId) {
+        const target = findNode(nodeId);
+        if (!target) return;
+        selectedId = target.id;
+        const { node, parent, index } = selectionInfo();
+        if (!parent) return;
+        remember();
+        const sibling = makeNode();
+        parent.children.splice(index + 1, 0, sibling);
+        selectedId = sibling.id;
+        render({ focus: true, scroll: true });
+        announce(`Added sibling after “${node.text}”`);
+        beginEdit(sibling.id);
+      }
+
+      function deleteSelected() {
+        const { node, parent, index } = selectionInfo();
+        if (!parent) return;
+        if (parent === root && root.children.length === 1) return announce("The final root cannot be deleted");
+        const descendants = allNodeCount(node) - 1;
+        const suffix = descendants ? ` and ${descendants} descendant${descendants === 1 ? "" : "s"}` : "";
+        if (!confirm(`Delete “${node.text}”${suffix}?\n\nYou can undo this action.`)) return;
+        remember();
+        parent.children.splice(index, 1);
+        selectedId = parent.children[index]?.id || parent.children[index - 1]?.id || (parent === root ? root.children[0].id : parent.id);
+        render({ focus: true, scroll: true });
+        announce(`Deleted “${node.text}”`);
+      }
+
+      function moveNode(direction) {
+        const { node, parent, index } = selectionInfo();
+        const target = index + direction;
+        if (!parent || target < 0 || target >= parent.children.length) return;
+        remember();
+        [parent.children[index], parent.children[target]] = [parent.children[target], parent.children[index]];
+        render({ focus: true, scroll: true });
+        announce(`Moved “${node.text}” ${direction < 0 ? "up" : "down"}`);
+      }
+
+      function indent() {
+        const { node, parent, index } = selectionInfo();
+        if (!parent || index <= 0) return announce("No previous sibling to indent beneath");
+        remember();
+        const newParent = parent.children[index - 1];
+        parent.children.splice(index, 1);
+        newParent.children.push(node);
+        newParent.expanded = true;
+        render({ focus: true, scroll: true });
+        announce(`Indented “${node.text}” beneath “${newParent.text}”`);
+      }
+
+      function outdent() {
+        const { node, parent, index } = selectionInfo();
+        if (!parent || parent === root) return announce("This node cannot be outdented further");
+        const grandparent = findParent(parent.id);
+        if (!grandparent) return;
+        remember();
+        parent.children.splice(index, 1);
+        const parentIndex = grandparent.children.findIndex((child) => child.id === parent.id);
+        grandparent.children.splice(parentIndex + 1, 0, node);
+        render({ focus: true, scroll: true });
+        announce(`Outdented “${node.text}”`);
+      }
+
+      function toggleNode(id) {
+        const node = findNode(id);
+        if (!node?.children.length) return;
+        remember();
+        node.expanded = !node.expanded;
+        render({ focus: true, scroll: true });
+        announce(`${node.expanded ? "Expanded" : "Collapsed"} “${node.text}”`);
+      }
+
+      function setAllExpanded(value) {
+        const changed = [];
+        function walk(node) {
+          if (node.children.length && node.expanded !== value) changed.push(node);
+          if (node.children.length) node.expanded = value;
+          for (const child of node.children) walk(child);
+        }
+        for (const topLevelNode of root.children) walk(topLevelNode);
+        if (!changed.length) return announce(value ? "Everything is already expanded" : "Everything is already collapsed");
+        for (const node of changed) node.expanded = !value;
+        remember();
+        for (const node of changed) node.expanded = value;
+        selectedId = root.children[0].id;
+        render({ focus: true, scroll: true });
+        announce(value ? "Expanded all branches" : "Collapsed all branches");
+      }
+
+      function resetTree() {
+        if (!confirm("Replace the current scaffold with a blank ROOT?\n\nYou can undo this action.")) return;
+        remember();
+        root = makeForest();
+        selectedId = root.children[0].id;
+        render({ focus: true, scroll: true });
+        announce("Started a blank scaffold");
+      }
+
+      function download(filename, content, type) {
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = filename;
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 0);
+      }
+
+      function exportJson() {
+        download("scaffold.json", `${JSON.stringify(forestData(), null, 2)}\n`, "application/json;charset=utf-8");
+        announce("Exported scaffold.json");
+      }
+
+      function treeText() {
+        const lines = [];
+        function walk(node, prefix) {
+          node.children.forEach((child, index) => {
+            const last = index === node.children.length - 1;
+            lines.push(`${prefix}${last ? "└── " : "├── "}${child.text}`);
+            walk(child, `${prefix}${last ? "    " : "│   "}`);
+          });
+        }
+        if (root.children.length === 1) {
+          lines.push(root.children[0].text);
+          walk(root.children[0], "");
+        } else {
+          root.children.forEach((topLevelNode, index) => {
+            const last = index === root.children.length - 1;
+            lines.push(`${last ? "└── " : "├── "}${topLevelNode.text}`);
+            walk(topLevelNode, last ? "    " : "│   ");
+          });
+        }
+        return `${lines.join("\n")}\n`;
+      }
+
+      function exportText() {
+        download("scaffold.txt", treeText(), "text/plain;charset=utf-8");
+        announce("Exported scaffold.txt");
+      }
+
+      async function importJson(file) {
+        if (!file) return;
+        try {
+          const parsed = JSON.parse(await file.text());
+          const imported = normalizeTree(parsed);
+          const count = imported.reduce((sum, node) => sum + allNodeCount(node), 0);
+          if (!confirm(`Import “${file.name}” with ${count} node${count === 1 ? "" : "s"}?\n\nThis replaces the current scaffold and can be undone.`)) return;
+          remember();
+          root = makeForest(imported);
+          selectedId = root.children[0].id;
+          render({ focus: true, scroll: true });
+          announce(`Imported ${count} node${count === 1 ? "" : "s"}`);
+        } catch (error) {
+          alert(`Could not import this file.\n\n${error.message}`);
+          announce("Import failed");
+        } finally {
+          fileInput.value = "";
+        }
+      }
+
+      function openTextImport() {
+        if (typeof textImportDialog.showModal === "function") {
+          textImportDialog.showModal();
+          requestAnimationFrame(() => textTreeInput.focus());
+        } else {
+          alert("This browser does not support the text-import window. Try a current browser.");
+        }
+      }
+
+      function importTextTree() {
+        try {
+          const imported = parseTextTree(textTreeInput.value);
+          const count = imported.reduce((sum, node) => sum + allNodeCount(node), 0);
+          if (!confirm(`Import this text tree with ${count} node${count === 1 ? "" : "s"}?\n\nThis replaces the current scaffold and can be undone.`)) return;
+          remember();
+          root = makeForest(imported);
+          selectedId = root.children[0].id;
+          textImportDialog.close();
+          textTreeInput.value = "";
+          render({ focus: true, scroll: true });
+          announce(`Imported ${count} node${count === 1 ? "" : "s"} from text`);
+        } catch (error) {
+          alert(`Could not read this text tree.\n\n${error.message}`);
+          textTreeInput.focus();
+        }
+      }
+
+      async function loadTextFile(file) {
+        if (!file) return;
+        try {
+          textTreeInput.value = await file.text();
+          textTreeInput.focus();
+          announce(`Loaded “${file.name}” for review`);
+        } catch (error) {
+          alert(`Could not read this text file.\n\n${error.message}`);
+        } finally {
+          textFileInput.value = "";
+        }
+      }
+
+      function bind(id, handler) {
+        $(id).addEventListener("click", handler);
+      }
+
+      bind("#newBtn", resetTree);
+      bind("#importBtn", () => fileInput.click());
+      bind("#importTextBtn", openTextImport);
+      bind("#exportJsonBtn", exportJson);
+      bind("#exportTextBtn", exportText);
+      bind("#addChildBtn", () => addChild());
+      bind("#addSiblingBtn", () => addSibling());
+      bind("#deleteBtn", deleteSelected);
+      bind("#moveUpBtn", () => moveNode(-1));
+      bind("#moveDownBtn", () => moveNode(1));
+      bind("#indentBtn", indent);
+      bind("#outdentBtn", outdent);
+      bind("#undoBtn", undo);
+      bind("#redoBtn", redo);
+      bind("#expandBtn", () => setAllExpanded(true));
+      bind("#collapseBtn", () => setAllExpanded(false));
+      bind("#renameBtn", () => beginEdit(selectedId));
+      bind("#focusSelectedBtn", () => {
+        render({ focus: true, scroll: true });
+        announce(`Focused “${findNode(selectedId)?.text || "selected node"}”`);
+      });
+      bind("#validateBtn", () => {
+        try {
+          normalizeTree(JSON.parse(JSON.stringify(forestData())));
+          const count = allNodeCount();
+          announce(`Structure valid · ${count} node${count === 1 ? "" : "s"}`);
+        } catch (error) {
+          alert(`Structure validation failed.\n\n${error.message}`);
+        }
+      });
+      bind("#keyboardHelpBtn", () => {
+        $("#treeHelp").scrollIntoView({ block: "nearest", behavior: "smooth" });
+        announce("Keyboard reference is shown below the editor");
+      });
+      bind("#aboutBtn", () => announce("Scaffold Walker · standalone generic tree editor"));
+      bind("#chooseTextBtn", () => textFileInput.click());
+      bind("#cancelTextBtn", () => textImportDialog.close());
+      bind("#loadTextBtn", importTextTree);
+      fileInput.addEventListener("change", () => importJson(fileInput.files?.[0]));
+      textFileInput.addEventListener("change", () => loadTextFile(textFileInput.files?.[0]));
+      textTreeInput.addEventListener("keydown", (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+          event.preventDefault();
+          importTextTree();
+        }
+      });
+
+      const menubar = $("#menubar");
+      const menus = [...menubar.querySelectorAll(".menu")];
+
+      function closeMenus(except = null) {
+        for (const menu of menus) {
+          if (menu !== except) menu.removeAttribute("open");
+        }
+      }
+
+      for (const menu of menus) {
+        menu.addEventListener("toggle", () => {
+          if (menu.open) closeMenus(menu);
+        });
+      }
+
+      menubar.addEventListener("click", (event) => {
+        const button = event.target.closest(".menu-panel button");
+        if (!button) return;
+        if (button.dataset.stub) {
+          announce(`${button.dataset.stub} is reserved for a future version`);
+        }
+        if (!button.disabled) button.closest(".menu")?.removeAttribute("open");
+      });
+
+      menubar.addEventListener("keydown", (event) => {
+        const summary = event.target.closest("summary");
+        if (!summary || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+        event.preventDefault();
+        const summaries = menus.map((menu) => menu.querySelector("summary"));
+        const index = summaries.indexOf(summary);
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        const next = (index + direction + summaries.length) % summaries.length;
+        closeMenus();
+        summaries[next].focus();
+      });
+
+      document.addEventListener("pointerdown", (event) => {
+        if (!menubar.contains(event.target)) closeMenus();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        const openMenu = menus.find((menu) => menu.open);
+        if (!openMenu) return;
+        event.preventDefault();
+        openMenu.removeAttribute("open");
+        openMenu.querySelector("summary")?.focus();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.defaultPrevented || editingId || !((event.ctrlKey || event.metaKey) && !event.altKey)) return;
+        const key = event.key.toLowerCase();
+        if (key === "z") {
+          event.preventDefault();
+          event.shiftKey ? redo() : undo();
+        } else if (key === "y") {
+          event.preventDefault();
+          redo();
+        }
+      });
+
+      loadLocal();
+      render({ focus: true });
+    })();
+  </script>
+</body>
+</html>

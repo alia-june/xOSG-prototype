@@ -1,0 +1,9 @@
+{
+  "package_id": "lexicon-nlp-sister-handshake-2026-09-28",
+  "archive": "<USER_HOME>\\Desktop\\outbox\\sister_handshake_needs_package_2026-09-28.zip",
+  "archive_sha256": "a6a1f676a51c7557147a15b975d0c2758176465e32fccf28ac608685a884c40f",
+  "archive_size": 78092,
+  "manifest_sha256": "8e3fab58235d0e8b44b2d332be9ed4995efeda083da9da530c57a592286e6310",
+  "status": "generated-local-handoff",
+  "execution_allowed": false
+}

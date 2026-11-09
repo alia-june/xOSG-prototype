@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071019">
+  <meta name="description" content="A deterministic read-only natural language file workspace.">
+  <title>File Atlas · Deterministic Workspace</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071019'/%3E%3Cpath d='M13 19h15l5 6h18v23H13z' fill='%23152a39' stroke='%235ee4bd' stroke-width='3'/%3E%3Cpath d='M19 33h26M19 40h18' stroke='%23ffbe66' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" aria-label="File Atlas">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div><strong>File Atlas</strong><span>Deterministic read-only workspace</span></div>
+    </div>
+    <div class="workspace-state" id="workspace-state"><span class="status-dot"></span><span id="workspace-label">Opening demo workspace…</span></div>
+    <div class="top-actions">
+      <button class="quiet-button" id="demo-button" type="button">Use demo</button>
+      <button class="primary-button" id="folder-button" type="button">Choose folder</button>
+      <button class="icon-button" id="about-button" type="button" aria-label="About File Atlas">?</button>
+      <input id="folder-input" type="file" webkitdirectory multiple hidden>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar" aria-label="Workspace browser">
+      <div class="panel-heading">
+        <div><p class="eyebrow">Workspace</p><h1 id="root-name">Demo workspace</h1></div>
+        <span class="read-only-badge">Read only</span>
+      </div>
+      <div class="path-bar"><span aria-hidden="true">⌂</span><span id="current-path">.</span></div>
+      <div class="file-list" id="file-list" aria-label="Current directory"></div>
+      <section class="history-section">
+        <div class="section-heading"><span>Session history</span><button id="clear-history" type="button">Clear</button></div>
+        <div class="history-list" id="history-list"><p class="muted-copy">Commands stay in this browser session.</p></div>
+      </section>
+    </aside>
+
+    <section class="command-workbench" aria-label="Command workbench">
+      <div class="workbench-intro">
+        <div><p class="eyebrow">Natural language command</p><h2>Ask for a bounded file operation</h2></div>
+        <span class="schema-chip" id="schema-chip">Loading catalog…</span>
+      </div>
+      <div class="example-row" aria-label="Example commands">
+        <button type="button" data-command="list files">List files</button>
+        <button type="button" data-command="show file README.md">Read README</button>
+        <button type="button" data-command="find files named parser in .">Find parser files</button>
+        <button type="button" data-command="search for candidate in .">Search text</button>
+        <button type="button" data-command="find notes in .">Show a collision</button>
+      </div>
+      <form class="command-form" id="command-form">
+        <label for="command-input">Command</label>
+        <textarea id="command-input" rows="3" maxlength="1024" spellcheck="false" placeholder="Try: search for candidate in notes"></textarea>
+        <div class="command-actions">
+          <span id="command-count">0 / 1024</span>
+          <button class="primary-button" id="parse-button" type="submit">Parse command</button>
+        </div>
+      </form>
+
+      <section class="intent-card" id="intent-card" aria-live="polite">
+        <div class="empty-stage">
+          <span class="stage-number">01</span>
+          <div><strong>Parse before reading</strong><p>The command grammar produces an inspectable intent. No file is opened at this stage.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="result-panel" aria-label="Operation result">
+      <div class="result-heading">
+        <div><p class="eyebrow">Result</p><h2>Workspace output</h2></div>
+        <span class="result-status" id="result-status">Not run</span>
+      </div>
+      <div class="result-body" id="result-body">
+        <div class="empty-result"><span>02</span><strong>Waiting for a parsed command</strong><p>Only a single registered read-only meaning can reach this panel.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="statusbar">
+    <span id="catalog-status">Loading the reviewed alias catalog…</span>
+    <span>Local browser session · no shell · no file mutations</span>
+  </footer>
+
+  <dialog id="about-dialog">
+    <div class="dialog-head"><h2>About File Atlas</h2><button class="icon-button" id="about-close" type="button" aria-label="Close">×</button></div>
+    <p>File Atlas is a graphical front end for the read-only file slice of the deterministic omni interface. It parses complete commands through a reviewed alias catalog and keeps parsing separate from file access.</p>
+    <p>A collision displays every ranked meaning and an explicit replacement command. Scores are ordering evidence, not probabilities. Choosing a local folder gives this page read access through the browser; the application has no upload or mutation adapter.</p>
+    <div class="limit-grid">
+      <div><strong>128 KiB</strong><span>file read</span></div>
+      <div><strong>1,000</strong><span>search files</span></div>
+      <div><strong>50</strong><span>results</span></div>
+    </div>
+  </dialog>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "schema": "sense-aboutness-calibration-decision/1",
+  "status": "AUTHORIZED_TEST_BLANK_DUAL_REVIEW_CALIBRATION",
+  "accepted_at": "2026-10-06",
+  "authority_source": "direct user continuation after the verified blank review package",
+  "authority_effect": "TEST_BLANK_DUAL_REVIEW_CALIBRATION_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "review_judgment_assignment_allowed": false,
+  "baseline_commit": "81b9d41",
+  "blank_sample_receipt": {
+    "path": "pilot/sense-aboutness/review-sample/SENSE_REVIEW_SAMPLE_RECEIPT.json",
+    "bytes": 2139,
+    "sha256": "4f870b7cdcaebce636a2897b72a33488b9e0a30d1b7f6950033dbd7e1c56d522"
+  },
+  "selection_rule": {
+    "population": "853 frozen blank review records",
+    "coverage_atoms": "every observed value of each of the seven sampling dimensions",
+    "target_record_count": 34,
+    "selection": "greedy maximum uncovered-atom coverage, then lowest existing selection rank, then normalized term",
+    "replacement": "none",
+    "expected_coverage_atom_count": 57,
+    "expected_uncovered_atom_count": 0
+  },
+  "reviewer_copies": ["reviewer_a", "reviewer_b"],
+  "required_null_fields": [
+    "reviewer_id",
+    "reviewed_at",
+    "review_status",
+    "sense_candidates",
+    "aboutness_assertions",
+    "abstention",
+    "review_notes"
+  ],
+  "excluded_operations": [
+    "pre-filling reviewer judgments",
+    "adjudication before independent copies exist",
+    "candidate generation",
+    "definition writing",
+    "canon admission",
+    "publication or deployment approval"
+  ]
+}

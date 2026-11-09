@@ -1,0 +1,110 @@
+{
+  "authority_effect": "NONE",
+  "member_count": 20,
+  "members": [
+    {
+      "path": "BASELINE_POINTER.json",
+      "sha256": "3e072d0ed490cb1511df9a173f7349b55069c24f0fa85758a0fc68d3208fc2f6",
+      "size": 682
+    },
+    {
+      "path": "BASIC_ARTIFACT_README.md",
+      "sha256": "dc6e848a83624d0518a55376886ab91f0900c3a2b613690bfd6607f40cc4ed95",
+      "size": 1822
+    },
+    {
+      "path": "BUILD_BASIC_ARTIFACT.py",
+      "sha256": "c7a1d4d3d40d170e3089ffa5eb5d85dad6a132eddf187f68bd53c2d88696b737",
+      "size": 3647
+    },
+    {
+      "path": "BUILD_MANIFEST.py",
+      "sha256": "83ecf1ff37d8a531cdd31114744d211fbfd91d45bb8665f3b90570cd5123de17",
+      "size": 1874
+    },
+    {
+      "path": "BUILD_VALIDATION.json",
+      "sha256": "8a9b63481f26049691531934b3176015eab123f16b45eea48cde417ac0d6b014",
+      "size": 2204
+    },
+    {
+      "path": "README.md",
+      "sha256": "b7b17e3a1df83687b35c5fa3ae095b0d1c1ff4e215147ec23bd5d64b2dfc5dbc",
+      "size": 4215
+    },
+    {
+      "path": "VERIFY_BASIC_ARTIFACT.py",
+      "sha256": "791daa1df02d48cc7f3b156e962fd156a463752028dc9633b9ad026fc452ef11",
+      "size": 6034
+    },
+    {
+      "path": "VERIFY_MANIFEST.py",
+      "sha256": "a42b8156f711deb87b7d8d919c30a8f93d4ca3ccae5e133f055b1be09cf17246",
+      "size": 2368
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "91df1326933e0c9d2f3a3e3a5a16edd2c227f2da1ecb5ad00d7b1ff63e231b3d",
+      "size": 410
+    },
+    {
+      "path": "requirements-development.txt",
+      "sha256": "79d5229979b5d21dfaced7bc1ac7749cbc218794d4ef15f8a2e6ac9fac2eacbd",
+      "size": 79
+    },
+    {
+      "path": "schemas/generic-interpretation-v1.schema.json",
+      "sha256": "117dfe43df001ccde734c431b9137931e7600b765f56ea75f3afdd6b2d59784b",
+      "size": 4071
+    },
+    {
+      "path": "src/nlp_offline_interpreter/__init__.py",
+      "sha256": "1fdd5520d7160479762e66ed887b139e8637e3fe243c9cb9aa75a33f51784ad5",
+      "size": 821
+    },
+    {
+      "path": "src/nlp_offline_interpreter/__main__.py",
+      "sha256": "d660222289e2c82c70ec19c0b9f850740c9f867c4f40ddf5c0788db39343687b",
+      "size": 156
+    },
+    {
+      "path": "src/nlp_offline_interpreter/basic.py",
+      "sha256": "6bbde47662325dd894d682213a822ae0916b60d4d0d37e468955183975beecec",
+      "size": 3010
+    },
+    {
+      "path": "src/nlp_offline_interpreter/core.py",
+      "sha256": "b97aebc78e17393b749c5d1f112ac5083253d86b79d0c69e38f3387be312f210",
+      "size": 28145
+    },
+    {
+      "path": "src/nlp_offline_interpreter/integration.py",
+      "sha256": "1224b7b5ec8e8e8765ec3c6da05e438a43289be97359d2eed0588cec61bfb191",
+      "size": 11949
+    },
+    {
+      "path": "tests/test_core.py",
+      "sha256": "2c2e37684a3b54a65293c9dbf30f3bfb9dcad7cbdc78d1cf963743a0935fb341",
+      "size": 12709
+    },
+    {
+      "path": "tests/test_fuzzy.py",
+      "sha256": "904b2e3e3a3f4f3ea1d9a232c6b9044a2d1af67e25d70d8a82c49639e59dc535",
+      "size": 6378
+    },
+    {
+      "path": "tests/test_integration.py",
+      "sha256": "91d4a462f3e4a017bdbf1b357390eedb3f456b30680fad40536373eddc38b274",
+      "size": 6157
+    },
+    {
+      "path": "tests/test_torture.py",
+      "sha256": "76d91b71b73bc46e0b73abdc2e3a379fd1edd9b4ff892967036b3e1c10e7284d",
+      "size": 3658
+    }
+  ],
+  "production_ready": false,
+  "project": "nlp-offline-interpreter/0.1",
+  "schema": "nlp-successor-manifest/1",
+  "status": "development"
+}

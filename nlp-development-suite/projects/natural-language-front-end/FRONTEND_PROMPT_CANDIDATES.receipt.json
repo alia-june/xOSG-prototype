@@ -1,0 +1,20 @@
+{
+  "receipt_kind": "local-generated-candidate",
+  "accepted_by_sister_machine": false,
+  "created_utc": "2026-09-16T17:38:02.087578+00:00",
+  "output_path": "<USER_HOME>\\Documents\\Workbench\\Natural Language\\FRONTEND_FULL_PROMPT_CANDIDATES.json",
+  "output_sha256": "d901f9b1f1e65433b57e290e977e60834f05911e9a95122765b9ad66f77f84d4",
+  "source_archive_sha256": "41b9c72fbddc9b1296f842faf47a555efcf3078fbd366273f13a3121cb70408a",
+  "source_member_sha256": "14ae8d438d672c0e51b3065f3a5307230494fa291d90159392447ccc73a424b8",
+  "schema_version": "handoff-stub/0.1",
+  "validation": {
+    "schema_valid": true,
+    "example_valid": true,
+    "source_hashes_valid": true,
+    "source_quotes_valid": 1196
+  },
+  "previous_output_path": "FRONTEND_PROMPT_CANDIDATES.previous.json",
+  "entries": 1196,
+  "candidate_partial": 28,
+  "unparsed": 1168
+}

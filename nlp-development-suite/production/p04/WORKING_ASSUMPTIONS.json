@@ -1,0 +1,15 @@
+{
+  "schema": "nlp-p04-working-assumptions/1",
+  "recorded_on": "2026-10-02",
+  "truth_state": "ACCEPTED_CANON",
+  "authority_effect": "P04_LOCAL_STAGING",
+  "production_ready": false,
+  "source_direction": "Q-001 through Q-007 and the bounded production plan were explicitly accepted by the user",
+  "assumptions": {
+    "repository": "local suite-level Git monorepo retaining component directories and provenance",
+    "runtime": "Windows-first CPython 3.11 through 3.14 verified locally",
+    "ci_provider": "GitHub Actions workflow staged locally with no remote repository or run evidence",
+    "staging_mutation": "no deployment, catalog mutation, external operation execution, or production credentials"
+  },
+  "canon_effect": "Q-001 through Q-007 govern bounded local release staging; no deployment, receiving-system, or production-readiness authority is granted."
+}

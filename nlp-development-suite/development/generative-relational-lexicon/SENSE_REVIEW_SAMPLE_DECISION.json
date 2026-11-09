@@ -1,0 +1,81 @@
+{
+  "schema": "sense-aboutness-review-sample-decision/1",
+  "status": "AUTHORIZED_TEST_BLANK_REVIEW_SAMPLE",
+  "accepted_at": "2026-10-06",
+  "authority_source": "direct user continuation after verified RLX-N01 and RLX-N02",
+  "authority_effect": "TEST_BLANK_REVIEW_PACKAGE_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "review_disposition_assignment_allowed": false,
+  "semantic_candidate_generation_allowed": false,
+  "baseline_commit": "a7e2d74",
+  "pinned_receipts": [
+    {
+      "path": "pilot/sense-aboutness/SENSE_ABOUTNESS_CONTRACT_RECEIPT.json",
+      "bytes": 1843,
+      "sha256": "d5062aa832d60c9d9593fd388106057f703a73a9d69e55379ef9e92317a33111"
+    },
+    {
+      "path": "pilot/tier-zero/output/PILOT_RECEIPT.json",
+      "bytes": 1528,
+      "sha256": "f3d8e3308c766ef37d76f9741cd7924fb365f465fca5f018fbe64e5d73c9b9af"
+    },
+    {
+      "path": "pilot/modern-comparison/COMPARISON_RECEIPT.json",
+      "bytes": 1582,
+      "sha256": "c7daf610f4a68aaddcf839c35c51c32b32ae57a8df23d157729d3732cd202236"
+    },
+    {
+      "path": "pilot/modern-comparison/normalization-audit/NORMALIZATION_AUDIT_RECEIPT.json",
+      "bytes": 1846,
+      "sha256": "f4ec7ffd3ffc75f07c4485506bc0db624a7fb25baab4b133f5e0ee7718d02230"
+    },
+    {
+      "path": "pilot/modern-comparison/normalization-audit/unresolved-shapes/UNRESOLVED_SHAPE_AUDIT_RECEIPT.json",
+      "bytes": 1849,
+      "sha256": "9a655eb10a4b4ad7d5c77e75caf050c61201d1d261890aa9ecadc764f37e789e"
+    }
+  ],
+  "sampling_rule": {
+    "population": "all normalized historical forms in the pinned Roget-OEWN discrepancy records",
+    "strata": [
+      "match_layer",
+      "historical_head_bucket",
+      "historical_pos_signature",
+      "source_label_bucket",
+      "modern_sense_count_bucket",
+      "modern_surface_collision_bucket",
+      "unresolved_primary_shape"
+    ],
+    "maximum_per_observed_stratum": 1,
+    "selection": "lowest SHA-256 of the pinned source hash, normalized historical term, and canonical stratum coordinates",
+    "replacement": "none",
+    "expected_population_count": 59636,
+    "expected_observed_stratum_count": 853,
+    "expected_sample_count": 853
+  },
+  "review_template": {
+    "fields_required_null": [
+      "reviewer_id",
+      "reviewed_at",
+      "review_status",
+      "sense_candidates",
+      "aboutness_assertions",
+      "abstention",
+      "review_notes"
+    ],
+    "raw_source_effect": "read-only evidence attachment"
+  },
+  "excluded_operations": [
+    "semantic label prefill",
+    "sense selection",
+    "aboutness assertion",
+    "lexical validity decision",
+    "definition generation",
+    "candidate ranking by a language model",
+    "source ingestion",
+    "canon admission",
+    "production or publication approval"
+  ]
+}

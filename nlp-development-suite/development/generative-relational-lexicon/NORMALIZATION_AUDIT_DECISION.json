@@ -1,0 +1,53 @@
+{
+  "schema": "generative-relational-lexicon-normalization-audit-decision/1",
+  "status": "AUTHORIZED_TEST_AUDIT",
+  "accepted_at": "2026-10-04",
+  "authority_source": "direct user continuation after the proposed controlled-normalization pass",
+  "authority_summary": "Measure surface-form discrepancy layers without deciding their semantic cause or accepting transformed matches as equivalence.",
+  "authority_effect": "TEST_AUDIT_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "semantic_equivalence_allowed": false,
+  "baseline_receipt": {
+    "relative_path": "pilot/modern-comparison/COMPARISON_RECEIPT.json",
+    "bytes": 1582,
+    "sha256": "c7daf610f4a68aaddcf839c35c51c32b32ae57a8df23d157729d3732cd202236"
+  },
+  "ordered_layers": [
+    {
+      "id": "EXACT_INDEXED_FORM",
+      "risk": "DICTIONARY_SUPPLIED_VARIANT",
+      "rule": "Unicode casefolded exact lookup across every OEWN indexed form rank"
+    },
+    {
+      "id": "UNICODE_COMPATIBILITY",
+      "risk": "CONSERVATIVE_SURFACE_NORMALIZATION",
+      "rule": "NFKC followed by Unicode casefold"
+    },
+    {
+      "id": "PUNCTUATION_HARMONIZED",
+      "risk": "CONSERVATIVE_SURFACE_NORMALIZATION",
+      "rule": "NFKC, apostrophe and dash-family harmonization, and whitespace collapse"
+    },
+    {
+      "id": "SEPARATOR_TO_SPACE",
+      "risk": "MODERATE_SURFACE_CANDIDATE",
+      "rule": "Treat whitespace, underscore, and hyphen as a single space"
+    },
+    {
+      "id": "SEPARATOR_ELIDED",
+      "risk": "LOOSE_COLLISION_PRONE_CANDIDATE",
+      "rule": "Remove whitespace, underscore, apostrophe, and hyphen"
+    }
+  ],
+  "excluded_operations": [
+    "definition or example lookup",
+    "semantic equivalence assertion",
+    "automatic canon admission",
+    "contextual sense selection",
+    "home-grown suffix lemmatization",
+    "cause assignment",
+    "production or publication approval"
+  ]
+}

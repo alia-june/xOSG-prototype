@@ -1,0 +1,34 @@
+{
+  "schema": "nlp-basic-artifact-receipt/1",
+  "artifact": "nlp-offline-interpreter-0.1.0-basic.zip",
+  "status": "verified-local-artifact",
+  "authority_effect": "NONE",
+  "approver_required": false,
+  "production_ready": false,
+  "execution_allowed": false,
+  "size": 17595,
+  "sha256": "a7f106ff4de9234bc0c3637f7ce9cd00e0baa674f674f68dd7c07c73ba83cd89",
+  "wheel": {
+    "filename": "nlp_offline_interpreter-0.1.0-py3-none-any.whl",
+    "size": 12534,
+    "sha256": "a3ef932ef0832716a17628d5318ac36175796fa2e2d80950079b6d149b59d9b3"
+  },
+  "verification": {
+    "artifact_builds_byte_identical": 2,
+    "artifact_manifest": "passed",
+    "checksum_list": "passed",
+    "path_and_member_safety": "passed",
+    "wheel_content_check": "passed",
+    "fresh_zip_extraction_and_install": "passed",
+    "module_and_console_entry_points": "passed",
+    "full_baseline_checks": "15/15 passed",
+    "named_tests": "144 passed",
+    "historical_manifest_members": "1306 verified",
+    "baseline_report": "production/reports/baseline-2026-10-01-basic-artifact.json"
+  },
+  "tested_runtime": "CPython 3.14.4 on one Windows host",
+  "limits": [
+    "Python 3.11 through 3.13 were not reproduced on this host.",
+    "This local artifact is not an external deployment or production-readiness attestation."
+  ]
+}

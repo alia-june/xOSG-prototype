@@ -1,0 +1,37 @@
+{
+  "schema": "generative-relational-lexicon-modern-comparison-decision/1",
+  "status": "AUTHORIZED_TEST_COMPARISON",
+  "accepted_at": "2026-10-04",
+  "authority_source": "direct user instruction in the active session",
+  "authority_summary": "Map the words found in Roget to a modern dictionary and report what discrepancy shapes look like without deciding what they mean.",
+  "authority_effect": "TEST_COMPARISON_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "historical_source_id": "project-gutenberg-roget-22",
+  "modern_source": {
+    "source_id": "oewn-2025",
+    "release": "oewn:2025",
+    "relative_path": "../../projects/natural-language-front-end/.wn_data/wn.db",
+    "bytes": 96727040,
+    "sha256": "11f762438e6928ff5d2d86bb35d5f714322aebe519bb742d9a3b4467fded0a62",
+    "license": "CC-BY-4.0 plus preserved underlying Princeton WordNet notice",
+    "license_url": "https://github.com/globalwordnet/english-wordnet/blob/main/LICENSE.md"
+  },
+  "comparison_fields": [
+    "exact normalized lemma presence",
+    "historical and modern part-of-speech sets",
+    "historical category-head count",
+    "modern sense and synset counts",
+    "modern outgoing relation count",
+    "source bracket-label presence"
+  ],
+  "excluded_fields": [
+    "definitions",
+    "examples",
+    "automatic contextual sense selection",
+    "causal explanations for discrepancies",
+    "accepted semantic continuity",
+    "future projections"
+  ]
+}

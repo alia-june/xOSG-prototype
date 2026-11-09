@@ -21,6 +21,7 @@ Public research prototypes for inspectable AI-assisted work, reference-native do
 | [xOSG-0](syn-xOSG-0/README.md) | Developmental orchestration research from ES-xOSG-7 through Seed | [Developmental architecture](syn-xOSG-0/ARCHITECTURE.md) | [Read the source ledger](syn-xOSG-0/docs/SOURCE_LEDGER.md) |
 | [Mill Factory](mill-factory/README.md) | PowerShell work batches with evidence, gates, and fail-closed promotion | [Batch architecture](mill-factory/ARCHITECTURE.md) | [Create a disposable batch](mill-factory/HOW_TO.md) |
 | [Code-Lexigraph](code-lexigraph/README.md) | Bounded Python code reconstruction with bidirectional traces and a restricted construction grammar | [Design and grammar](code-lexigraph/docs/DESIGN.md) | [Inspect a reconstruction](code-lexigraph/HOW_TO.md) |
+| [NLP Development Suite](nlp-development-suite/README.md) | Code-only lexical, grammar, Atlas, and non-executing interpretation prototypes with separately managed data | [Suite boundaries and components](nlp-development-suite/README.md) | [Run the data-free checks](nlp-development-suite/PROTOTYPE_TEST_PROFILE.md) |
 | [Etabit Schema](etabit-schema/README.md) | Draft multi-drive construction schema, source and reference examples, and unresolved contracts | [Drive and authority architecture](etabit-schema/ARCHITECTURE.md) | [Review and validate a descriptor](etabit-schema/HOW_TO.md) |
 | [Syn-Etabit Transformer — Textual](syn-etabit-transformer-textual/README.md) | Reference-native document construction research and a retained CPU compatibility service | [Construction and service architecture](syn-etabit-transformer-textual/ARCHITECTURE.md) | [Read the service setup and environment limits](syn-etabit-transformer-textual/service/README.md) |
 | [sf-AmorphDataDrive](sf-amorph-data-drive/README.md) | Locked v0.3 research specification with open identity, bitmap, topology, and recursion contracts | [Locked v0.3 specification](sf-amorph-data-drive/specifications/sf_edabit_amorph_data_drive_locked_spec_v0_3.md) | [Review a specification change](sf-amorph-data-drive/HOW_TO.md) |
@@ -167,6 +168,25 @@ hardening, universal sentinel semantics, or guarantees about external effects.
 
 ---
 
+## NLP Development Suite — bounded language tooling
+
+**[Open project →](nlp-development-suite/README.md)** · **[Data policy →](nlp-development-suite/DATA_POLICY.md)** · **[Test profile →](nlp-development-suite/PROTOTYPE_TEST_PROFILE.md)**
+
+The NLP Development Suite stages reusable lexical primitives, a controlled
+natural-language front end, a code-only Lexicon Atlas interface, a bounded
+read-only File Atlas, and non-executing interpretation and relational-lexicon
+research. The repository carries code, schemas, contracts, and tests while
+keeping dictionary payloads, generated lexical shards, historical review data,
+credentials, and machine-local paths outside the public tree.
+
+Its current validation profile runs **81 data-free checks** plus JavaScript
+syntax and repository-policy verification. These checks establish only the
+packaged code surface and declared data boundary; they do not establish lexical
+completeness, semantic authority, production readiness, or approval of any
+separately supplied dataset.
+
+---
+
 ## sf-AmorphDataDrive — strict raw-substrate architecture
 
 **[Open project →](sf-amorph-data-drive/README.md)** · **[Locked v0.3 →](sf-amorph-data-drive/specifications/sf_edabit_amorph_data_drive_locked_spec_v0_3.md)** · **[Relation to Etabit →](sf-amorph-data-drive/docs/ETABIT_RELATION.md)**
@@ -310,6 +330,12 @@ xOSG-prototype/
 │   ├── tests/                  construction, behavior, and CLI checks
 │   └── docs/                   design, provenance, validation, open decisions
 │
+├── nlp-development-suite/      code-only language and lexical research suite
+│   ├── projects/               bounded reusable prototype components
+│   ├── development/            offline and relational-lexicon experiments
+│   ├── contracts/              cross-component interface definitions
+│   └── production/             non-deploying production-readiness records
+│
 ├── syn-xOSG-0/
 │   ├── growth/                 canonical developmental spine
 │   ├── docs/                   source and boundary records
@@ -347,12 +373,12 @@ xOSG-prototype/
 1. **[xOSG-0](syn-xOSG-0/README.md)** — developmental and authority model.
 2. **[Mill Factory](mill-factory/README.md)** — evidence-bearing batches and fail-closed promotion.
 3. **[Code-Lexigraph](code-lexigraph/README.md)** — bidirectional meaning-to-code reconstruction.
-4. **[Etabit Schema](etabit-schema/README.md)** — multi-drive construction and distributed-authority schema research.
-5. **[sf-AmorphDataDrive](sf-amorph-data-drive/README.md)** — strict raw substrate and open successor contracts.
-6. **[Syn-Etabit Transformer — Textual](syn-etabit-transformer-textual/README.md)** — reference-native document model.
-7. **[MATH.SC-0](xosg-0-math-sc0/README.md)** — deterministic computation architecture.
-
-8. **[xOSG instrumentation](docs/xosg/README.md)** — durable workspace kit, shell identity, and simulation records.
+4. **[NLP Development Suite](nlp-development-suite/README.md)** — code-only lexical, grammar, and language-tool prototypes.
+5. **[Etabit Schema](etabit-schema/README.md)** — multi-drive construction and distributed-authority schema research.
+6. **[sf-AmorphDataDrive](sf-amorph-data-drive/README.md)** — strict raw substrate and open successor contracts.
+7. **[Syn-Etabit Transformer — Textual](syn-etabit-transformer-textual/README.md)** — reference-native document model.
+8. **[MATH.SC-0](xosg-0-math-sc0/README.md)** — deterministic computation architecture.
+9. **[xOSG instrumentation](docs/xosg/README.md)** — durable workspace kit, shell identity, and simulation records.
 
 Read each project's validation, source-boundary, and integration documents before treating test results as broader acceptance.
 

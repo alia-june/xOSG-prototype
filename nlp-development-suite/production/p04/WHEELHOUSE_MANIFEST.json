@@ -1,0 +1,154 @@
+{
+  "authority_effect": "NONE",
+  "production_ready": false,
+  "runtime": "CPython 3.11-3.14 Windows x86-64 wheel set",
+  "schema": "nlp-p04-wheelhouse-manifest/1",
+  "status": "generated-staging-evidence",
+  "wheel_count": 18,
+  "wheels": [
+    {
+      "package": "anyio",
+      "path": "wheelhouse/anyio-4.15.1-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "sha256": "6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101",
+      "size": 132079,
+      "version": "4.15.1"
+    },
+    {
+      "package": "aprompt",
+      "path": "wheelhouse/aprompt-1.1.0-py3-none-any.whl",
+      "requires_python": ">=3.11",
+      "sha256": "9baccbad73341e47265e1321bfc9367aedce904f6fdc4ba8862af87010c68257",
+      "size": 131275,
+      "version": "1.1.0"
+    },
+    {
+      "package": "attrs",
+      "path": "wheelhouse/attrs-26.1.0-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "size": 67548,
+      "version": "26.1.0"
+    },
+    {
+      "package": "certifi",
+      "path": "wheelhouse/certifi-2026.7.22-py3-none-any.whl",
+      "requires_python": ">=3.7",
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "size": 136983,
+      "version": "2026.7.22"
+    },
+    {
+      "package": "h11",
+      "path": "wheelhouse/h11-0.16.0-py3-none-any.whl",
+      "requires_python": ">=3.8",
+      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86",
+      "size": 37515,
+      "version": "0.16.0"
+    },
+    {
+      "package": "httpcore",
+      "path": "wheelhouse/httpcore-1.0.9-py3-none-any.whl",
+      "requires_python": ">=3.8",
+      "sha256": "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55",
+      "size": 78784,
+      "version": "1.0.9"
+    },
+    {
+      "package": "httpx",
+      "path": "wheelhouse/httpx-0.28.1-py3-none-any.whl",
+      "requires_python": ">=3.8",
+      "sha256": "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad",
+      "size": 73517,
+      "version": "0.28.1"
+    },
+    {
+      "package": "idna",
+      "path": "wheelhouse/idna-3.19-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4",
+      "size": 68550,
+      "version": "3.19"
+    },
+    {
+      "package": "jsonschema",
+      "path": "wheelhouse/jsonschema-4.26.0-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+      "size": 90630,
+      "version": "4.26.0"
+    },
+    {
+      "package": "jsonschema-specifications",
+      "path": "wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+      "size": 18437,
+      "version": "2025.9.1"
+    },
+    {
+      "package": "referencing",
+      "path": "wheelhouse/referencing-0.37.0-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+      "size": 26766,
+      "version": "0.37.0"
+    },
+    {
+      "package": "rpds-py",
+      "path": "wheelhouse/rpds_py-2026.6.3-cp311-cp311-win_amd64.whl",
+      "requires_python": ">=3.11",
+      "sha256": "2c54a076ca4d370980ab57bc0e31df57bbe8d41340436a90ef8b1219a3cbb127",
+      "size": 223219,
+      "version": "2026.6.3"
+    },
+    {
+      "package": "rpds-py",
+      "path": "wheelhouse/rpds_py-2026.6.3-cp312-cp312-win_amd64.whl",
+      "requires_python": ">=3.11",
+      "sha256": "2c958bf94822e9290a40aaf2a822d4bc5c88099093e3948ad6c571eca9272e5f",
+      "size": 220394,
+      "version": "2026.6.3"
+    },
+    {
+      "package": "rpds-py",
+      "path": "wheelhouse/rpds_py-2026.6.3-cp313-cp313-win_amd64.whl",
+      "requires_python": ">=3.11",
+      "sha256": "9250a9a0a6fd4648b3f868da8d91a4c52b5811a62df58e753d50ae4454a36f80",
+      "size": 219454,
+      "version": "2026.6.3"
+    },
+    {
+      "package": "rpds-py",
+      "path": "wheelhouse/rpds_py-2026.6.3-cp314-cp314-win_amd64.whl",
+      "requires_python": ">=3.11",
+      "sha256": "0be972be84cfcaf46c8c6edf690ca0f154ac17babf1f6a955a51579b34ad2dc5",
+      "size": 220380,
+      "version": "2026.6.3"
+    },
+    {
+      "package": "setuptools",
+      "path": "wheelhouse/setuptools-84.0.0-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+      "size": 818216,
+      "version": "84.0.0"
+    },
+    {
+      "package": "typing-extensions",
+      "path": "wheelhouse/typing_extensions-4.16.0-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "size": 45571,
+      "version": "4.16.0"
+    },
+    {
+      "package": "wn",
+      "path": "wheelhouse/wn-1.1.1-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "sha256": "feaea1ef53806729b4629daa769546adb55a45cd029fa8e524db2ada837f8d24",
+      "size": 95820,
+      "version": "1.1.1"
+    }
+  ]
+}

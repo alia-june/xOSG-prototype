@@ -1,0 +1,1588 @@
+{
+  "schema": "nlp-suite-prototype-manifest/1",
+  "status": "GENERATED",
+  "member_count": 316,
+  "total_bytes": 2705711,
+  "members": [
+    {
+      "path": ".gitattributes",
+      "bytes": 154,
+      "sha256": "0714bb2615fe47a15adf7aa809ccabf30165450095c4c8bb15c74df787140ee9"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 734,
+      "sha256": "ecafe7abe0098a57cc98328dcab5edf6bfa788028ca86fb35b6e0732709a5630"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 386,
+      "sha256": "ec71a81c8ddeac16060e3000d5ba773eeeb625668a22f493940f4c3574a451f9"
+    },
+    {
+      "path": "BUILD_ARCHIVE.py",
+      "bytes": 2248,
+      "sha256": "a574d1e1bf161361f7882ffd4e9271f9f56a62d044111f86b9ac2ccf64d5d038"
+    },
+    {
+      "path": "BUILD_PROTOTYPE_ARCHIVE.py",
+      "bytes": 2275,
+      "sha256": "e138a20474a032716bc24f0d1ce04e278790fb34cd2b0b305b47e2f20d6633c1"
+    },
+    {
+      "path": "CONTINUATION.md",
+      "bytes": 2247,
+      "sha256": "147478715fdfd340b839e9f24570d5cd4a35ea8b230e98a1eda9a1f3988c44e9"
+    },
+    {
+      "path": "contracts/NLP_CAPABILITY_HANDOFF_V0_1.json",
+      "bytes": 977,
+      "sha256": "8d00ccd34206d9bffa8bb439b58e228684084e12f326248cd44dd1a048cceb07"
+    },
+    {
+      "path": "contracts/NLP_CAPABILITY_HANDOFF_V0_1.md",
+      "bytes": 7635,
+      "sha256": "06844a15763d21a97adccbf6376a9a120da209a454cfed08e5dce2d296da4faf"
+    },
+    {
+      "path": "DATA_DEPENDENCIES.md",
+      "bytes": 1474,
+      "sha256": "50a6a101132651fa6f87378e6394b0bc332d5ec267ade2794148aa0a2362e6ad"
+    },
+    {
+      "path": "DATA_POLICY.md",
+      "bytes": 712,
+      "sha256": "6ec2005ce6c411e8ea02b58efc92c550d3571c9a01c62a004f99b47825c1d663"
+    },
+    {
+      "path": "DEPLOYMENT_CHECKLIST.md",
+      "bytes": 855,
+      "sha256": "14805d0562b1a054230fc2b89a3d71b2f8145af94320edfd76e7a888932224fa"
+    },
+    {
+      "path": "development/generative-relational-lexicon/analyze_initial_mining.py",
+      "bytes": 10594,
+      "sha256": "417d399e558de7aa34761b1d7b046e79560b2bc6f6c7d9f0a7c3e020994fc873"
+    },
+    {
+      "path": "development/generative-relational-lexicon/audit_surface_normalization.py",
+      "bytes": 16152,
+      "sha256": "fe2416704248f420f9918e06794ca16061124e00422d1e2104baf137eede8ac6"
+    },
+    {
+      "path": "development/generative-relational-lexicon/audit_unresolved_shapes.py",
+      "bytes": 16264,
+      "sha256": "38129f70a225197a1d319ef6b2a0a7ceb08d56768517b40475f1d20c5ee3677d"
+    },
+    {
+      "path": "development/generative-relational-lexicon/build_review_sample.py",
+      "bytes": 10292,
+      "sha256": "4789de4b0ea6e88b4cce3d9eb41e401cb8e18d202afc07001d563cd9fe170c89"
+    },
+    {
+      "path": "development/generative-relational-lexicon/build_sense_calibration.py",
+      "bytes": 10160,
+      "sha256": "8f5422397407c7513ad5aa732f7988798cc56ed829e95cbead7d08966aca1d09"
+    },
+    {
+      "path": "development/generative-relational-lexicon/build_sense_review_sample.py",
+      "bytes": 17204,
+      "sha256": "d86ddd35af04c95f49ae554a2a0601c492963975133a5db95994eef2eec7b9f3"
+    },
+    {
+      "path": "development/generative-relational-lexicon/compare_roget_oewn.py",
+      "bytes": 19411,
+      "sha256": "d1ffccb2d44653d90860a6797c755b303aba670dc2511bd47818f32346a37b9a"
+    },
+    {
+      "path": "development/generative-relational-lexicon/export_sense_reviewer_packets.py",
+      "bytes": 3722,
+      "sha256": "fa9eeeccad7e52dc48d56336d843bf4f909a48f4265c877e7acc89a8c8445d62"
+    },
+    {
+      "path": "development/generative-relational-lexicon/fixtures/sense-aboutness/invalid-accepted-canon.json",
+      "bytes": 1406,
+      "sha256": "120a15535316f6e1bd80afb67a24b016b78b244954c9657b33c80e87d1d83360"
+    },
+    {
+      "path": "development/generative-relational-lexicon/fixtures/sense-aboutness/invalid-form-level-aboutness.json",
+      "bytes": 881,
+      "sha256": "c67a30fce7104790ebcaabcb34025c3ff8fa207b5863249877fba4da5d706bb5"
+    },
+    {
+      "path": "development/generative-relational-lexicon/fixtures/sense-aboutness/invalid-form-only-support.json",
+      "bytes": 1401,
+      "sha256": "9b39bb25548334e4019f4f7f4a75274904f005d3b1ebc7ed1cb66675cf632ae2"
+    },
+    {
+      "path": "development/generative-relational-lexicon/fixtures/sense-aboutness/invalid-missing-evidence-ref.json",
+      "bytes": 1381,
+      "sha256": "374e80a96e20a264dffd5371378604d10e87dda74baf90458117f84144da6c23"
+    },
+    {
+      "path": "development/generative-relational-lexicon/fixtures/sense-aboutness/valid-abstained.json",
+      "bytes": 910,
+      "sha256": "f1ed3f0853f3eea118081629df2c4cb2fea481e5a3fd360348b48a59d0e484e0"
+    },
+    {
+      "path": "development/generative-relational-lexicon/fixtures/sense-aboutness/valid-ambiguous-conflict.json",
+      "bytes": 2803,
+      "sha256": "6ac78d8c6e32050cff4d61e32b1fe9af3b155afbed055dcdb9538c4eeb03e0c3"
+    },
+    {
+      "path": "development/generative-relational-lexicon/fixtures/sense-aboutness/valid-supported.json",
+      "bytes": 1569,
+      "sha256": "390af769e60f17510fa46e193fc08dae6fbe83bc1e5eb5e3be552080e16fb4c3"
+    },
+    {
+      "path": "development/generative-relational-lexicon/INITIAL_MINING_GAP_REPORT.json",
+      "bytes": 19104,
+      "sha256": "b5fe8d5495043dec9a99ff6cdec7c96742a0a36a238e02d5ab7cc14f40193559"
+    },
+    {
+      "path": "development/generative-relational-lexicon/INITIAL_MINING_GAP_REPORT.md",
+      "bytes": 8206,
+      "sha256": "ab807b3e96580409335c042c471a19accbd7e038c071742e57833e7f56803770"
+    },
+    {
+      "path": "development/generative-relational-lexicon/INITIAL_MINING_LICENSE_POLICY.json",
+      "bytes": 5227,
+      "sha256": "5fd4ac88a1b6de91976485076369e7bd552902fef2748f871cfcf2c9d873fa47"
+    },
+    {
+      "path": "development/generative-relational-lexicon/LANGUAGE_EXPANSION_SURVEY.md",
+      "bytes": 6745,
+      "sha256": "f4e73913a50385bb5679cd76b70d3ea9f2bd591f26d3e93273a304849582b9e5"
+    },
+    {
+      "path": "development/generative-relational-lexicon/measure_parser_repair.py",
+      "bytes": 10404,
+      "sha256": "79a1c9fd73e3798c46e5967440194f9a8f759b598afe16fe452e038f292ac9f3"
+    },
+    {
+      "path": "development/generative-relational-lexicon/MODERN_COMPARISON_DECISION.json",
+      "bytes": 1489,
+      "sha256": "86c06ddb78590467d910f2a679217cf576af60559b314b81ef71ae9daedaaf29"
+    },
+    {
+      "path": "development/generative-relational-lexicon/NORMALIZATION_AUDIT_DECISION.json",
+      "bytes": 1923,
+      "sha256": "5849d2de33a9dff10bff0b89105e8af430d7842517c91e0261a0c6ea29607809"
+    },
+    {
+      "path": "development/generative-relational-lexicon/PARSER_REPAIR_DECISION.json",
+      "bytes": 3486,
+      "sha256": "f7bf50721b41a1a27203d41896fe9753e76d132f6755448ad71b9c1a95b59243"
+    },
+    {
+      "path": "development/generative-relational-lexicon/query_word_history.py",
+      "bytes": 2638,
+      "sha256": "bab9b9a93b7a5aa2c67bbccf4ed25261b0dbc68ae816ae177eb4b00f617f5049"
+    },
+    {
+      "path": "development/generative-relational-lexicon/README.md",
+      "bytes": 7491,
+      "sha256": "7ed608714ffd3596910e458f77c7606bc206dcaaa2c062302935307c14b09ed6"
+    },
+    {
+      "path": "development/generative-relational-lexicon/RECONSTRUCTION_MODEL.md",
+      "bytes": 7939,
+      "sha256": "f3f3118a918a779e46de2fb79bd402805bc6b97d5e56a4440797a039e997585f"
+    },
+    {
+      "path": "development/generative-relational-lexicon/REVIEW_DISPOSITION_DECISION.json",
+      "bytes": 1383,
+      "sha256": "eeb53fdbf584684b345951a3817fded86e51d6017fd8b593a4120dac654f0270"
+    },
+    {
+      "path": "development/generative-relational-lexicon/REVIEW_SAMPLE_DECISION.json",
+      "bytes": 1423,
+      "sha256": "791dfe4ee601df6c01842d286182dedcc288c4db75457073b8320783362e5b97"
+    },
+    {
+      "path": "development/generative-relational-lexicon/review_sample_dispositions.py",
+      "bytes": 16947,
+      "sha256": "81f13468dc0c849d77e0418c23eaeef83e4971dccc9ad6b6630adda74ceae851"
+    },
+    {
+      "path": "development/generative-relational-lexicon/run_tier_zero_pilot.py",
+      "bytes": 17044,
+      "sha256": "c1947b910ebfd53833cef6aed356c17295e36cbb1660940164cf07701a9b6154"
+    },
+    {
+      "path": "development/generative-relational-lexicon/schemas/sense-aboutness-candidate-v0.1.schema.json",
+      "bytes": 6672,
+      "sha256": "d2007c4e3c4ee92be120f77aa9dc9d3cfd2bbaabe9eb72db9cf0c1193deebadc"
+    },
+    {
+      "path": "development/generative-relational-lexicon/SENSE_ABOUTNESS_BASELINE_DECISION.json",
+      "bytes": 5180,
+      "sha256": "d9dc6554bf10f5e6c68f9e8830a2a251f928070c72897c349fbfe78341fb41d1"
+    },
+    {
+      "path": "development/generative-relational-lexicon/SENSE_CALIBRATION_DECISION.json",
+      "bytes": 1583,
+      "sha256": "571abe6408c6bd305b5ff1ea3d8ccc59dbbe63b946b5313cc7847f15876c6893"
+    },
+    {
+      "path": "development/generative-relational-lexicon/SENSE_REVIEW_PROTOCOL_2026-10-06.md",
+      "bytes": 4696,
+      "sha256": "2d15abdf9f6c07b8e2c10e96d1d70ba4ca98e8cdc733ac177f30ad393c4ef4c0"
+    },
+    {
+      "path": "development/generative-relational-lexicon/SENSE_REVIEW_SAMPLE_DECISION.json",
+      "bytes": 2795,
+      "sha256": "6466d6ee760647a1fb8e52b2d2c63804c622fb1e23cb0d972b3b775310ae0f05"
+    },
+    {
+      "path": "development/generative-relational-lexicon/SOURCE_LANGUAGE_MAP.json",
+      "bytes": 46029,
+      "sha256": "10ecc2b0c79d8695318f8c2c75f87e737526086988c136aefdf55111d2ce2d62"
+    },
+    {
+      "path": "development/generative-relational-lexicon/SOURCE_REGISTER.md",
+      "bytes": 12103,
+      "sha256": "7a59bbf2bbf1aa104aac658efad411f46f5daa4c36b92b4404611123cbba1bb8"
+    },
+    {
+      "path": "development/generative-relational-lexicon/STATUS_AND_NEXT_ACTIONS_2026-10-06.md",
+      "bytes": 12343,
+      "sha256": "a5c32457984f6ded74fbd3edfc9366b108eb8cc7af64f4495e64060ec5011f67"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_initial_mining_policy.py",
+      "bytes": 4150,
+      "sha256": "b8984b96fde4b5eb7793bb67beb4b5c1cb17921d83d7d04e5e0c1ce2f4ae305a"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_modern_comparison.py",
+      "bytes": 3680,
+      "sha256": "3205f218ca144c37cef7d50c274f3abc0819ff4f2d5a51fe9d1f4770e393fe0e"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_normalization_audit.py",
+      "bytes": 3266,
+      "sha256": "fb4120c6bbfa78d9be9bc47f809241940418bcb03b8196d42734e536e2bf18fb"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_parser_repair.py",
+      "bytes": 2728,
+      "sha256": "6e1e9f3f428d3dc8f79d5e2ce271f6ccdf1c645cc77c7c3247eaff0da0209507"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_review_dispositions.py",
+      "bytes": 3592,
+      "sha256": "834259a7f2e30a7c90491dc2af7c90a37cce8c85016261822f32ae765126b977"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_review_sample.py",
+      "bytes": 2524,
+      "sha256": "e72219c51d1cf80812e29a4467807372635a0e7925c0df37c69ed19724d5c9fa"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_sense_aboutness.py",
+      "bytes": 4194,
+      "sha256": "0e1137b1eee2806e3ad10543dc2313a78bc9acb22eb68e8ad331b25c327cc756"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_sense_calibration.py",
+      "bytes": 2733,
+      "sha256": "0298956035d2de73edad599e9e7f879484cc04ae01688aeec6c51d4f12f69119"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_sense_calibration_review.py",
+      "bytes": 2293,
+      "sha256": "cb7df6d01c13e2e8327fe707547b40e1e6c0cb0a945332f2f265b0939db33b78"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_sense_review_sample.py",
+      "bytes": 5149,
+      "sha256": "f0e3a2baa80a3149756967fa628e5ce1dbe0860643331034b2def3bfb63bfb30"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_sense_reviewer_packets.py",
+      "bytes": 2671,
+      "sha256": "37fdb4c225ad2550ad93343432a40ddb4c0c31d9163940352c1864c2c0aae0ea"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_source_map.py",
+      "bytes": 5216,
+      "sha256": "f54181ba5b690de9a91d2abc743abde0fc73eb31bbd70d2791bdd941e9360e14"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_tier_zero_pilot.py",
+      "bytes": 5977,
+      "sha256": "cf5e48b8ae9219f62603931299b22dd8ab214891d665f05c60b9cfd6fd50c942"
+    },
+    {
+      "path": "development/generative-relational-lexicon/tests/test_unresolved_shape_audit.py",
+      "bytes": 3452,
+      "sha256": "299fc12ae186fc2191e4aacdd730176d6794b51f9ba2cc6a752f8706f01e311e"
+    },
+    {
+      "path": "development/generative-relational-lexicon/TIER_ZERO_PILOT_DECISION.json",
+      "bytes": 1649,
+      "sha256": "0f454f2ed1768a5e44b9b6fcfd164dbdf79d52c1afedeee2af4effe32eea4386"
+    },
+    {
+      "path": "development/generative-relational-lexicon/TRANSLATION_SOURCE_SURVEY.md",
+      "bytes": 8874,
+      "sha256": "001a73ff988085bef42edec1ce3f584ac80c7329fad88016842d0f5fc15d34fb"
+    },
+    {
+      "path": "development/generative-relational-lexicon/UNRESOLVED_SHAPE_AUDIT_DECISION.json",
+      "bytes": 1476,
+      "sha256": "ac819dfcbb92ae97e52b67a44e88afd40c42e76ca36cac23183a16d879366419"
+    },
+    {
+      "path": "development/generative-relational-lexicon/validate_sense_aboutness.py",
+      "bytes": 12813,
+      "sha256": "a24e05e6d080e2647b89775b76b95b2fb060f3e8ec53959fd356cb877a839866"
+    },
+    {
+      "path": "development/generative-relational-lexicon/validate_sense_calibration_review.py",
+      "bytes": 6460,
+      "sha256": "ba50eaf374df85221ac9d40ff96ef5ce8154e18bfb4fc3e7b0c83fe3737f33f6"
+    },
+    {
+      "path": "development/generative-relational-lexicon/validate_source_map.py",
+      "bytes": 5801,
+      "sha256": "b5e9dc9dc4d5b7640cbfcf38c28ce549d31bd9f4ace86d28460612da8d65dae6"
+    },
+    {
+      "path": "development/generative-relational-lexicon/WORD_UNIVERSE_MODEL.md",
+      "bytes": 6090,
+      "sha256": "0af98e584119b67b1dd4320a2364e7df6ed5bcb877a5efce7d45a4e3b78104f8"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/BASELINE_POINTER.json",
+      "bytes": 682,
+      "sha256": "3e072d0ed490cb1511df9a173f7349b55069c24f0fa85758a0fc68d3208fc2f6"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/BASIC_ARTIFACT_README.md",
+      "bytes": 1822,
+      "sha256": "dc6e848a83624d0518a55376886ab91f0900c3a2b613690bfd6607f40cc4ed95"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/build/lib/nlp_offline_interpreter/__init__.py",
+      "bytes": 821,
+      "sha256": "1fdd5520d7160479762e66ed887b139e8637e3fe243c9cb9aa75a33f51784ad5"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/build/lib/nlp_offline_interpreter/__main__.py",
+      "bytes": 156,
+      "sha256": "d660222289e2c82c70ec19c0b9f850740c9f867c4f40ddf5c0788db39343687b"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/build/lib/nlp_offline_interpreter/basic.py",
+      "bytes": 3010,
+      "sha256": "6bbde47662325dd894d682213a822ae0916b60d4d0d37e468955183975beecec"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/build/lib/nlp_offline_interpreter/core.py",
+      "bytes": 28145,
+      "sha256": "b97aebc78e17393b749c5d1f112ac5083253d86b79d0c69e38f3387be312f210"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/build/lib/nlp_offline_interpreter/integration.py",
+      "bytes": 11949,
+      "sha256": "1224b7b5ec8e8e8765ec3c6da05e438a43289be97359d2eed0588cec61bfb191"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/BUILD_BASIC_ARTIFACT.py",
+      "bytes": 3647,
+      "sha256": "c7a1d4d3d40d170e3089ffa5eb5d85dad6a132eddf187f68bd53c2d88696b737"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/BUILD_MANIFEST.py",
+      "bytes": 1874,
+      "sha256": "83ecf1ff37d8a531cdd31114744d211fbfd91d45bb8665f3b90570cd5123de17"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/BUILD_VALIDATION.json",
+      "bytes": 2204,
+      "sha256": "8a9b63481f26049691531934b3176015eab123f16b45eea48cde417ac0d6b014"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/DEVELOPMENT_MANIFEST.json",
+      "bytes": 3409,
+      "sha256": "9731633fc25c81a31b1ab382cb582c1b6a40f25d081a9adf67363076d32e2a46"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/dist/BASIC_ARTIFACT_RECEIPT.json",
+      "bytes": 1300,
+      "sha256": "2df25f54745dda849b45987d3d971dca9178903c9fe721b2c3c1aac2131ee3ca"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/pyproject.toml",
+      "bytes": 410,
+      "sha256": "91df1326933e0c9d2f3a3e3a5a16edd2c227f2da1ecb5ad00d7b1ff63e231b3d"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/README.md",
+      "bytes": 4215,
+      "sha256": "b7b17e3a1df83687b35c5fa3ae095b0d1c1ff4e215147ec23bd5d64b2dfc5dbc"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/requirements-development.txt",
+      "bytes": 79,
+      "sha256": "79d5229979b5d21dfaced7bc1ac7749cbc218794d4ef15f8a2e6ac9fac2eacbd"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/schemas/generic-interpretation-v1.schema.json",
+      "bytes": 4071,
+      "sha256": "117dfe43df001ccde734c431b9137931e7600b765f56ea75f3afdd6b2d59784b"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter/__init__.py",
+      "bytes": 821,
+      "sha256": "1fdd5520d7160479762e66ed887b139e8637e3fe243c9cb9aa75a33f51784ad5"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter/__main__.py",
+      "bytes": 156,
+      "sha256": "d660222289e2c82c70ec19c0b9f850740c9f867c4f40ddf5c0788db39343687b"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter/basic.py",
+      "bytes": 3010,
+      "sha256": "6bbde47662325dd894d682213a822ae0916b60d4d0d37e468955183975beecec"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter/core.py",
+      "bytes": 28145,
+      "sha256": "b97aebc78e17393b749c5d1f112ac5083253d86b79d0c69e38f3387be312f210"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter/integration.py",
+      "bytes": 11949,
+      "sha256": "1224b7b5ec8e8e8765ec3c6da05e438a43289be97359d2eed0588cec61bfb191"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter.egg-info/dependency_links.txt",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter.egg-info/entry_points.txt",
+      "bytes": 85,
+      "sha256": "8a64f3224d6d4d275ec31771c7590be17cba1ed7336a1eded9ac1c7a421e3f32"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter.egg-info/PKG-INFO",
+      "bytes": 161,
+      "sha256": "2c4166ce06e761e216e207501580c8e9b27927fa3097822133078cfe6c8e6eec"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter.egg-info/SOURCES.txt",
+      "bytes": 565,
+      "sha256": "b5d9dfe35ef615b99039431bdafa44e46bfba3f542a581d47f07f9e931be411f"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter.egg-info/top_level.txt",
+      "bytes": 24,
+      "sha256": "c141bce996fec9df70cc7bdb64fbbd1ba7fd3fb01ca7ba303f031f62fde5f068"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/tests/test_core.py",
+      "bytes": 12709,
+      "sha256": "2c2e37684a3b54a65293c9dbf30f3bfb9dcad7cbdc78d1cf963743a0935fb341"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/tests/test_fuzzy.py",
+      "bytes": 6378,
+      "sha256": "904b2e3e3a3f4f3ea1d9a232c6b9044a2d1af67e25d70d8a82c49639e59dc535"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/tests/test_integration.py",
+      "bytes": 6157,
+      "sha256": "91d4a462f3e4a017bdbf1b357390eedb3f456b30680fad40536373eddc38b274"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/tests/test_torture.py",
+      "bytes": 3658,
+      "sha256": "76d91b71b73bc46e0b73abdc2e3a379fd1edd9b4ff892967036b3e1c10e7284d"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/VERIFY_BASIC_ARTIFACT.py",
+      "bytes": 6034,
+      "sha256": "791daa1df02d48cc7f3b156e962fd156a463752028dc9633b9ad026fc452ef11"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/VERIFY_MANIFEST.py",
+      "bytes": 2368,
+      "sha256": "a42b8156f711deb87b7d8d919c30a8f93d4ca3ccae5e133f055b1be09cf17246"
+    },
+    {
+      "path": "EXCLUSIONS.md",
+      "bytes": 864,
+      "sha256": "5d1a31588c6372573e2194840228dac499c8cfb8221a403fc135f7c69e3a536e"
+    },
+    {
+      "path": "production/ACCEPTANCE_CHECKLIST.md",
+      "bytes": 2674,
+      "sha256": "b055126f6a1da7def3004fff2459ba60df5568180dda6ab09812f09a009daf72"
+    },
+    {
+      "path": "production/BASELINE_EVIDENCE.json",
+      "bytes": 2626,
+      "sha256": "123fe110534c7b12172369a11fe1a8e5784d3842060e6522239f66ca08c308bf"
+    },
+    {
+      "path": "production/BASIC_ARTIFACT_SCOPE_2026-10-01.md",
+      "bytes": 1002,
+      "sha256": "7e7b9d4dc7c096d38428b26fec7bb37f1fb5cbdffd3f937c9068e69c8134eef1"
+    },
+    {
+      "path": "production/CHANGE_CONTROL.md",
+      "bytes": 2657,
+      "sha256": "5c98b4d1f24a310a3f6861f80fd9bec280042f884cc893fe73340e16f1d0ed43"
+    },
+    {
+      "path": "production/COVERAGE_LEDGER.csv",
+      "bytes": 10491,
+      "sha256": "9887be3c7d8d5df67ff924432cc62426d822bae9a39127df17a719c07f608663"
+    },
+    {
+      "path": "production/DECISION_LOG.md",
+      "bytes": 23310,
+      "sha256": "3d277dba11ffd5acfaa6c3739e00bae142760f8076d5b93a999faf64a6946663"
+    },
+    {
+      "path": "production/ERROR_LOG.md",
+      "bytes": 15493,
+      "sha256": "d003d2aaf82f570d3a2b08afd86f978440f7faf77cd9e46e55ccd70e65daae81"
+    },
+    {
+      "path": "production/HARDENING_PLAN_2026-10-01.md",
+      "bytes": 1765,
+      "sha256": "210a22737b96e678d4ce0e59ddd979d2420eb65ebbf77c6dcaa839b195dc5357"
+    },
+    {
+      "path": "production/HARDENING_REPORT_2026-10-01.md",
+      "bytes": 3809,
+      "sha256": "f7294a4d1aaebf946e4e3dfdc1be5ec3c761b6ebd87adcca2b521d1c45a32fe3"
+    },
+    {
+      "path": "production/p03_authorization.json",
+      "bytes": 7869,
+      "sha256": "c2cb1ab88264811bb2839b56ab9d08be48e4e0f0b312b9d7defae14031bff682"
+    },
+    {
+      "path": "production/P03_AUTHORIZATION_PACKET.md",
+      "bytes": 5320,
+      "sha256": "4a7b7959b5c27f173ed106265ee15c7a339e8d9c3fa0b5375178ad6f39f8472c"
+    },
+    {
+      "path": "production/P03_SCOPE_ACCEPTANCE_2026-10-01.md",
+      "bytes": 1177,
+      "sha256": "0544be5d9dcb853c09a736f2e163af06ce885904baad92b360bcfed543f81a8a"
+    },
+    {
+      "path": "production/p04/BUILD_WHEELHOUSE_MANIFEST.py",
+      "bytes": 2771,
+      "sha256": "92dd2c27130bc412261715cd4cabcf1cc87e639b28af7d5fce8aea0d01534d53"
+    },
+    {
+      "path": "production/p04/CI_CONTRACT.md",
+      "bytes": 898,
+      "sha256": "bfd8213f07d057ac8f7e08adea825d6558006ac2e790f027b142a8dc738fc0c1"
+    },
+    {
+      "path": "production/p04/GENERATED_DATA_POLICY.md",
+      "bytes": 1058,
+      "sha256": "1c99581dbda4b5e9945b2c7f775261e9d7d8eedc62f4c22239cb5aaeb37ce001"
+    },
+    {
+      "path": "production/p04/README.md",
+      "bytes": 2100,
+      "sha256": "0cd4bfa64839faef31bbf66945891123ffeb94b6c006d1dd2d8e06599a465e35"
+    },
+    {
+      "path": "production/p04/REPOSITORY_POLICY.md",
+      "bytes": 1233,
+      "sha256": "2af0c570781e931446229fc15c77853a8ac02d223b18a467f737c816cd0665b6"
+    },
+    {
+      "path": "production/p04/requirements-py311.lock",
+      "bytes": 1448,
+      "sha256": "f9b9f8d9b367e3202bd51d80ea451475f4300347c2e325d3504024de8ec06226"
+    },
+    {
+      "path": "production/p04/requirements-py312.lock",
+      "bytes": 1448,
+      "sha256": "322c207bb7c2c353568fd217c5efbac2ee02b33cb3019200a79beacdad46dcef"
+    },
+    {
+      "path": "production/p04/requirements-py313.lock",
+      "bytes": 1448,
+      "sha256": "96aef7f564944d09a6da5c716d7973155cf8cf70886f4750ce1a28a58ae6d760"
+    },
+    {
+      "path": "production/p04/requirements-py314.in",
+      "bytes": 263,
+      "sha256": "57114fa132205e8400fe90c8c787b3cab4e9e35c86ce54a41e88acac7acaa9c2"
+    },
+    {
+      "path": "production/p04/requirements-py314.lock",
+      "bytes": 1448,
+      "sha256": "ec1c7485c9d7aa4c0d094edb93a6210858d0bd11d043549e418ae2aa1587e6c0"
+    },
+    {
+      "path": "production/p04/RUN_CLEAN_STAGE.py",
+      "bytes": 8586,
+      "sha256": "5abeeaac068ffd2045e487ffe2eae5ede2029868618e31c089f01699bc2dcc68"
+    },
+    {
+      "path": "production/p04/SCAN_SECRETS.py",
+      "bytes": 2627,
+      "sha256": "784eff045616d6e5d968f42aa8e52113645b49b7ab2cd405b8e89d7dbefe0815"
+    },
+    {
+      "path": "production/p04/SECRETS_POLICY.md",
+      "bytes": 824,
+      "sha256": "3ced10bd7c9d126bd52d9196e2db0120fffa7d0b491112438f1a60821f666f3f"
+    },
+    {
+      "path": "production/p04/templates/github-actions-ci.yml",
+      "bytes": 658,
+      "sha256": "62d013864be62cabdb62c2fce6a53b2a60c679b26309c396d7004edf4b58a650"
+    },
+    {
+      "path": "production/p04/VERIFY_P04_STAGE.py",
+      "bytes": 7886,
+      "sha256": "514c8d4e458561dabde08a0d99e453b3983253644bfaf1f6c0e912a2e1cdd36c"
+    },
+    {
+      "path": "production/p04/WHEELHOUSE_MANIFEST.json",
+      "bytes": 5147,
+      "sha256": "e592e72928a9fd4438b27ef51fd57945921f46bd9d52e28bf670d5089b605d3b"
+    },
+    {
+      "path": "production/p04/WORKING_ASSUMPTIONS.json",
+      "bytes": 874,
+      "sha256": "0292c98d868e2f37bbe635f24aa2177731479e6f6ebe829758afd5f8ffabe489"
+    },
+    {
+      "path": "production/P04_COMPLETION_REPORT_2026-10-02.md",
+      "bytes": 2252,
+      "sha256": "4da09b91d1818e8b7d63ab99f459af3f4f2d2d5271f64822fb52179f3ee31dbe"
+    },
+    {
+      "path": "production/P04_STAGE_REPORT_2026-10-02.md",
+      "bytes": 2488,
+      "sha256": "0a9dd36a38df137797da6a5925f9ec5757c40580539ee76ed551dc7091d1aac7"
+    },
+    {
+      "path": "production/p05/MIGRATION_AND_ROLLBACK.md",
+      "bytes": 1518,
+      "sha256": "2719b4e142b2e4d47d975f34f73a3456fab5d22d7cd3e3624a4a794c738eddf8"
+    },
+    {
+      "path": "production/p05/P05_IMPLEMENTATION_REVIEW.md",
+      "bytes": 1703,
+      "sha256": "f69d87fe9fd0493ea1adfbfb815f669b9a18b0e89c8e05deb9c6be5e744a6950"
+    },
+    {
+      "path": "production/p05/REQUIREMENT_TRACE.json",
+      "bytes": 4806,
+      "sha256": "4a518745f2dc3843481bf10ccf1964490e19ad03a350501b2a1764231c7d4675"
+    },
+    {
+      "path": "production/P05_COMPLETION_REPORT_2026-10-02.md",
+      "bytes": 2398,
+      "sha256": "01824d5bd5ea506f7ff134bed15adfb6bf1e70eac189b0e60dd8be1190017289"
+    },
+    {
+      "path": "production/p06/ARTIFACT_MANIFEST.json",
+      "bytes": 2031,
+      "sha256": "7f72d50657b6e3821e74a2a2cabc728793c5363dfa371ca99d80fb192ce1770e"
+    },
+    {
+      "path": "production/p06/BUNDLED_LICENSE_INVENTORY.md",
+      "bytes": 7548,
+      "sha256": "cff3b0ae03213444977c0831242fc05fae1b0d9d65438863cb98f66268330e56"
+    },
+    {
+      "path": "production/p06/DEPENDENCY_INVENTORY.json",
+      "bytes": 1081,
+      "sha256": "19d3109bcfdb7ecdd9f727dc915a608a7a0fc4d8458fb89e2b4660058ddc6e38"
+    },
+    {
+      "path": "production/p06/LICENSE_REVIEW.md",
+      "bytes": 2237,
+      "sha256": "2733dc5eef50536b651531dca36d789b4834be8e0cd81c89790cd8563e59c179"
+    },
+    {
+      "path": "production/p06/PROVENANCE.json",
+      "bytes": 1244,
+      "sha256": "f7857cf88d3d2628bbc26f965dd2ed9bf52fdd3d7f1cb81fbd6b3f6811cf7f90"
+    },
+    {
+      "path": "production/P06_BLOCKER_REPORT_2026-10-02.md",
+      "bytes": 2861,
+      "sha256": "9b6d6c71c9de2bdb8a420f18418b714a251bbafba7b3283220714cfe5bfddf17"
+    },
+    {
+      "path": "production/P06_TESTBED_COMPLETION_REPORT_2026-10-02.md",
+      "bytes": 1564,
+      "sha256": "066d376eb86989a47a1eea021d68c34b07ef3f3c482cec76fa5b07610816683f"
+    },
+    {
+      "path": "production/p07/RUN_P07_VALIDATION.py",
+      "bytes": 10197,
+      "sha256": "8a91458555bca7660f7a60bbd6a5e2bb6e0d3e25675de06f4f838f7072e81c33"
+    },
+    {
+      "path": "production/p07/THREAT_MODEL.md",
+      "bytes": 2414,
+      "sha256": "42666582d6d9f9d1e4ec34cb6df2f340d362f747fed9d78b6d7181797b835885"
+    },
+    {
+      "path": "production/p07/VALIDATION_PROFILE.json",
+      "bytes": 1565,
+      "sha256": "1c7363e4ef71f44c59847755892e741ef721bb17081f41e09572c6c9ddff3763"
+    },
+    {
+      "path": "production/P07_COMPLETION_REPORT_2026-10-03.md",
+      "bytes": 2515,
+      "sha256": "150e682c2e0e50c0390dec320ed9a3ed5c754e9247a55c5d623fdc46764b7e6c"
+    },
+    {
+      "path": "production/p08/BUILD_P08_CANDIDATE.py",
+      "bytes": 4384,
+      "sha256": "88db23d33c259ddb6cedd554ea7904fc07aa0682349667a3da7f39e7d3d8f4fa"
+    },
+    {
+      "path": "production/p08/CANDIDATE_RECEIPT.json",
+      "bytes": 692,
+      "sha256": "e4f23d76fb134293174d2937b1273a72b9e235cfa57fdfbdb6d7491b4072d4e8"
+    },
+    {
+      "path": "production/p08/CHANGELOG.md",
+      "bytes": 630,
+      "sha256": "bd394a5bdfa33fcef9d438dac3aa28cdc1b78d08c42f31b390ab8eeff81e39c2"
+    },
+    {
+      "path": "production/p08/KNOWN_LIMITATIONS.md",
+      "bytes": 808,
+      "sha256": "c00497c28839cc0bc65031cdcd865257bb9df3018ec486d9beb3a73a79420929"
+    },
+    {
+      "path": "production/p08/MIGRATION_AND_ROLLBACK.md",
+      "bytes": 876,
+      "sha256": "6431f2f399131cf69b88247bd3370867a856811ae2fb097f90466012fa5ce8ea"
+    },
+    {
+      "path": "production/p08/VERIFY_P08_CANDIDATE.py",
+      "bytes": 3928,
+      "sha256": "64aa9aeefe9297c5c32c41b35d7d439b81a91564dd2781668227e63a526f8df1"
+    },
+    {
+      "path": "production/P08_COMPLETION_REPORT_2026-10-03.md",
+      "bytes": 1241,
+      "sha256": "0cb63cae0999920baa0f10a62dcc62eafb01ee89a557ab88f30c03e894d34d7d"
+    },
+    {
+      "path": "production/production_plan.json",
+      "bytes": 17016,
+      "sha256": "2043d30b5fc7ae48b1aa469ad65c5f6a7431cc59b28baca94c4ef606c7a6209b"
+    },
+    {
+      "path": "production/PRODUCTION_PLAN.md",
+      "bytes": 8555,
+      "sha256": "7494cf1eb89f3545ebc8c34f837dbcbcfe34467c6b0be0263d99747058735d48"
+    },
+    {
+      "path": "production/PRODUCTION_PLAN_ACCEPTANCE_2026-10-02.md",
+      "bytes": 2394,
+      "sha256": "c4f2e54203442e63fe95c24f6c64c7f41ec794a5be18eb52495c52094d4d33f5"
+    },
+    {
+      "path": "production/Q001_REPOSITORY_MODEL_ACCEPTANCE_2026-10-02.md",
+      "bytes": 1427,
+      "sha256": "a27619c2f5c101c1f9a77e6ba1d20fb3bb362e4a5034d0dfee797859cc311362"
+    },
+    {
+      "path": "production/Q003_CATALOG_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+      "bytes": 1683,
+      "sha256": "161c150fbb634c9dbb4bd8bba057d0244b061403ce995b2c698103444fd3295c"
+    },
+    {
+      "path": "production/Q004_SISTER_SCHEMA_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+      "bytes": 1836,
+      "sha256": "c2485a91154d638d8d760ccf109864127b2e9d841a8495e2e70d87e0490f32ae"
+    },
+    {
+      "path": "production/Q005_RUNTIME_OPERATING_MODEL_ACCEPTANCE_2026-10-02.md",
+      "bytes": 2145,
+      "sha256": "d7b2e67915829732048d2485059679923e9c90a194789ddb3962ead0854baf8f"
+    },
+    {
+      "path": "production/Q006_DATA_POLICY_ACCEPTANCE_2026-10-02.md",
+      "bytes": 2051,
+      "sha256": "7169ae75bd552e66a5735ce0d6565d89c4bdd3b134ab1b79605a741346405653"
+    },
+    {
+      "path": "production/Q007_ACCOUNTABILITY_MODEL_ACCEPTANCE_2026-10-02.md",
+      "bytes": 2202,
+      "sha256": "350b2fcb7290beb060764de37a2d34dd0020c2e8eafcc235df82f002ef632077"
+    },
+    {
+      "path": "production/README.md",
+      "bytes": 5856,
+      "sha256": "8746466cc57a56d31ca3dbe9c14554cbf9c95478b943242e300686e927ee29c6"
+    },
+    {
+      "path": "production/RISK_REGISTER.csv",
+      "bytes": 4419,
+      "sha256": "8b9369caad4f2be375c04cf79890a1d9bf665d3ee3a2337960d78a3d11805439"
+    },
+    {
+      "path": "production/ROLLBACK_RUNBOOK.md",
+      "bytes": 1863,
+      "sha256": "ca45d1936b8648dd5c2c882067ef04c24bdf5cf414d9cdcbe8287a0b12c93854"
+    },
+    {
+      "path": "production/run_checks.py",
+      "bytes": 13363,
+      "sha256": "ca943b72f5d1499473611fd636153333e9dbcc6c3ad53ca997264cf7c72881b4"
+    },
+    {
+      "path": "production/SOURCE_INVENTORY.csv",
+      "bytes": 2816,
+      "sha256": "2b336bc61740d2694adcc07339ad6901c8c10ba663cb0ea77025e0adec923c41"
+    },
+    {
+      "path": "production/SYSTEM_BOUNDARIES.md",
+      "bytes": 2912,
+      "sha256": "b4f50f85c674f949b6e5155f65934e71a1ee8d58eb9d66feeef60e9a9fd6ade8"
+    },
+    {
+      "path": "production/TESTBED_SCOPE_ACCEPTANCE_2026-10-02.md",
+      "bytes": 1241,
+      "sha256": "b99b197fbea42e90822b0d3fefea77c9ba542232b13769910f044b7659b627d3"
+    },
+    {
+      "path": "production/tests/test_p04_staging.py",
+      "bytes": 3076,
+      "sha256": "1c7dacd2f9d7f85f730d88349561397ad8fcc132cbb459b93e7295ae5666ac71"
+    },
+    {
+      "path": "production/tests/test_p05_transfer.py",
+      "bytes": 1491,
+      "sha256": "e47999a1208db4d942db9f093618f27b1b88511590e786715786d54fe3e34d07"
+    },
+    {
+      "path": "production/tests/test_p06_evidence.py",
+      "bytes": 1145,
+      "sha256": "7b3092d7276555c1e97f52741dbc8e13faa73b04eb843ad702ba8df1a1c6641c"
+    },
+    {
+      "path": "production/tests/test_p07_validation.py",
+      "bytes": 1318,
+      "sha256": "438c0aeb30fadbc785bdd4772ced60a5b3c5d68724bfab1f7da250b82536254d"
+    },
+    {
+      "path": "production/tests/test_p08_candidate.py",
+      "bytes": 983,
+      "sha256": "c8798179baf706e78137e98d93723e5f34022c9401dbd0ce3fa1dae99e1f047a"
+    },
+    {
+      "path": "production/tests/test_production_control.py",
+      "bytes": 9473,
+      "sha256": "f18c9d1da9d88f0ed7f273c1c8ad849f382df8049e90dd2ecbbc16a760ccd01e"
+    },
+    {
+      "path": "production/tests/test_test_rig_hardening.py",
+      "bytes": 4204,
+      "sha256": "2f90f3bc22f72cfa2d409744f30141bfec1daa188b4348d4e3d1af6c4dbf89e2"
+    },
+    {
+      "path": "production/validate_authorization.py",
+      "bytes": 9823,
+      "sha256": "3358724c3c6445d6cbf87432f5cf4218b4aba4e46042798ba09a7e20e2a42237"
+    },
+    {
+      "path": "production/validate_first_slice.py",
+      "bytes": 4460,
+      "sha256": "39e414def817f5ac617b8b6dc96a1d1c48244fa2a7b4b55bbfb0d9ee50e95cab"
+    },
+    {
+      "path": "production/validate_p05_slice.py",
+      "bytes": 7684,
+      "sha256": "3fa35143dc1f4a0e42aa63f3939f8b35bcf54b562fe735ad4e2a2df894037185"
+    },
+    {
+      "path": "production/validate_p06_evidence.py",
+      "bytes": 7088,
+      "sha256": "045d139d7021a65854022013e8bea864b0ac9543d066bebcda340bbf5cff7244"
+    },
+    {
+      "path": "production/validate_plan.py",
+      "bytes": 7995,
+      "sha256": "05645221ea2a9fd2e5400e37f983d82cb1184b2667d383c996050586bcfd7403"
+    },
+    {
+      "path": "production/validate_test_environment.py",
+      "bytes": 1797,
+      "sha256": "44a4935bd2c0c86770eab68e6a6659d0b61737512006c48fd6bd031b5e4f7a8f"
+    },
+    {
+      "path": "PRODUCTION.md",
+      "bytes": 1341,
+      "sha256": "c3a3ec9a2550c29631b3cf62ef560054c0403ca32c50729acd774bbcd1570380"
+    },
+    {
+      "path": "projects/file-atlas/build_data.py",
+      "bytes": 1817,
+      "sha256": "1fcf20b3c665dea9968a59738f0e803e7012080415b865434b00041d85dbdec4"
+    },
+    {
+      "path": "projects/file-atlas/dist/data/command_aliases.json",
+      "bytes": 5125,
+      "sha256": "fed6b49800fe13c9c511cef2d2561ec2ffb0c3d1b3ffefbc57e935dffcbe18bb"
+    },
+    {
+      "path": "projects/file-atlas/dist/data/manifest.json",
+      "bytes": 322,
+      "sha256": "8f15859a0b9c84d573fb3a84951bcb8145460fe8ddae7114892e0c469e15d9cc"
+    },
+    {
+      "path": "projects/file-atlas/dist/index.html",
+      "bytes": 5670,
+      "sha256": "2cdc446d87aeffa3dd5c6ed698ffe5a8e3e09821a723c7395d15dcb80ec39db1"
+    },
+    {
+      "path": "projects/file-atlas/dist/js/app.js",
+      "bytes": 16897,
+      "sha256": "96bd41a1f8a687c72b0e8deafa7e31fa7e2e86a863c9d76d23fcee4d79cb5dca"
+    },
+    {
+      "path": "projects/file-atlas/dist/js/parser.js",
+      "bytes": 8586,
+      "sha256": "6942870698ba4f302418572a88987df404f8483302fd086b7b2579500c78680a"
+    },
+    {
+      "path": "projects/file-atlas/dist/js/workspace.js",
+      "bytes": 10248,
+      "sha256": "5ae1a14cbac256b334eed5239311c4fc5a62ea7bc844d48e6c5f23919fa2b9bd"
+    },
+    {
+      "path": "projects/file-atlas/dist/styles.css",
+      "bytes": 15074,
+      "sha256": "8f622cc42d518d72051e850447363986ae87a7532bc69fc8913f192305581993"
+    },
+    {
+      "path": "projects/file-atlas/README.md",
+      "bytes": 1260,
+      "sha256": "73fa267d115aa44390250aadaf6800b4170f4bb0b6918cb48784fc091badc6f9"
+    },
+    {
+      "path": "projects/file-atlas/verify_frontend.mjs",
+      "bytes": 2108,
+      "sha256": "96296e11ecb5d63af689a88746238b9d62a02aba65d82e42034e9f58cb8f5bfb"
+    },
+    {
+      "path": "projects/lexicon-atlas/.gitattributes",
+      "bytes": 50,
+      "sha256": "15ce5788d26dd17c8e015d6f4ecdec76143d3d52e1d7a2da53d984e4f1d86cce"
+    },
+    {
+      "path": "projects/lexicon-atlas/.gitignore",
+      "bytes": 471,
+      "sha256": "fe1e6f57785ecdab327cae2e8b6b248b09fb34bcab212667daf3677c2751a28c"
+    },
+    {
+      "path": "projects/lexicon-atlas/build_data.py",
+      "bytes": 15501,
+      "sha256": "e6538c331ad11200dc67d3570a801c26f7d12714bf6e9acb3c1af07aaf236bea"
+    },
+    {
+      "path": "projects/lexicon-atlas/DATA_INSTALLATION.md",
+      "bytes": 2182,
+      "sha256": "f91302f91f941a663f5b1a2151f068176b101c9db1f8bbafa98706d4a342501e"
+    },
+    {
+      "path": "projects/lexicon-atlas/desktop/main.cjs",
+      "bytes": 3073,
+      "sha256": "0422f26d76dca0473c0369878b23588f491a332161f744da9f3f8949b3967099"
+    },
+    {
+      "path": "projects/lexicon-atlas/desktop/package.json",
+      "bytes": 263,
+      "sha256": "79f7442a4742fa2b0fbe0370cda0bb163cb096045a6ca334c5da56ffb8fabac3"
+    },
+    {
+      "path": "projects/lexicon-atlas/desktop/preload.cjs",
+      "bytes": 193,
+      "sha256": "7b7c5d423ff120543a1da0f52e5e500a9c8de500a6795d9f876fb717e9b9ae38"
+    },
+    {
+      "path": "projects/lexicon-atlas/desktop/README.md",
+      "bytes": 387,
+      "sha256": "05a7fc4a1394efef053f4a64edbf0936b2c548b28b56d0b8448d534c7087775d"
+    },
+    {
+      "path": "projects/lexicon-atlas/dist/app.js",
+      "bytes": 49863,
+      "sha256": "beebaed4bcfa6a299a5441237c2640c32cbd4171ac0100707e4b34ffdc8e719e"
+    },
+    {
+      "path": "projects/lexicon-atlas/dist/data/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "projects/lexicon-atlas/dist/data/README.md",
+      "bytes": 98,
+      "sha256": "5ceed9b897726c20b4ae5647d870650181dd767367b6910cae3adf91f7a7751d"
+    },
+    {
+      "path": "projects/lexicon-atlas/dist/index.html",
+      "bytes": 8965,
+      "sha256": "f4538cb10dedefb8d64a7f054ffc14c33e520eaa9e79b3f45848437ebad71300"
+    },
+    {
+      "path": "projects/lexicon-atlas/dist/modules/synthesis-engine.js",
+      "bytes": 4271,
+      "sha256": "ab80c129763e61b2745546a73b4c4ab0f430fc4fd0e9fd9583534ec1b626233a"
+    },
+    {
+      "path": "projects/lexicon-atlas/dist/resources.html",
+      "bytes": 10978,
+      "sha256": "00bd1d47341a5b1ce12e399a8057993f2185c89b4fb187f06cd00c61f00e8f14"
+    },
+    {
+      "path": "projects/lexicon-atlas/dist/styles.css",
+      "bytes": 33493,
+      "sha256": "0b0ab56032d4153c3b195927ebc73926ac65ac796f612667286a4bfda001dcfb"
+    },
+    {
+      "path": "projects/lexicon-atlas/lexical_pipeline.py",
+      "bytes": 22144,
+      "sha256": "6cc0bb55d56ce6c02b0fc53239cd58e7beca32aba065bb3d63070f26c7f4fa2c"
+    },
+    {
+      "path": "projects/lexicon-atlas/LICENSE",
+      "bytes": 1069,
+      "sha256": "7e012a5231ba0dfe4437124476aac2ea3c3dc994d1968ac2840069fd7fef9c31"
+    },
+    {
+      "path": "projects/lexicon-atlas/MODULE_ARCHITECTURE.md",
+      "bytes": 4105,
+      "sha256": "57aed2805d0923ef77a1d687367cc74a22bf364ccac5bd7e6dfc49c0963b4168"
+    },
+    {
+      "path": "projects/lexicon-atlas/NOTES.md",
+      "bytes": 8845,
+      "sha256": "007480b94053e133a451239d9e4046664c1aba0495d557db4558d4ae41878d1e"
+    },
+    {
+      "path": "projects/lexicon-atlas/odict_bridge.cjs",
+      "bytes": 1332,
+      "sha256": "af38bc35b52b878c957ed1ba83d42a671f03136ca389a64badcc31c05d4f52b2"
+    },
+    {
+      "path": "projects/lexicon-atlas/OFFLINE_APP_OUTLINE.md",
+      "bytes": 2909,
+      "sha256": "e5144d8e3b8e23e2d238bde2bb11ce5871f634327d01b43b28ea0e08d83204d0"
+    },
+    {
+      "path": "projects/lexicon-atlas/README.md",
+      "bytes": 4679,
+      "sha256": "36c41cd0db3c7d354f6615d1ee2a95463ce7f7df449319a31c81961202e96e7b"
+    },
+    {
+      "path": "projects/lexicon-atlas/TODO.md",
+      "bytes": 3305,
+      "sha256": "97205eb211bee167ff96c6dc8215f83792226cc173df9ca5549ea85caa87a112"
+    },
+    {
+      "path": "projects/lexicon-atlas/validate_build.py",
+      "bytes": 2966,
+      "sha256": "5ca456075d28d2a7fdcd36c9d91d149f5d5d358a74bcb6e9847de53eeb368d76"
+    },
+    {
+      "path": "projects/lexicon-atlas/verify_code_only.py",
+      "bytes": 1841,
+      "sha256": "19651c423a654a5d0ba193b66cc4951965c92de28f9c1659940916a6de13da74"
+    },
+    {
+      "path": "projects/lexicon-core/.gitignore",
+      "bytes": 51,
+      "sha256": "f88478187cb5c54ae55059302a4d43c74099c7e15c0c255b4e4cea2389aebf06"
+    },
+    {
+      "path": "projects/lexicon-core/examples/catalog-v0.1-acceptance.json",
+      "bytes": 1142,
+      "sha256": "031dde46b51b42c5b5c1bca698063297eb140025910e4dedca91802669f05c3e"
+    },
+    {
+      "path": "projects/lexicon-core/examples/catalog-v0.1-partial.json",
+      "bytes": 432,
+      "sha256": "f82ee876f94d6ae27d3e53d5f76fc1933901f3ffc98be795df335f9557754591"
+    },
+    {
+      "path": "projects/lexicon-core/NOTES.md",
+      "bytes": 2836,
+      "sha256": "06ee87285413a940ec608c6028bd281bf025b4faf96c76087cb6156162f31eda"
+    },
+    {
+      "path": "projects/lexicon-core/pyproject.toml",
+      "bytes": 324,
+      "sha256": "3ee8589610a7e49dbc174df73da9d45982611729efbd9d554f4bb2364c3e6fe8"
+    },
+    {
+      "path": "projects/lexicon-core/README.md",
+      "bytes": 4390,
+      "sha256": "ae0ebb95d9bdbe1a7a7c4027121873866cd6adb9af25bc5a4b482193b886b58c"
+    },
+    {
+      "path": "projects/lexicon-core/schemas/catalog-interpretation-result-v0.1.schema.json",
+      "bytes": 4669,
+      "sha256": "c94f7cca40b169fac549c4a959decb91952018b1f1189bb733f736acdb124929"
+    },
+    {
+      "path": "projects/lexicon-core/schemas/catalog-operation-registry-v0.1.schema.json",
+      "bytes": 1124,
+      "sha256": "34a14e6f1044f0dff9112f5438616235af49be1784f0076baebed51f61499abc"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/__init__.py",
+      "bytes": 1257,
+      "sha256": "c66fe016b37ee4ffffcfc553a6f14846ab0e92a5b0eda10fb697199044308f3c"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/adapters/__init__.py",
+      "bytes": 448,
+      "sha256": "07ec15cc64d68f36a36bf2ec7ce1f22fdd1f975ea9cd29f2a007f14d753f00ec"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/adapters/catalog_v0_1.py",
+      "bytes": 28875,
+      "sha256": "6abd6216f24e3aebadaad6d3ecf4f4ecdadb88bcb2dcf9009dc1c88224f976eb"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/collisions.py",
+      "bytes": 1211,
+      "sha256": "43efe90b42a07608b626e7ac233991542bf57c6e5ade1e7869b2cf6937a78e97"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/intent.py",
+      "bytes": 2142,
+      "sha256": "f767635306a3915a97cb787715d62319bea1f103b16bff856a03ed0b9bfd1a4e"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/morphology.py",
+      "bytes": 1503,
+      "sha256": "0e512956eeda10f19e7c11510b45c1524a729ed7d12a249753e73868ab9e8a68"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/normalize.py",
+      "bytes": 1090,
+      "sha256": "2df47ffdd1b60c23ceaf9a2bbf5bfb6267043b6a25f62d40e8d7dcaec63454ee"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/pipeline.py",
+      "bytes": 988,
+      "sha256": "112335d17807842263286f8e800da86b4f40a9dc4063e0296256a590af383438"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/registry.py",
+      "bytes": 2558,
+      "sha256": "7d4bead35ddd8d404d7b27bce49d8ec485b4cf18f6e283cb74ab873c2e696673"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/relations.py",
+      "bytes": 2101,
+      "sha256": "105ee87eaf459f6b5573468583f37bdd317b960fe3d8d4221fe2ccd0bbb9febc"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/synthesis.py",
+      "bytes": 3276,
+      "sha256": "34874c96f6a3566bfb86f67a88c2cf76988cfdda90e01ef27d571e47b99174aa"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/__init__.py",
+      "bytes": 623,
+      "sha256": "7a8bfb71dd79f647e96b7e69542b8f76b3261fdd78790321a37dee1a0ff8c5fc"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/base.py",
+      "bytes": 945,
+      "sha256": "b6e0359fce125dfa2e3bd26af1cf209d90f9051207edaf21c1354d8203df88f9"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/builtin.py",
+      "bytes": 370,
+      "sha256": "2cc00883f91d304a38d4191aa84b9394851b1690a16172ab994001f0d9bcd741"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/dictionary.py",
+      "bytes": 1109,
+      "sha256": "c231a4dfbe3c7133b03075888886a1fc1ce05ead0efedc1b98b67a07138c05c3"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/eliza_nxt.py",
+      "bytes": 1910,
+      "sha256": "cc42a16e02bc3a0525b26e2c30044dce2bd3f34c8eca6973f58370103cfb9236"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/expert_control.py",
+      "bytes": 1388,
+      "sha256": "fc99f6a2a972a9594c12403e3f6a518d2607210a2b0b3ce4680aabb16eadaf0b"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/file_explorer.py",
+      "bytes": 1399,
+      "sha256": "4a599d4e6d208424121a8ee07945594b1ac607a7b964375090f8548fa293e298"
+    },
+    {
+      "path": "projects/lexicon-core/src/lexicon_core/tasks/router.py",
+      "bytes": 1306,
+      "sha256": "f84cd631777006a39c774f51fd56f226eb8435896b0ac476486564973cbc8060"
+    },
+    {
+      "path": "projects/lexicon-core/tests/test_catalog_adapter.py",
+      "bytes": 10138,
+      "sha256": "6c5ef02a479fde6712491056923140fdff8dd0dedae0f431cb1b670171f28871"
+    },
+    {
+      "path": "projects/lexicon-core/tests/test_core.py",
+      "bytes": 4823,
+      "sha256": "e6643e8e2c275f8302e3ab51e51f7fd7afb61314c069b6c0ec3d798612233503"
+    },
+    {
+      "path": "projects/lexicon-core/TODO.md",
+      "bytes": 2090,
+      "sha256": "e296277ffe238d6765ad7a16484bdc74b373bd4bf9e05f8b01da868683a42ded"
+    },
+    {
+      "path": "projects/natural-language-front-end/.gitignore",
+      "bytes": 36,
+      "sha256": "9bdbe1d3598f46d89fedb43f479f3aa9a800273df5d880fd05173bea0af99128"
+    },
+    {
+      "path": "projects/natural-language-front-end/command_aliases.json",
+      "bytes": 5863,
+      "sha256": "376ff6f0059598072dd57b612e005fb2e2c324b117d6c30ba85a0fd4951a09ee"
+    },
+    {
+      "path": "projects/natural-language-front-end/COMMAND_ALIASES.md",
+      "bytes": 5865,
+      "sha256": "80cb228e5f526893d9ab190d258020b7512a2fbae426ad1f794841a8d80ae978"
+    },
+    {
+      "path": "projects/natural-language-front-end/command_aliases.py",
+      "bytes": 10874,
+      "sha256": "2ae5dd53726e1e6dfa8bcb90e6a3ebc7f19d86b683b7131599808371965c2924"
+    },
+    {
+      "path": "projects/natural-language-front-end/COMPLIANCE_REVIEW_YES_2026-09-16.md",
+      "bytes": 5013,
+      "sha256": "74db381612d22f402a367d15a247882090889d43eed61287b5c37c74a7153f7d"
+    },
+    {
+      "path": "projects/natural-language-front-end/CONTROL_DRAFT_SCAFFOLD.md",
+      "bytes": 1964,
+      "sha256": "608cfce692afa9014b45e601cbd7e197d9e40daf9b16154cf556094c06768d34"
+    },
+    {
+      "path": "projects/natural-language-front-end/control_draft_scaffold.py",
+      "bytes": 10999,
+      "sha256": "9eec23fbbff3f23522570d04bd2e4c701327cf0e1df546443f4a28162a5cc134"
+    },
+    {
+      "path": "projects/natural-language-front-end/controlled_boolean.py",
+      "bytes": 6973,
+      "sha256": "651af51f26453903683cde3a1f70d63ceb6189a4c886e6b1cb127eea793af90f"
+    },
+    {
+      "path": "projects/natural-language-front-end/CONTROLLED_BOOLEAN_SLICE.md",
+      "bytes": 2191,
+      "sha256": "e6b073a72c65d8953924d1b28a11ea05e964daed157ceec11a895ae024bab97b"
+    },
+    {
+      "path": "projects/natural-language-front-end/examples/controlled_boolean.meaning.json",
+      "bytes": 1888,
+      "sha256": "82e564f8542368dd9c608b8ee4abfbec63fc71a368a01939db523faa66d7c9e3"
+    },
+    {
+      "path": "projects/natural-language-front-end/examples/controlled_boolean.txt",
+      "bytes": 167,
+      "sha256": "02db6748067840f8530f4059a9d6b35a280bbdf4da7b668a481bc86eada4c73c"
+    },
+    {
+      "path": "projects/natural-language-front-end/FILE_FUNCTION_MATRIX.md",
+      "bytes": 9528,
+      "sha256": "f436a0826c3e3e68cbee666cfcb324077b84a59ad75d2532d0c606507309168f"
+    },
+    {
+      "path": "projects/natural-language-front-end/FILE_FUNCTION_TODO.md",
+      "bytes": 9538,
+      "sha256": "ed1869e299ebd85f0d9a310c953bba7f9234b3c9957db1e4005593f16f8c01f6"
+    },
+    {
+      "path": "projects/natural-language-front-end/FRONTEND_FULL_PROMPT_CANDIDATES.json",
+      "bytes": 563664,
+      "sha256": "d901f9b1f1e65433b57e290e977e60834f05911e9a95122765b9ad66f77f84d4"
+    },
+    {
+      "path": "projects/natural-language-front-end/FRONTEND_PROMPT_CANDIDATES.receipt.json",
+      "bytes": 845,
+      "sha256": "320d1916282eda34a44977228837b199e14e5c1504900730158fb0425745a012"
+    },
+    {
+      "path": "projects/natural-language-front-end/FRONTEND_PROMPT_CANDIDATES.previous.json",
+      "bytes": 582189,
+      "sha256": "7bf2b760cfe4fa8425bf3e48493b914a593c03e573e23d09d05bf7abd4c34dee"
+    },
+    {
+      "path": "projects/natural-language-front-end/grammar_parser.py",
+      "bytes": 9398,
+      "sha256": "dcc2bf674d64ed22f11b2730614e337e690dd3a1548a96e2821ecaf8852e7e98"
+    },
+    {
+      "path": "projects/natural-language-front-end/HANDOFF_CONTINUATION_2026-09-16.md",
+      "bytes": 6161,
+      "sha256": "b4d98824c4311be91d5e25db1ac3331b4523b1c76d7dd0ad170fae0c2c9821a9"
+    },
+    {
+      "path": "projects/natural-language-front-end/handoff_stub.example.json",
+      "bytes": 2120,
+      "sha256": "26735ac83f1e7dbcd8162651eed8c29dc9d40d80c093ecce4ec8af88ef2f34d3"
+    },
+    {
+      "path": "projects/natural-language-front-end/HANDOFF_STUB.md",
+      "bytes": 1785,
+      "sha256": "d86aa5c6ab7298a107f7017a123b6e33b6c1ed58a591b9586a643994813a7ce5"
+    },
+    {
+      "path": "projects/natural-language-front-end/handoff_stub.schema.json",
+      "bytes": 2944,
+      "sha256": "dd8520e7055e8bad32f707f29db919440d660c347eb536bbd58e91868d4aa023"
+    },
+    {
+      "path": "projects/natural-language-front-end/logic_frontend.py",
+      "bytes": 13708,
+      "sha256": "e320c94b1e4195dfab63a3181d8dc2c00fa86e99587cb6cec326b1006c6b0de0"
+    },
+    {
+      "path": "projects/natural-language-front-end/NLP_LAYER_ORDER.md",
+      "bytes": 2861,
+      "sha256": "a24bd3c279eb92bd13cbe96bb32a8e97d706b9e33984b6b915947293896c71d1"
+    },
+    {
+      "path": "projects/natural-language-front-end/omni_cli.py",
+      "bytes": 26739,
+      "sha256": "43e4c197184300228960dfd7d633dab90f64bb9ddb0b1cca3c27537a59f96b5b"
+    },
+    {
+      "path": "projects/natural-language-front-end/OMNI_FRONTEND.md",
+      "bytes": 7847,
+      "sha256": "c91e85b11b8e3c55b88339c463afe8be3f719084868c2f60efd7ea7c37a1c822"
+    },
+    {
+      "path": "projects/natural-language-front-end/ONLINE_MINING_FULL_PROMPT_2026-09-16.md",
+      "bytes": 19691,
+      "sha256": "4d53c73da0747ae26b05386281c1a558f13f216a77aad8ceb76d3943a893c24c"
+    },
+    {
+      "path": "projects/natural-language-front-end/package_sister_handoff.py",
+      "bytes": 2655,
+      "sha256": "dd5cd0042d58a62fd5894c1503e31ea37055336d1bf75d63fb93d7b6667ba041"
+    },
+    {
+      "path": "projects/natural-language-front-end/README.md",
+      "bytes": 9079,
+      "sha256": "8dc230295116d561610a171bdb7a0db4d3650ba4cbd4e0af4f89a46f7a45814c"
+    },
+    {
+      "path": "projects/natural-language-front-end/requirements-handoff.txt",
+      "bytes": 19,
+      "sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
+      "path": "projects/natural-language-front-end/requirements-sister.txt",
+      "bytes": 68,
+      "sha256": "58ab68bcc5a527db96535241d08db8a76a70db691e75676df67b76a519b4e287"
+    },
+    {
+      "path": "projects/natural-language-front-end/requirements.txt",
+      "bytes": 10,
+      "sha256": "61b05059f4ab96af4560b53a2f3224ac06d6e943b6a1686dcd13fed8ac2885c4"
+    },
+    {
+      "path": "projects/natural-language-front-end/semantic_layers.py",
+      "bytes": 4446,
+      "sha256": "f3bf3ea4af47ee8339eafd4845652205ebe8486ec59f8bb8cbf854fbc9edf3a8"
+    },
+    {
+      "path": "projects/natural-language-front-end/sister_adapter.py",
+      "bytes": 9593,
+      "sha256": "6e16eb241c508edcb9647cc29784976cb91025a83b3df33ccc73e8fe73e29c07"
+    },
+    {
+      "path": "projects/natural-language-front-end/SISTER_CONTRACT_INTEGRATION.md",
+      "bytes": 4210,
+      "sha256": "032ef88768771c5a0e72788ffc187d88f7a7d8d8af1877be500d46991ede3e66"
+    },
+    {
+      "path": "projects/natural-language-front-end/sister_handshake_needs_package_2026-09-28.DELIVERY_RECEIPT.json",
+      "bytes": 425,
+      "sha256": "b2c76f9ea1bfba83d224e7a129146ac604263d038273941c3d60db152e4863c3"
+    },
+    {
+      "path": "projects/natural-language-front-end/source_archive.py",
+      "bytes": 3181,
+      "sha256": "ea4d9297476b65598f3b7ef659d1024c5795a6bc770ffbe1c908b844f7a5e74a"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_command_aliases.py",
+      "bytes": 6288,
+      "sha256": "8fe91e1a172c32279bf9b3be29b12a458c4ca4e2f7a6345db6f9f1ceeb423410"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_control_draft_scaffold.py",
+      "bytes": 2738,
+      "sha256": "0aef31bd73a377894ecdc46b9bb1f3ed25c13e7289017dadb5d3d1b34fb9e3e3"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_controlled_boolean.py",
+      "bytes": 3164,
+      "sha256": "3a0a255dcf9179f63a531aa74ee850cb0b9815f3fdb67466b13c291eb9f062d5"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_grammar_parser.py",
+      "bytes": 1186,
+      "sha256": "1a21784906d56e8178c2a1ef653d7bd026109721604010c75af47027f3829089"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_logic_frontend.py",
+      "bytes": 6297,
+      "sha256": "397db2acb57d2a59fbe8a114d8eb9f54e38b4239d609bc757040ede82aec207b"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_omni_cli.py",
+      "bytes": 5862,
+      "sha256": "3f512c0da24ef8e1bd392ad68bfc91f9ea947a6a9889ece00ebc1169412d854c"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_semantic_layers.py",
+      "bytes": 4517,
+      "sha256": "4a2ef9a73b8b6ba97ce975510d2017be32490dda1dd3006754142e3cce0a0f70"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_sister_adapter.py",
+      "bytes": 3925,
+      "sha256": "a74d4fd2bcb89d6026aedecfafc72c328cdb5b8c6b23f6f5f6e4cbc9cdb252cd"
+    },
+    {
+      "path": "projects/natural-language-front-end/tests/test_wordnet_integration.py",
+      "bytes": 2702,
+      "sha256": "17494c55f81961b1c8efa53f76e47fe2932da481bd4d0511f706d814344c2d69"
+    },
+    {
+      "path": "projects/natural-language-front-end/validate_handoff_stub.py",
+      "bytes": 2442,
+      "sha256": "4fcc3371c04006a1d4bf8b05aa75264fe374cf0f862a3b61f1c98e13953fd63b"
+    },
+    {
+      "path": "projects/natural-language-front-end/verify_wordnet.py",
+      "bytes": 2525,
+      "sha256": "8de72934f14a15eb6214300433ab0f6375094ac5fbc62f9da8d2c946546eebaf"
+    },
+    {
+      "path": "projects/natural-language-front-end/wordnet_command_layer.py",
+      "bytes": 2643,
+      "sha256": "dd2e67bc3d42a241b2824476e3102cfa3ee4b2db8e188dfc9653844bc28cb22b"
+    },
+    {
+      "path": "projects/natural-language-front-end/WORDNET_DATA.md",
+      "bytes": 2611,
+      "sha256": "c7f0d80377c478596b2c74f1e1d2dd991191a9eb3533f980c1f07cdeb4045240"
+    },
+    {
+      "path": "projects/natural-language-front-end/wordnet_lexicon.py",
+      "bytes": 6206,
+      "sha256": "1e7266e831c8fb8d178bfe543528b624c13c79da3e02ece2abf1dd951fb9278d"
+    },
+    {
+      "path": "projects/natural-language-front-end/WORDNET_VERIFICATION_2026-09-26.json",
+      "bytes": 934,
+      "sha256": "598b01920db1b2a724b134cfa585c134ded23f98e03dd57ead49515a26cd2784"
+    },
+    {
+      "path": "PROTOTYPE_REPO_POLICY.json",
+      "bytes": 1747,
+      "sha256": "51678b76d2425908084402e97b8c16b4b15717e3fb02fa20d96b7a68107fe682"
+    },
+    {
+      "path": "PROTOTYPE_TEST_PROFILE.md",
+      "bytes": 611,
+      "sha256": "908037dcece14a6f6ec6237e91c5f167158be005dd42a6dfffe114f30ecc1cda"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1319,
+      "sha256": "b1094f231079e3486e395fccc4f884185a73fe9ebf6a4c8846d6f07271cc874e"
+    },
+    {
+      "path": "README_FIRST.md",
+      "bytes": 3156,
+      "sha256": "45e01275fe375908101f1bc3b5055b6d8826cab587a47033fa182270bad49b47"
+    },
+    {
+      "path": "requirements-development.txt",
+      "bytes": 119,
+      "sha256": "7a82acfcfe54d39ab22a1c824d1a14ef3640b79ab8c8ad1d63af08053114d9ab"
+    },
+    {
+      "path": "requirements-prototype.txt",
+      "bytes": 19,
+      "sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
+      "path": "RUN_PROTOTYPE_CHECKS.py",
+      "bytes": 3192,
+      "sha256": "326d62c426f22b30163f8e9744de9dd63979ec03a823833e6dd1b4c568585ca7"
+    },
+    {
+      "path": "SANITIZATION_REPORT.json",
+      "bytes": 416,
+      "sha256": "36563a5958eebf84b59dfc7da0894110ce53cebbb081f16c31c9a0b4f6aa8dde"
+    },
+    {
+      "path": "scaffold-editor/scaffold-walker.html",
+      "bytes": 52355,
+      "sha256": "7e72c44c40fa43db8d1e5eba7828004e166ac220af57774ab09013c538ff04d4"
+    },
+    {
+      "path": "shared-registry/README.md",
+      "bytes": 777,
+      "sha256": "c94da3bb765d2c5912b6b0628e1409adfe089d32d1df3c5969b0227e1d775d72"
+    },
+    {
+      "path": "shared-registry/registry.json",
+      "bytes": 207,
+      "sha256": "71c3d7baf41e409d2d754c0bc54692151181c07f3be6336bc4591b07d140f78f"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 1340,
+      "sha256": "5553d11a315b41fe4e7c444ae8d39c104475c4e3dd2a936bd85618f997fabe70"
+    },
+    {
+      "path": "VERIFY_EXPORT.py",
+      "bytes": 1447,
+      "sha256": "3a5b8ca31f45022fbff9c4f0c80ae0d31ceb7c353804b102ac2938d2ba07b7d2"
+    },
+    {
+      "path": "VERIFY_PROTOTYPE_REPO.py",
+      "bytes": 5909,
+      "sha256": "ed5ea3a4c4f10aa97538366a9cf30eac90bf9970b09d5025ca3c710386d1abab"
+    }
+  ]
+}

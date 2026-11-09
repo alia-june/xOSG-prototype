@@ -1,0 +1,17 @@
+{
+  "contract_id": "catalog.modular-nlp-capability-handoff/0.1",
+  "status": "generated-test-fixture",
+  "cases": [
+    {
+      "input": "find recovery; explain why it matters",
+      "expected_status": "parsed_single",
+      "expected_operations": ["catalog.find"],
+      "expected_unresolved": [
+        {
+          "text": "explain why it matters",
+          "reason": "unsupported_trailing_clause"
+        }
+      ]
+    }
+  ]
+}

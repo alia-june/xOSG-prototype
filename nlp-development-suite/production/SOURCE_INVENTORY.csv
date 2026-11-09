@@ -1,0 +1,14 @@
+identifier,location,type,version_status,authority,accessibility,integrity,relevance
+SRC-001,<USER_HOME>/Desktop/outbox/NLP_DEVELOPMENT_SUITE_2026-09-28_v1.zip,archive,2026-09-28 v1,SOURCE,readable,SHA-256 5207AA7EB326FFB1010431819789D9AE790B479FB19E14FB53B0F138437755E4,Immutable intake baseline
+SRC-002,PACKAGE_MANIFEST.json,configuration,nlp-development-export-manifest/1,SOURCE,readable,1306 members verified with zero size or hash mismatches,Historical snapshot member ledger
+SRC-003,projects/lexicon-core,source,commit 49a9251483e89242482d694a52b4daffac972b33,generated implementation snapshot,readable,22 tests reproduced,Reusable deterministic NLP primitives and catalog adapter
+SRC-004,projects/lexicon-atlas,source,commit 14c0f4fe907d82447c9147fe32cfe3b20deff539,generated application snapshot,readable,1440449 terms structurally validated,Lexical exploration and generated browser data
+SRC-005,projects/file-atlas,source,commit fb3f07cbd2f7ba505f896ed7a7d33a8ed136bc06,generated prototype snapshot,readable,12 checks across 37 rules reproduced,File-interface prototype
+SRC-006,projects/natural-language-front-end,source,filesystem snapshot with no Git commit,mixed source and generated implementation,readable,54 tests reproduced,Grammar command logic and sister adapters
+SRC-007,scaffold-editor/Scaffold Walker.html,document,source version unknown,user-supplied artifact,readable,byte hash recorded in PACKAGE_MANIFEST.json,Future metadata-preserving UI integration
+SRC-008,contracts/NLP_CAPABILITY_HANDOFF_V0_1.md,document,v0.1,advisory interface handoff,readable,SHA-256 06844a15763d21a97adccbf6376a9a120da209a454cfed08e5dce2d296da4faf,Catalog capability requirements and non-authority boundary
+SRC-009,contracts/NLP_CAPABILITY_HANDOFF_V0_1.json,configuration,v0.1,machine-readable advisory summary,readable,SHA-256 8d00ccd34206d9bffa8bb439b58e228684084e12f326248cd44dd1a048cceb07,Catalog capability summary but not JSON Schema
+SRC-010,shared-registry/registry.json,configuration,current snapshot,source inventory metadata,readable,hash recorded in PACKAGE_MANIFEST.json,External lexical source identity and path registry
+SRC-011,<LEXICON_DATA_ROOT>,data,external machine-local sources,mixed external source authorities,partial,individual revisions and hashes in DATA_DEPENDENCIES.md,Required for full data rebuild but excluded from export
+SRC-012,production/,generated controls,2026-09-28 generated,GENERATED_SYNTHESIS,readable,validated by production control tests,New planning and validation controls not part of historical snapshot
+SRC-013,development/nlp-offline-interpreter,source,0.1.0 development successor,accepted bounded development plus generated implementation,readable,successor tests and baseline pointer,Generic non-executing interpretation engine kept separate from historical snapshot

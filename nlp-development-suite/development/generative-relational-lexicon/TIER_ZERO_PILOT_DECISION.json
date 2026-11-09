@@ -1,0 +1,38 @@
+{
+  "schema": "generative-relational-lexicon-tier-zero-pilot-decision/1",
+  "status": "AUTHORIZED_TEST_EXECUTION",
+  "accepted_at": "2026-10-03",
+  "authority_source": "direct user instruction in the active session",
+  "authority_summary": "Unlock Tier Zero as a modifiable internal test of whether the approach can work; this is not production.",
+  "authority_effect": "TEST_EXECUTION_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "network_refresh_allowed": false,
+  "source_id": "project-gutenberg-roget-22",
+  "unit_id": "ebook-22-pinned-plain-text-body",
+  "artifact": {
+    "relative_path": "pilot/tier-zero/raw/project-gutenberg-ebook-22.txt",
+    "source_url": "https://www.gutenberg.org/cache/epub/22/pg22.txt",
+    "bytes": 1539638,
+    "sha256": "ac6bdc2d616ecf0d7994e987f5aabb46855459368132e4e03fc80dbe3c88c095"
+  },
+  "allowed_actions": [
+    "verify the pinned local artifact",
+    "parse source structure",
+    "extract historical term-to-category membership candidates",
+    "query historical evidence for a generated modern-word test set",
+    "emit proposal-only structural evidence",
+    "run deterministic positive and negative tests",
+    "revise or discard the pilot approach"
+  ],
+  "forbidden_actions": [
+    "production deployment",
+    "publication",
+    "canon admission",
+    "refreshing or replacing the source artifact without a new recorded decision",
+    "treating category membership as a definition or timeless semantic fact",
+    "silently treating the mixed electronic edition as pure 1911 evidence",
+    "expanding execution to another source by analogy"
+  ]
+}

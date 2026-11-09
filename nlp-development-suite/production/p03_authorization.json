@@ -1,0 +1,167 @@
+{
+  "schema": "nlp-production-authorization/1",
+  "proposal_id": "p03-nlp-offline-interpreter-2026-10-01",
+  "status": "accepted-bounded-local-release",
+  "truth_state": "ACCEPTED_CANON",
+  "authority_effect": "P00-P09_LOCAL_RELEASE_WORKFLOW",
+  "production_ready": false,
+  "phase": "P03",
+  "accepted_on": "2026-10-02",
+  "acceptance_version": "production-plan/1-bounded-local-release",
+  "acceptance_evidence": "production/PRODUCTION_PLAN_ACCEPTANCE_2026-10-02.md",
+  "deployment_authority": "NONE",
+  "current_operating_scope": "internal-testbed-no-publication",
+  "development_authorization": {
+    "status": "accepted",
+    "scope": "bounded generic non-executing interpreter development and validation",
+    "authority": "user",
+    "evidence": "production/P03_SCOPE_ACCEPTANCE_2026-10-01.md",
+    "production_effect": "NONE"
+  },
+  "first_release": {
+    "id": "nlp-offline-interpreter/0.1",
+    "release_type": "offline-library-and-plan-cli",
+    "objective": "Produce deterministic structured interpretation proposals without executing operations.",
+    "execution_allowed": false,
+    "network_allowed": false,
+    "filesystem_mutation_allowed": false,
+    "catalog_mutation_allowed": false,
+    "included": [
+      "deterministic normalization and controlled parsing",
+      "exact source text and SHA-256",
+      "visible collisions unresolved regions and layer traces",
+      "local pinned OEWN candidate evidence",
+      "proposal-only task routing",
+      "versioned JSON output"
+    ],
+    "excluded": [
+      "filesystem operation execution",
+      "catalog or rule mutation",
+      "network providers web lookup and LLM calls",
+      "browser desktop and scaffold user interfaces",
+      "external raw corpus redistribution",
+      "sister-machine schema claims",
+      "production deployment and availability claims"
+    ],
+    "acceptance_criteria": [
+      "clean Python 3.11 or newer environment reproduces installation and checks",
+      "one versioned public API and plan-only CLI use Lexicon Core",
+      "release CLI exposes no execution mode",
+      "identical inputs and configuration produce deterministic JSON",
+      "typed review or non-success states cover invalid unsupported ambiguous and conflicting input",
+      "WordNet is local pinned optional and does not select senses",
+      "provider layers are disabled and no network access is required",
+      "unit contract schema determinism offline malformed-input and packaging checks pass",
+      "artifact contains manifests licenses limitations and rollback instructions",
+      "acceptance is bound to the exact release-candidate hash"
+    ]
+  },
+  "decisions": [
+    {
+      "id": "Q-001",
+      "state": "accepted_canon_for_development",
+      "value": "suite-level monorepo as the canonical development source for nlp-offline-interpreter/0.1, retaining component directories and historical provenance",
+      "authority": "user",
+      "accepted_on": "2026-10-02",
+      "version": "Q-001/1",
+      "evidence": "production/Q001_REPOSITORY_MODEL_ACCEPTANCE_2026-10-02.md",
+      "scope": "development source, versioning, local validation, and release preparation",
+      "production_effect": "NONE",
+      "unresolved": [
+        "canonical remote repository location"
+      ]
+    },
+    {
+      "id": "Q-002",
+      "state": "accepted_for_development",
+      "value": "nlp-offline-interpreter/0.1 as a non-executing library and plan-only CLI",
+      "authority": "user"
+    },
+    {
+      "id": "Q-003",
+      "state": "accepted_canon_for_development",
+      "value": "catalog v0.1 is an advisory development compatibility profile; a supplied versioned receiving-system command registry remains authoritative",
+      "authority": "user",
+      "accepted_on": "2026-10-02",
+      "version": "Q-003/1",
+      "evidence": "production/Q003_CATALOG_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+      "scope": "compatibility development, local validation, and proposal-only operation mapping",
+      "production_effect": "NONE",
+      "unresolved": [
+        "receiving-system catalog registry and argument-contract acceptance"
+      ]
+    },
+    {
+      "id": "Q-004",
+      "state": "accepted_canon_for_development",
+      "value": "exclude unavailable sister schemas and compatibility claims until the schemas are supplied, assessed, and explicitly accepted",
+      "authority": "user",
+      "accepted_on": "2026-10-02",
+      "version": "Q-004/1",
+      "evidence": "production/Q004_SISTER_SCHEMA_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+      "scope": "nlp-offline-interpreter/0.1 release contract and external parse-tree, logic, transition, acceptance, and authority schemas",
+      "production_effect": "NONE",
+      "unresolved": [
+        "canonical sister schemas have not been supplied"
+      ]
+    },
+    {
+      "id": "Q-005",
+      "state": "accepted_canon_for_development",
+      "value": "local offline single-user process with Python 3.11 as the canonical release-build runtime, newer Python support conditional on passing tests, Windows validated first, and no service or availability claim",
+      "authority": "user",
+      "accepted_on": "2026-10-02",
+      "version": "Q-005/1",
+      "evidence": "production/Q005_RUNTIME_OPERATING_MODEL_ACCEPTANCE_2026-10-02.md",
+      "scope": "release builds, Python compatibility claims, first validated host family, user model, and service exclusions",
+      "production_effect": "NONE",
+      "unresolved": [
+        "additional operating-system targets",
+        "any future service-level requirements"
+      ]
+    },
+    {
+      "id": "Q-006",
+      "state": "accepted_canon_for_development",
+      "value": "packaged OEWN 2025 candidate data only with verified license and attribution, no omitted-corpus redistribution, no telemetry or network transmission, and no automatic input retention",
+      "authority": "user",
+      "accepted_on": "2026-10-02",
+      "version": "Q-006/1",
+      "evidence": "production/Q006_DATA_POLICY_ACCEPTANCE_2026-10-02.md",
+      "scope": "packaged data, omitted corpora, telemetry, transmission, retention, and release-candidate license checks",
+      "production_effect": "NONE",
+      "unresolved": [
+        "legal and license compliance of the exact release candidate"
+      ]
+    },
+    {
+      "id": "Q-007",
+      "state": "accepted_canon_for_development",
+      "value": "user is product/canon and release-scope authority for the bounded local downloadable release; no separate human approver is required; evidence gates remain mandatory; operations and receiving-system approvers are not applicable to the accepted scope",
+      "authority": "user",
+      "accepted_on": "2026-10-02",
+      "version": "Q-007/1",
+      "evidence": "production/Q007_ACCOUNTABILITY_MODEL_ACCEPTANCE_2026-10-02.md",
+      "scope": "bounded local downloadable nlp-offline-interpreter/0.1 release only",
+      "production_effect": "NONE",
+      "unresolved": []
+    }
+  ],
+  "source_evidence": [
+    "projects/lexicon-core/src/lexicon_core/__init__.py",
+    "projects/lexicon-core/src/lexicon_core/tasks/base.py",
+    "projects/lexicon-core/src/lexicon_core/tasks/router.py",
+    "projects/natural-language-front-end/omni_cli.py",
+    "projects/natural-language-front-end/semantic_layers.py",
+    "contracts/NLP_CAPABILITY_HANDOFF_V0_1.md",
+    "production/BASELINE_EVIDENCE.json",
+    "production/Q001_REPOSITORY_MODEL_ACCEPTANCE_2026-10-02.md",
+    "production/Q003_CATALOG_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+    "production/Q004_SISTER_SCHEMA_AUTHORITY_ACCEPTANCE_2026-10-02.md",
+    "production/Q005_RUNTIME_OPERATING_MODEL_ACCEPTANCE_2026-10-02.md",
+    "production/Q006_DATA_POLICY_ACCEPTANCE_2026-10-02.md",
+    "production/Q007_ACCOUNTABILITY_MODEL_ACCEPTANCE_2026-10-02.md",
+    "production/TESTBED_SCOPE_ACCEPTANCE_2026-10-02.md",
+    "production/PRODUCTION_PLAN_ACCEPTANCE_2026-10-02.md"
+  ]
+}

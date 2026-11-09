@@ -1,0 +1,51 @@
+{
+  "schema": "sense-aboutness-candidate/0.1",
+  "record_id": "record-precision-historical",
+  "status": "CANDIDATES_PROPOSED",
+  "form": {
+    "text": "precision",
+    "normalized_text": "precision",
+    "language": "eng",
+    "variety": null
+  },
+  "evidence": [
+    {
+      "evidence_id": "ev-roget-precision-placement",
+      "source_id": "project-gutenberg-roget-22",
+      "artifact_sha256": "ac6bdc2d616ecf0d7994e987f5aabb46855459368132e4e03fc80dbe3c88c095",
+      "source_span": {"kind": "LINE", "start": 3113, "end": 3113},
+      "evidence_kind": "CATEGORY_PLACEMENT",
+      "truth_state": "SOURCE",
+      "observed_value": "The source places the form under a recorded historical heading."
+    }
+  ],
+  "sense_candidates": [
+    {
+      "sense_candidate_id": "sense-precision-1",
+      "scope": {
+        "language": "eng",
+        "time_scope": "source-artifact context",
+        "community": null,
+        "register": null,
+        "domain": null
+      },
+      "scope_evidence_refs": ["ev-roget-precision-placement"],
+      "candidate_state": "SUPPORTED_CANDIDATE",
+      "distinguished_from": [],
+      "aboutness_assertions": [
+        {
+          "assertion_id": "as-precision-quality",
+          "facet": "QUALITY",
+          "value": "exactness",
+          "candidate_state": "SUPPORTED_CANDIDATE",
+          "truth_state": "INFERENCE",
+          "evidence_refs": ["ev-roget-precision-placement"],
+          "conflicts_with": []
+        }
+      ]
+    }
+  ],
+  "abstention": null,
+  "review_state": "UNREVIEWED",
+  "authority_effect": "PROPOSAL_ONLY"
+}

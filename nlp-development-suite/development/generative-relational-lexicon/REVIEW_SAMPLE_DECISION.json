@@ -1,0 +1,33 @@
+{
+  "schema": "generative-relational-lexicon-review-sample-decision/1",
+  "status": "AUTHORIZED_TEST_REVIEW_SAMPLE",
+  "accepted_at": "2026-10-05",
+  "authority_source": "direct user continuation after the unresolved-shape audit",
+  "authority_summary": "Draw a deterministic stratified sample and attach the pinned raw source blocks for review of parser boundaries.",
+  "authority_effect": "TEST_REVIEW_SAMPLE_ONLY",
+  "production_ready": false,
+  "publication_allowed": false,
+  "canon_admission": false,
+  "review_disposition_assignment_allowed": false,
+  "unresolved_shape_receipt": {
+    "relative_path": "pilot/modern-comparison/normalization-audit/unresolved-shapes/UNRESOLVED_SHAPE_AUDIT_RECEIPT.json",
+    "bytes": 1849,
+    "sha256": "9a655eb10a4b4ad7d5c77e75caf050c61201d1d261890aa9ecadc764f37e789e"
+  },
+  "source_sample_rule": {
+    "strata": "primary visible shape plus historical part-of-speech marker signature",
+    "maximum_per_stratum": 5,
+    "selection": "lowest SHA-256 of pinned source hash, normalized term, shape, and POS signature",
+    "replacement": "none",
+    "raw_block_effect": "read-only evidence attachment"
+  },
+  "excluded_operations": [
+    "automatic parser repair",
+    "automatic deletion or relabeling",
+    "lexical validity decision",
+    "citation or language interpretation",
+    "semantic sense selection",
+    "canon admission",
+    "production or publication approval"
+  ]
+}

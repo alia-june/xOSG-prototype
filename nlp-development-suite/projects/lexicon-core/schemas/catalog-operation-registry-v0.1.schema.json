@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lexicon-atlas.invalid/catalog-operation-registry/v0.1/schema.json",
+  "title": "Catalog operation registry input v0.1",
+  "type": "object",
+  "required": ["handoff_id", "current_operations"],
+  "properties": {
+    "handoff_id": {"type": "string", "minLength": 1},
+    "current_operations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string", "minLength": 1},
+        "uniqueItems": true
+      }
+    },
+    "operation_contracts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "required": {"$ref": "#/$defs/typeMap"},
+          "optional": {"$ref": "#/$defs/typeMap"},
+          "allow_extra": {"type": "boolean"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "typeMap": {
+      "type": "object",
+      "additionalProperties": {
+        "enum": ["string", "boolean", "integer", "number", "array", "object", "null"]
+      }
+    }
+  },
+  "additionalProperties": true
+}
