@@ -21,13 +21,15 @@ Public research prototypes for inspectable AI-assisted work, reference-native do
 | [xOSG-0](syn-xOSG-0/README.md) | Developmental orchestration research from ES-xOSG-7 through Seed | [Developmental architecture](syn-xOSG-0/ARCHITECTURE.md) | [Read the source ledger](syn-xOSG-0/docs/SOURCE_LEDGER.md) |
 | [Mill Factory](mill-factory/README.md) | PowerShell work batches with evidence, gates, and fail-closed promotion | [Batch architecture](mill-factory/ARCHITECTURE.md) | [Create a disposable batch](mill-factory/HOW_TO.md) |
 | [Code-Lexigraph](code-lexigraph/README.md) | Bounded Python code reconstruction with bidirectional traces and a restricted construction grammar | [Design and grammar](code-lexigraph/docs/DESIGN.md) | [Inspect a reconstruction](code-lexigraph/HOW_TO.md) |
-| [NLP Development Suite](nlp-development-suite/README.md) | Code-only lexical, grammar, Atlas, and non-executing interpretation prototypes with separately managed data | [Suite boundaries and components](nlp-development-suite/README.md) | [Run the data-free checks](nlp-development-suite/PROTOTYPE_TEST_PROFILE.md) |
+| [NLP Development Suite](nlp-development-suite/README.md) | Code-only lexical, grammar, Atlas, and non-executing interpretation prototypes with separately managed data | [Suite boundaries and components](nlp-development-suite/README.md) | [Run the data-free checks](nlp-development-suite/README.md#quick-start-data-free-validation) |
 | [Etabit Schema](etabit-schema/README.md) | Draft multi-drive construction schema, source and reference examples, and unresolved contracts | [Drive and authority architecture](etabit-schema/ARCHITECTURE.md) | [Review and validate a descriptor](etabit-schema/HOW_TO.md) |
 | [Syn-Etabit Transformer — Textual](syn-etabit-transformer-textual/README.md) | Reference-native document construction research and a retained CPU compatibility service | [Construction and service architecture](syn-etabit-transformer-textual/ARCHITECTURE.md) | [Read the service setup and environment limits](syn-etabit-transformer-textual/service/README.md) |
-| [sf-AmorphDataDrive](sf-amorph-data-drive/README.md) | Locked v0.3 research specification with open identity, bitmap, topology, and recursion contracts | [Locked v0.3 specification](sf-amorph-data-drive/specifications/sf_edabit_amorph_data_drive_locked_spec_v0_3.md) | [Review a specification change](sf-amorph-data-drive/HOW_TO.md) |
+| [sf-AmorphDataDrive](sf-amorph-data-drive/README.md) | Locked v0.3 raw substrate baseline and locked v0.1 member identity contract | [Locked v0.3 specification](sf-amorph-data-drive/specifications/sf_edabit_amorph_data_drive_locked_spec_v0_3.md) and [locked sf-UUID contract](sf-amorph-data-drive/contracts/SF_UUID_IDENTITY_CONTRACT_v0.1_LOCKED.md) | [Review a specification change](sf-amorph-data-drive/HOW_TO.md) |
 | [MATH.SC-0](xosg-0-math-sc0/README.md) | Deterministic numerical work across Python, JavaScript, and native C/C++ with verification | [Three-runtime architecture](xosg-0-math-sc0/docs/three_runtime_architecture.md) | [Build and check the runtimes](xosg-0-math-sc0/HOW_TO.md) |
 | [GFX Form Engine / Encoded Lexical Raster](gfx-form-engine/README.md) | JSON-0 CPU scaffold and research on frames, aligned reads, and lexical raster execution | [Frame and execution architecture](gfx-form-engine/ARCHITECTURE.md) | [Build and test the CPU scaffold](gfx-form-engine/HOW_TO.md) |
 | [Semantic Symbol Interpreter](semantic-symbol-interpreter/README.md) | Synthetic text interpretation and an adversarial harness for context, evidence, and uncertainty | [Interpretation architecture](semantic-symbol-interpreter/ARCHITECTURE.md) | [Inspect a fixture grade](semantic-symbol-interpreter/HOW_TO.md) |
+| [Holoquary v1.3](holoquary/README.md) | Reconstituted C99 prototype for deterministic logic, explicit uncertainty, and small transactional state | [Computational model](holoquary/README.md#what-holoquary-is) | [Read the reconstitution record](holoquary/RECONSTITUTION.md) |
+| [Governed Microserver Transmigration](governed-microserver-transmigration/README.md) | Candidate-only validation of JSON microserver manifests and declared glue | [Microserver and glue architecture](governed-microserver-transmigration/docs/ARCHITECTURE.md) | [Review the verification scope](governed-microserver-transmigration/docs/VERIFICATION.md) |
 
 **xOSG family entry points:** [Amorphous Durable AI Workspace / DWSK](amorphous-durable-ai-workspace/README.md) (source-qualified storage and recovery; [architecture](amorphous-durable-ai-workspace/ARCHITECTURE.md)), [Naked Shell](Naked%20Shell/README.md) (identity only), [Synthetic Simulations](Synthetic%20Simulations/README.md) (public research account and retained failed experiment; [reading guide](Synthetic%20Simulations/HOW_TO.md)), and [Instrumentation](Instrumentation/README.md) (related tooling and worked controller examples; [architecture](Instrumentation/ARCHITECTURE.md)).
 
@@ -179,8 +181,10 @@ research. The repository carries code, schemas, contracts, and tests while
 keeping dictionary payloads, generated lexical shards, historical review data,
 credentials, and machine-local paths outside the public tree.
 
-Its current validation profile runs **81 data-free checks** plus JavaScript
-syntax and repository-policy verification. These checks establish only the
+The [data-free validation profile](nlp-development-suite/PROTOTYPE_TEST_PROFILE.md)
+covers **81 Python checks**, repository-policy verification, and JavaScript
+syntax checks when Node.js is available. The [Windows CI workflow](.github/workflows/nlp-suite-code-only.yml)
+configures Python 3.11 through 3.14 with Node.js 22. These checks establish only the
 packaged code surface and declared data boundary; they do not establish lexical
 completeness, semantic authority, production readiness, or approval of any
 separately supplied dataset.
@@ -191,7 +195,7 @@ separately supplied dataset.
 
 **[Open project →](sf-amorph-data-drive/README.md)** · **[Locked v0.3 →](sf-amorph-data-drive/specifications/sf_edabit_amorph_data_drive_locked_spec_v0_3.md)** · **[Relation to Etabit →](sf-amorph-data-drive/docs/ETABIT_RELATION.md)**
 
-sf-AmorphDataDrive separates raw existence, relation/interpretation, and composition/coherence. Locked v0.3 prohibits identity and metadata on raw D0. Current successor direction introduces member sf-UUID, touple-to-gestalt/gesple construction, and recursive ID/data/metadata integration while leaving identity, topology, bitmap, width, and recursion contracts open.
+sf-AmorphDataDrive separates raw existence, relation/interpretation, and composition/coherence. Locked v0.3 keeps identity and metadata outside raw D0. The [locked sf-UUID member identity contract v0.1](sf-amorph-data-drive/contracts/SF_UUID_IDENTITY_CONTRACT_v0.1_LOCKED.md) defines member identity, including issuance, scope, duplicate and collision handling, and continuity. Storage topology, bitmap mapping, x/y packing widths, and recursion bounds remain [open decisions](sf-amorph-data-drive/docs/OPEN_DECISIONS.md).
 
 It is related to Etabit as a possible strict substrate profile; no integration is admitted.
 
@@ -319,6 +323,7 @@ xOSG-prototype/
 ├── Naked Shell/                staged shell identity
 ├── Synthetic Simulations/      bounded documentation and failed source
 ├── docs/xosg/                  family overview, license and migration records
+├── Instrumentation/           tool instrumentation and controller examples
 │
 ├── mill-factory/               evidence-bearing batch factory
 │   ├── templates/              ledgers, contracts, decision, and rollback forms
@@ -357,13 +362,18 @@ xOSG-prototype/
 │   ├── docs/                   contracts, validation, findings, integrations
 │   └── ...                     transformation and research artifacts
 │
-└── xosg-0-math-sc0/
-    ├── js/                     JavaScript control plane + frozen web UI
-    ├── src/                    Python numerical and verification plane
-    ├── native/                 C/C++ kernels
-    ├── protocol/               operation and result contracts
-    ├── tests/                  numerical and hardening suites
-    └── docs/                   architecture, evidence, walls
+├── xosg-0-math-sc0/
+│   ├── js/                     JavaScript control plane + frozen web UI
+│   ├── src/                    Python numerical and verification plane
+│   ├── native/                 C/C++ kernels
+│   ├── protocol/               operation and result contracts
+│   ├── tests/                  numerical and hardening suites
+│   └── docs/                   architecture, evidence, walls
+│
+├── gfx-form-engine/            JSON-0 and lexical raster CPU scaffold
+├── semantic-symbol-interpreter/ synthetic-text interpretation and fixtures
+├── holoquary/                  reconstituted v1.3 source ZIP and UPTI handoff candidate
+└── governed-microserver-transmigration/ JSON manifest and glue validation
 ```
 
 ---
@@ -375,10 +385,14 @@ xOSG-prototype/
 3. **[Code-Lexigraph](code-lexigraph/README.md)** — bidirectional meaning-to-code reconstruction.
 4. **[NLP Development Suite](nlp-development-suite/README.md)** — code-only lexical, grammar, and language-tool prototypes.
 5. **[Etabit Schema](etabit-schema/README.md)** — multi-drive construction and distributed-authority schema research.
-6. **[sf-AmorphDataDrive](sf-amorph-data-drive/README.md)** — strict raw substrate and open successor contracts.
+6. **[sf-AmorphDataDrive](sf-amorph-data-drive/README.md)** — raw substrate, locked member identity, and open successor contracts.
 7. **[Syn-Etabit Transformer — Textual](syn-etabit-transformer-textual/README.md)** — reference-native document model.
 8. **[MATH.SC-0](xosg-0-math-sc0/README.md)** — deterministic computation architecture.
 9. **[xOSG instrumentation](docs/xosg/README.md)** — durable workspace kit, shell identity, and simulation records.
+10. **[GFX Form Engine](gfx-form-engine/README.md)** — frame-scoped data, execution, and recovery research.
+11. **[Semantic Symbol Interpreter](semantic-symbol-interpreter/README.md)** — contextual readings and evidence for synthetic text.
+12. **[Holoquary](holoquary/README.md)** — reconstituted v1.3 source and its evidence boundary.
+13. **[Governed Microserver Transmigration](governed-microserver-transmigration/README.md)** — candidate manifest and glue validation. [Verification notes](governed-microserver-transmigration/docs/VERIFICATION.md) distinguish functional and static checks from unverified native Windows containment.
 
 Read each project's validation, source-boundary, and integration documents before treating test results as broader acceptance.
 
