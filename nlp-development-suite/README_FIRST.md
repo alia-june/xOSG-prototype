@@ -22,11 +22,16 @@ From the extracted package root on Windows PowerShell:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r .\requirements-development.txt
-cd .\projects\lexicon-core
-$env:PYTHONPATH = 'src'
-..\..\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m pip install -r .\requirements-prototype.txt
+$emptyData = New-Item -ItemType Directory -Force .\.prototype-empty-data
+$env:LEXICON_DATA_ROOT = $emptyData.FullName
+.\.venv\Scripts\python.exe -B .\RUN_PROTOTYPE_CHECKS.py
 ```
+
+`requirements-prototype.txt` contains only the pinned dependency needed by the
+data-free validation profile. `requirements-development.txt` describes the
+full source-workspace environment and references a local `aprompt` wheel that
+is deliberately excluded from this code-only export.
 
 To inspect the packaged Lexicon Atlas browser:
 

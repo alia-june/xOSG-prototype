@@ -1,8 +1,8 @@
 {
   "schema": "nlp-suite-prototype-manifest/1",
   "status": "GENERATED",
-  "member_count": 315,
-  "total_bytes": 2705002,
+  "member_count": 316,
+  "total_bytes": 2705711,
   "members": [
     {
       "path": ".gitattributes",
@@ -11,8 +11,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 586,
-      "sha256": "b33934598de8cbc7ab3221fc0b7f99dd39e2044ccc4aceffbb6933751d2a2efa"
+      "bytes": 734,
+      "sha256": "ecafe7abe0098a57cc98328dcab5edf6bfa788028ca86fb35b6e0732709a5630"
     },
     {
       "path": ".gitignore",
@@ -1531,8 +1531,8 @@
     },
     {
       "path": "README_FIRST.md",
-      "bytes": 2813,
-      "sha256": "6bd952c6d3a60cbb8baa7f12a06a18a56d35e51492a9f3ea3e3bace91ac4e718"
+      "bytes": 3156,
+      "sha256": "45e01275fe375908101f1bc3b5055b6d8826cab587a47033fa182270bad49b47"
     },
     {
       "path": "requirements-development.txt",
@@ -1540,9 +1540,14 @@
       "sha256": "7a82acfcfe54d39ab22a1c824d1a14ef3640b79ab8c8ad1d63af08053114d9ab"
     },
     {
+      "path": "requirements-prototype.txt",
+      "bytes": 19,
+      "sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
       "path": "RUN_PROTOTYPE_CHECKS.py",
-      "bytes": 3198,
-      "sha256": "ad4b22793f49d578f898e9edf394e51498b5b2333cc4ff7ca6b9d5ec9f3ef29c"
+      "bytes": 3192,
+      "sha256": "326d62c426f22b30163f8e9744de9dd63979ec03a823833e6dd1b4c568585ca7"
     },
     {
       "path": "SANITIZATION_REPORT.json",
@@ -1566,8 +1571,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 1135,
-      "sha256": "8ef7666d760f488704d830d2734993c14d484c0c88ded5ac989c4f623d8bfbe5"
+      "bytes": 1340,
+      "sha256": "5553d11a315b41fe4e7c444ae8d39c104475c4e3dd2a936bd85618f997fabe70"
     },
     {
       "path": "VERIFY_EXPORT.py",

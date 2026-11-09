@@ -1,4 +1,4 @@
-"""Run the dependency-free checks supported by the code-only prototype export."""
+"""Run the data-free checks supported by the code-only prototype export."""
 
 from __future__ import annotations
 

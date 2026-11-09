@@ -11,6 +11,6 @@ Validation was run against the staged export, not only the source workspaces.
 | Lexicon Atlas | JavaScript syntax checks | passed |
 | File Atlas | `verify_frontend.mjs` | 12 checks passed across 37 rules |
 
-The original pinned Python environment was used to supply installed dependencies during validation. It is excluded from the export. Recreate it with `requirements-development.txt` in the destination project.
+The original pinned Python environment was used to supply installed dependencies during validation. It is excluded from the export. Recreate the bounded code-only validation environment with `requirements-prototype.txt`. The full `requirements-development.txt` retains its source-workspace dependency on an excluded local `aprompt` wheel and is not a reproducible installation contract for this sanitized export.
 
 Package-manifest verification is recorded in the external export receipt after the final archive is created. Archive and member hashes demonstrate byte integrity, not semantic correctness or receiver acceptance.

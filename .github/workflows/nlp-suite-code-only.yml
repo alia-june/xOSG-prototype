@@ -30,5 +30,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Install declared validation dependencies
+        run: python -m pip install --disable-pip-version-check -r nlp-development-suite/requirements-prototype.txt
       - name: Run data-free prototype checks
         run: python -B nlp-development-suite/RUN_PROTOTYPE_CHECKS.py
