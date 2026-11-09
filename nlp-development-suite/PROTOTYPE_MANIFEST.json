@@ -2,7 +2,7 @@
   "schema": "nlp-suite-prototype-manifest/1",
   "status": "GENERATED",
   "member_count": 316,
-  "total_bytes": 2705711,
+  "total_bytes": 2713993,
   "members": [
     {
       "path": ".gitattributes",
@@ -1526,8 +1526,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1319,
-      "sha256": "b1094f231079e3486e395fccc4f884185a73fe9ebf6a4c8846d6f07271cc874e"
+      "bytes": 9601,
+      "sha256": "9ab2b417222502b35b64734d879c07eb6542ed906406da6cf1bde5773afb8bb1"
     },
     {
       "path": "README_FIRST.md",
