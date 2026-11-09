@@ -1,6 +1,6 @@
 {
   "authority_effect": "NONE",
-  "member_count": 20,
+  "member_count": 23,
   "members": [
     {
       "path": "BASELINE_POINTER.json",
@@ -28,9 +28,24 @@
       "size": 2204
     },
     {
+      "path": "LICENSES/Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "size": 11358
+    },
+    {
+      "path": "LICENSES/MIT.txt",
+      "sha256": "31addc3e5f278d64050bba9c708750d55650ac5b7801b74e40fa2ee3cf2f9d5b",
+      "size": 1066
+    },
+    {
+      "path": "LICENSES/NOTICE.txt",
+      "sha256": "82473d4772a4a9e767356e38b7e7733253714e04d40bb7eb5f5c3ea8ce9f1312",
+      "size": 345
+    },
+    {
       "path": "README.md",
-      "sha256": "b7b17e3a1df83687b35c5fa3ae095b0d1c1ff4e215147ec23bd5d64b2dfc5dbc",
-      "size": 4215
+      "sha256": "b63a3912d57271deab8145d6c6bf61cf291709d6049ee58739b95002e2de51e4",
+      "size": 5794
     },
     {
       "path": "VERIFY_BASIC_ARTIFACT.py",
@@ -44,8 +59,8 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "91df1326933e0c9d2f3a3e3a5a16edd2c227f2da1ecb5ad00d7b1ff63e231b3d",
-      "size": 410
+      "sha256": "ce49a52b17eb00f954453096a426d31c7c3df02c63c5702e45266ce55b1c89a5",
+      "size": 530
     },
     {
       "path": "requirements-development.txt",
@@ -59,8 +74,8 @@
     },
     {
       "path": "src/nlp_offline_interpreter/__init__.py",
-      "sha256": "1fdd5520d7160479762e66ed887b139e8637e3fe243c9cb9aa75a33f51784ad5",
-      "size": 821
+      "sha256": "9f00536607d1918d4d35211fed33f6b3789b8045fbb58003b676c12b5292d97f",
+      "size": 824
     },
     {
       "path": "src/nlp_offline_interpreter/__main__.py",

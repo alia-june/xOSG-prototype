@@ -16,7 +16,7 @@ from .core import (
 )
 from .basic import BASIC_LAYER_VERSION, BasicTextLayer, analyze_text
 
-__version__ = "0.1.0"
+__version__ = "0.1.1rc1"
 
 __all__ = [
     "DEFAULT_MAX_SOURCE_CHARS",

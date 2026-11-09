@@ -1,0 +1,8 @@
+NLP Offline Interpreter 0.1.1rc1
+Copyright (c) 2026 Alia June
+
+The five Python implementation modules included in this wheel are
+available under MIT OR Apache-2.0. Recipients may choose either
+license. Both license texts are included.
+
+Source baseline: https://github.com/alia-june/xOSG-prototype/commit/dd54fa7029002b6d88298c592e31676f761d3f4b

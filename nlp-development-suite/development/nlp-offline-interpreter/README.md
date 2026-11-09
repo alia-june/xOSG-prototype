@@ -73,6 +73,38 @@ in `production/reports/p04-stage-2026-10-02-authorized-py311.json`; it produced
 two byte-identical wheels. Neither record is the future immutable P08 release
 candidate or cross-platform attestation.
 
+## Rebuild the licensed wheel candidate
+
+Version **0.1.1rc1** packages the five implementation modules under
+**MIT OR Apache-2.0**. The license texts and copyright notice are in
+[LICENSES/](LICENSES/). The historical P06 records describe the earlier
+0.1.0 wheel.
+
+On Windows with Python 3.14.3, run the following from this project directory
+to stage just the wheel inputs in a new temporary folder. The build uses the
+setuptools version pinned in `pyproject.toml`.
+
+```powershell
+$project = (Get-Location).Path
+$stage = Join-Path $env:TEMP ("nlp-offline-wheel-" + [guid]::NewGuid().ToString("N"))
+$source = Join-Path $stage "source"
+$package = Join-Path $source "src\nlp_offline_interpreter"
+New-Item -ItemType Directory -Path $package -Force | Out-Null
+Copy-Item -LiteralPath (Join-Path $project "pyproject.toml") -Destination $source
+Copy-Item -LiteralPath (Join-Path $project "LICENSES") -Destination $source -Recurse
+$modules = "__init__.py", "__main__.py", "basic.py", "core.py", "integration.py"
+foreach ($module in $modules) {
+    Copy-Item -LiteralPath (Join-Path $project "src\nlp_offline_interpreter\$module") -Destination $package
+}
+$env:SOURCE_DATE_EPOCH = "1704067200"
+$dist = Join-Path $stage "dist"
+python -m pip --isolated --disable-pip-version-check wheel --no-deps --no-cache-dir --index-url https://pypi.org/simple --wheel-dir $dist $source
+Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $dist "nlp_offline_interpreter-0.1.1rc1-py3-none-any.whl")
+```
+
+The validated wheel SHA-256 is
+`740e838f120f3727b586cf68521884be9b7776bdbf3f061307653fab1b3c5a9b`.
+
 ## Tests
 
 ```powershell

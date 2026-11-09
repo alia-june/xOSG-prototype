@@ -1,8 +1,8 @@
 {
   "schema": "nlp-suite-prototype-manifest/1",
   "status": "GENERATED",
-  "member_count": 316,
-  "total_bytes": 2713993,
+  "member_count": 319,
+  "total_bytes": 2728924,
   "members": [
     {
       "path": ".gitattributes",
@@ -406,8 +406,8 @@
     },
     {
       "path": "development/nlp-offline-interpreter/DEVELOPMENT_MANIFEST.json",
-      "bytes": 3409,
-      "sha256": "9731633fc25c81a31b1ab382cb582c1b6a40f25d081a9adf67363076d32e2a46"
+      "bytes": 3869,
+      "sha256": "b6f0f6d155aab0345f94739ba6fe7468f8069eb06c073249b44be22f355ac1f9"
     },
     {
       "path": "development/nlp-offline-interpreter/dist/BASIC_ARTIFACT_RECEIPT.json",
@@ -416,13 +416,28 @@
     },
     {
       "path": "development/nlp-offline-interpreter/pyproject.toml",
-      "bytes": 410,
-      "sha256": "91df1326933e0c9d2f3a3e3a5a16edd2c227f2da1ecb5ad00d7b1ff63e231b3d"
+      "bytes": 530,
+      "sha256": "ce49a52b17eb00f954453096a426d31c7c3df02c63c5702e45266ce55b1c89a5"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/LICENSES/Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/LICENSES/MIT.txt",
+      "bytes": 1066,
+      "sha256": "31addc3e5f278d64050bba9c708750d55650ac5b7801b74e40fa2ee3cf2f9d5b"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/LICENSES/NOTICE.txt",
+      "bytes": 345,
+      "sha256": "82473d4772a4a9e767356e38b7e7733253714e04d40bb7eb5f5c3ea8ce9f1312"
     },
     {
       "path": "development/nlp-offline-interpreter/README.md",
-      "bytes": 4215,
-      "sha256": "b7b17e3a1df83687b35c5fa3ae095b0d1c1ff4e215147ec23bd5d64b2dfc5dbc"
+      "bytes": 5794,
+      "sha256": "b63a3912d57271deab8145d6c6bf61cf291709d6049ee58739b95002e2de51e4"
     },
     {
       "path": "development/nlp-offline-interpreter/requirements-development.txt",
@@ -436,8 +451,8 @@
     },
     {
       "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter/__init__.py",
-      "bytes": 821,
-      "sha256": "1fdd5520d7160479762e66ed887b139e8637e3fe243c9cb9aa75a33f51784ad5"
+      "bytes": 824,
+      "sha256": "9f00536607d1918d4d35211fed33f6b3789b8045fbb58003b676c12b5292d97f"
     },
     {
       "path": "development/nlp-offline-interpreter/src/nlp_offline_interpreter/__main__.py",
