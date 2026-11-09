@@ -398,6 +398,10 @@ Read each project's validation, source-boundary, and integration documents befor
 
 ---
 
+## Licensing
+
+See the [licensing index](LICENSING.md) for file-specific grants and existing component notices.
+
 ## Public repository boundary
 
 This is a **public prototype and research repository**.
