@@ -2,7 +2,7 @@
   "schema": "nlp-suite-prototype-manifest/1",
   "status": "GENERATED",
   "member_count": 315,
-  "total_bytes": 2704235,
+  "total_bytes": 2705002,
   "members": [
     {
       "path": ".gitattributes",
@@ -1251,8 +1251,8 @@
     },
     {
       "path": "projects/lexicon-core/tests/test_core.py",
-      "bytes": 4056,
-      "sha256": "80c3e042b079647e75a22120ee30b850923343c68c67a901b25fd324f5f3603b"
+      "bytes": 4823,
+      "sha256": "e6643e8e2c275f8302e3ab51e51f7fd7afb61314c069b6c0ec3d798612233503"
     },
     {
       "path": "projects/lexicon-core/TODO.md",

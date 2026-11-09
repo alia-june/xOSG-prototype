@@ -22,7 +22,7 @@ the current project-directory structure and adding the suite to that structure.
 - Archive SHA-256: `56e3909ce8b9f0f323390240cb1a1d778b08a3de24c1e3e1fecb2bc4d7df528c`
 - Transformation status: generated sanitized export from the working NLP suite
 - Source export inventory: 315 manifest-bound files, 2,704,305 bytes
-- Staged inventory: 315 manifest-bound files, 2,704,235 bytes
+- Staged inventory: 315 manifest-bound files, 2,705,002 bytes
 
 Two inert historical evidence filenames were shortened during staging so a
 clean Windows checkout remains below the practical path-length limit. The
@@ -51,6 +51,12 @@ After Git staging, the same code-only profile passed from a clean checkout of
 the index. This confirms that ignored-but-manifested Atlas front-end files and
 packaged evidence are present in the proposed commit rather than available only
 from the preparer's working tree.
+
+The first GitHub Actions run exposed one hidden host dependency: the registry
+test fell back to a developer-machine data root when `LEXICON_DATA_ROOT` was
+unset. The test now builds a temporary synthetic registry and source-directory
+fixture. It retains the same registry assertions without reading private or
+external lexical data; the manifest records the changed test bytes.
 
 The root workflow `.github/workflows/nlp-suite-code-only.yml` makes the nested
 suite checks active for this host repository on Python 3.11 through 3.14. A

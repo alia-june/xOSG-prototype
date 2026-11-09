@@ -1,4 +1,9 @@
+import json
+import os
+from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 from lexicon_core.registry import inventory, load_registry, source_path
 from lexicon_core.synthesis import synthesize
@@ -11,12 +16,24 @@ from lexicon_core.tasks import TaskRequest, built_in_modules, route_request
 
 class RegistryTests(unittest.TestCase):
     def test_registry_exposes_all_sources(self):
-        registry = load_registry()
         expected = {"oewn", "cmudict", "ipa_dict", "unimorph", "wiktionary", "gcide", "odict", "stardict-inbox"}
-        self.assertTrue(expected.issubset(registry["sources"]))
-        status = inventory()
-        self.assertTrue(all(item["exists"] for item in status.values()))
-        self.assertTrue(source_path("wiktionary").is_dir())
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            sources = {}
+            for source_id in sorted(expected):
+                relative = Path("sources") / source_id
+                (root / relative).mkdir(parents=True)
+                sources[source_id] = {"path": relative.as_posix(), "fixture": True}
+            (root / "registry.json").write_text(
+                json.dumps({"schema": "lexicon-atlas-registry/1", "sources": sources}),
+                encoding="utf-8",
+            )
+            with patch.dict(os.environ, {"LEXICON_DATA_ROOT": str(root)}):
+                registry = load_registry()
+                self.assertTrue(expected.issubset(registry["sources"]))
+                status = inventory()
+                self.assertTrue(all(item["exists"] for item in status.values()))
+                self.assertTrue(source_path("wiktionary").is_dir())
 
 
 class SynthesisTests(unittest.TestCase):
