@@ -39,6 +39,14 @@ These are separate research systems, not one finished product. Each keeps its ow
 
 ---
 
+## Historical seed research links
+
+- **[Omnifact Reference v0.8.0](Synthetic%20Simulations/research-staging/omnifact-ref-v0-8-0/README.md)** — sanitized source **staging record and checksum**, historical reference candidate; not admitted, not designated defunct. [Sanitization summary](Synthetic%20Simulations/research-staging/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md).
+- **[MAGE Core 0.1.7-prealpha](Synthetic%20Simulations/defunct-experiments/retired/mage-core-v0-1-7-prealpha/README.md)** — retired, de-identified historical record. [Scoped design](Synthetic%20Simulations/defunct-experiments/retired/mage-core-v0-1-7-prealpha/DESIGN_RECORD.md).
+- **[LLM Prompt Hardening Modular Kit Candidate 1.5](Synthetic%20Simulations/defunct-experiments/failure/llm-prompt-hardening-modular-kit-v1-5-candidate/README.md)** — prior sanitized failed experiment.
+
+**Link status:** these new OmniFact and MageCore pages host documentation and verified artifact identifiers; their sanitized ZIP binaries have not been uploaded to GitHub. The original archives and private exclusion ledgers are not public.
+
 ## System landscape
 
 ```text
