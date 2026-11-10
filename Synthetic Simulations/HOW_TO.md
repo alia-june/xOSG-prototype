@@ -11,6 +11,14 @@ This is a reading guide to the public research record. The private control-plane
 | What was investigated for memory instrumentation? | [LLM memory instrumentation lane](README.md#lane-b-llm-memory-instrumentation) | Intake findings and proposed experiment boundaries do not establish admission, deployment, or integration of the private candidates. |
 | What happened in the retained failed experiment? | [Failed kit record](defunct-experiments/failure/llm-prompt-hardening-modular-kit-v1-5-candidate/README.md) and its [validation record](defunct-experiments/failure/llm-prompt-hardening-modular-kit-v1-5-candidate/source/VALIDATION.md) | The sanitized source is retained to preserve evidence and lessons. Its presence does not change the failed and defunct disposition. |
 
+## Newly indexed historical references
+
+- [Omnifact v0.8.0 — research-staging record](research-staging/omnifact-ref-v0-8-0/README.md) and [sanitization summary](research-staging/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md): historical reference candidate, not designated defunct, not admitted; sanitized ZIP bytes not hosted here.
+- [MAGE Core 0.1.7-prealpha — defunct record](defunct-experiments/retired/mage-core-v0-1-7-prealpha/README.md) and [scoped design](defunct-experiments/retired/mage-core-v0-1-7-prealpha/DESIGN_RECORD.md): retired environment research, not integrated; sanitized ZIP bytes not hosted here.
+- [LLM prompt hardening modular-kit failure](defunct-experiments/failure/llm-prompt-hardening-modular-kit-v1-5-candidate/README.md): sanitized historical failed experiment already present.
+
+These links concern research records, not active components or downloadable ZIP releases.
+
 ## Read results in their own scope
 
 In the control-plane lane, the synthetic orchestrator proposes a route, a deterministic rule gate constrains it, a trace role records the decision, and a synthetic response role renders a bounded placeholder. The historical use of *hypervisor* names the trace role; it does not establish hardware virtualization or isolation. Setup retains `can_launch: false`, `can_execute: false`, and `release_ready: false`. `FINISHED` means the declared planning, setup, or simulation operation completed, not that the underlying workload ran or was accepted.
