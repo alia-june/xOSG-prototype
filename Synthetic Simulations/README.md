@@ -59,13 +59,13 @@ Current record:
 
 - [LLM Prompt Hardening Modular Kit Candidate 1.5](defunct-experiments/failure/llm-prompt-hardening-modular-kit-v1-5-candidate) - user-designated failed experiment with sanitized source originally admitted under MIT in private OpenSurface and now publicly relocated; archive integrity passed, but a fresh Windows run passed 42/43 tests and reproduced a POSIX-mode portability defect.
 
-## Historical reference staging and defunct records
+## Retired and defunct research records
 
 The following records are published as **documentation and cross-references**. No source ZIP in either new entry is hosted here, and neither is admitted to Synthetic Simulations:
 
 | Historical item | Public record | Status | Source ZIP |
 | --- | --- | --- | --- |
-| Omnifact Reference v0.8.0 | [Staging record](research-staging/omnifact-ref-v0-8-0/README.md) · [sanitization report](research-staging/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md) | Historical research reference; not admitted, **not** designated defunct | Sanitized archive prepared; **not uploaded** |
+| Omnifact Reference v0.8.0 | [Staging record](defunct-experiments/retired/omnifact-ref-v0-8-0/README.md) · [sanitization report](defunct-experiments/retired/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md) | Retired historical reference; not admitted; no test failure is claimed | Sanitized archive prepared; **not uploaded** |
 | MAGE Core 0.1.7-prealpha | [Defunct record](defunct-experiments/retired/mage-core-v0-1-7-prealpha/README.md) · [design record](defunct-experiments/retired/mage-core-v0-1-7-prealpha/DESIGN_RECORD.md) | Defunct / retired; not active | De-identified archive prepared; **not uploaded** |
 | LLM Prompt Hardening Modular Kit 1.5 | [Failure and defunct record](defunct-experiments/failure/llm-prompt-hardening-modular-kit-v1-5-candidate/README.md) | Historical failed candidate | Existing sanitized source tree; original nested archive excluded |
 
