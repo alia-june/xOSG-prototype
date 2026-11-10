@@ -49,7 +49,7 @@ A reduced historical source archive was prepared from the original upload and st
 
 The local sanitization report and the private file exclusion ledger are separate artifacts. The ledger must **not** be published; it contains excluded source identifiers. The reduced ZIP must not be presented as an installed project, validated security system, or proven anonymous work.
 
-**Related reference:** [Omnifact v0.8.0 staging record](../../../research-staging/omnifact-ref-v0-8-0/README.md) and its [sanitization summary](../../../research-staging/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md). Co-location does not mean functional integration.
+**Related reference:** [Omnifact v0.8.0 staging record](../omnifact-ref-v0-8-0/README.md) and its [sanitization summary](../omnifact-ref-v0-8-0/SANITIZATION_REPORT.md). Co-location does not mean functional integration.
 
 ## Privacy and source-release boundary
 
