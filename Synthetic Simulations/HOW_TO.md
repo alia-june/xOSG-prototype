@@ -13,7 +13,7 @@ This is a reading guide to the public research record. The private control-plane
 
 ## Newly indexed historical references
 
-- [Omnifact v0.8.0 — research-staging record](research-staging/omnifact-ref-v0-8-0/README.md) and [sanitization summary](research-staging/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md): historical reference candidate, not designated defunct, not admitted; sanitized ZIP bytes not hosted here.
+- [Omnifact v0.8.0 — research-staging record](defunct-experiments/retired/omnifact-ref-v0-8-0/README.md) and [sanitization summary](defunct-experiments/retired/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md): retired historical reference, not admitted; no test failure is asserted; sanitized ZIP bytes not hosted here.
 - [MAGE Core 0.1.7-prealpha — defunct record](defunct-experiments/retired/mage-core-v0-1-7-prealpha/README.md) and [scoped design](defunct-experiments/retired/mage-core-v0-1-7-prealpha/DESIGN_RECORD.md): retired environment research, not integrated; sanitized ZIP bytes not hosted here.
 - [LLM prompt hardening modular-kit failure](defunct-experiments/failure/llm-prompt-hardening-modular-kit-v1-5-candidate/README.md): sanitized historical failed experiment already present.
 
