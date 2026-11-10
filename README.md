@@ -13,6 +13,10 @@ Public research prototypes for inspectable AI-assisted work, reference-native do
 
 **Working on tool instrumentation?** Start with [How to Instrument a Tool](Instrumentation/README.md) and the [living tooling workspace guide](Instrumentation/WORKSPACE_HOW_TO.md). The [existing-controller how-to](Instrumentation/HOW_TO_USE.md) applies after a controller has been fitted to a declared tool and approved.
 
+## Current publication and recovery phase
+
+**Stage 0 — site hydration (in progress):** publish eligible research theory, proof-of-concept records, links, statuses, and evidence boundaries arising from EOL simulation research. **Stage 1 — stable programmatic code rehydration (planned):** expert-system- and rule-led reconstruction from admissible evidence; synthetic generative text only as a separately qualified last resort. Existing bounded prototypes such as Code-Lexigraph are **not** general Stage 1 admission. Private data is excluded from the public corpus. [Read the public roadmap](https://github.com/alia-june/ethical-and-intellectual-theory/blob/main/research-ethics/EOL_SITE_HYDRATION_AND_REHYDRATION_ROADMAP.md).
+
 ## Project directory
 
 | Project | What you will find | Architecture or design | Run or read first |
