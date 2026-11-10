@@ -1,4 +1,4 @@
-# Omnifact Reference v0.8.0 — sanitized research staging record
+# Omnifact Reference v0.8.0 — retired sanitized research record
 
 **Disposition:** RETIRED / HISTORICAL REFERENCE / NOT ADMITTED / NOT ACTIVATED.  
 **Recorded:** 2026-11-10.  
@@ -24,7 +24,7 @@ The checksum identifies the prepared local artifact; it does not assert that tho
 
 The sanitized reference retains historical code and specifications concerning Omnifact composition, authority, provenance, migration, persistence, transactions, validation, recovery, and worker behavior, together with generic fixtures and test definitions. The historic implementation and release notes must not be confused with fresh operational evidence.
 
-This is an **independent reference candidate**, not the active Synthetic Simulations runtime and retired from active consideration without implying a failed test. Inclusion in this retired historical directory does not activate it, certify its security, or admit it as the accepted implementation of a recursive factory/generator.
+This is a **retired historical reference**, not the active Synthetic Simulations runtime. Retirement does not imply a failed test. Inclusion in this retired historical directory does not activate it, certify its security, or admit it as the accepted implementation of a recursive factory/generator.
 
 ## Sanitization boundary
 
