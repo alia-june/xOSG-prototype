@@ -33,6 +33,24 @@ MAGE Core may inform future studies of guarded construction environments, but it
 
 [Read the scoped design record](DESIGN_RECORD.md) · [Synthetic Simulations home](../../../README.md) · [Defunct prompt-hardening record](../../failure/llm-prompt-hardening-modular-kit-v1-5-candidate/README.md)
 
+## Linked sanitized source projection
+
+A reduced historical source archive was prepared from the original upload and statically checked outside this repository. **Its binary ZIP is not hosted on GitHub**; this page and the [scoped design record](DESIGN_RECORD.md) are the present public links.
+
+| Field | Value |
+| --- | --- |
+| Prepared local sanitized archive | `MAGE_CORE_ANONYMIZED_DEFUNCT_SOURCE_v0_1_7.zip` |
+| Local ZIP size | 65,072 bytes |
+| Local ZIP members | 39 (including internal release records) |
+| SHA-256 | `19e542d04c04df71e849f038e3e11398c45d6f30a927d23f3fcfa56679364bec` |
+| Checks | bounded privacy scan, CRC, Python AST, JSON parsing |
+| Program execution | None |
+| Release | **NOT UPLOADED**, defunct / not admitted |
+
+The local sanitization report and the private file exclusion ledger are separate artifacts. The ledger must **not** be published; it contains excluded source identifiers. The reduced ZIP must not be presented as an installed project, validated security system, or proven anonymous work.
+
+**Related reference:** [Omnifact v0.8.0 staging record](../../../research-staging/omnifact-ref-v0-8-0/README.md) and its [sanitization summary](../../../research-staging/omnifact-ref-v0-8-0/SANITIZATION_REPORT.md). Co-location does not mean functional integration.
+
 ## Privacy and source-release boundary
 
 No human name, email, personal history, local drive root, user profile path, diary, real-world subject dossier, machine inventory, or raw source dataset from the original archive is intentionally reproduced here.
