@@ -15,7 +15,7 @@ Public research prototypes for inspectable AI-assisted work, reference-native do
 
 ## Current publication and recovery phase
 
-**Stage 0 — site hydration (in progress):** publish eligible research theory, proof-of-concept records, links, statuses, and evidence boundaries arising from EOL simulation research. **Stage 1 — stable programmatic code rehydration (planned):** expert-system- and rule-led reconstruction from admissible evidence; synthetic generative text only as a separately qualified last resort. Existing bounded prototypes such as Code-Lexigraph are **not** general Stage 1 admission. Private data is excluded from the public corpus. [Read the public roadmap](https://github.com/alia-june/ethical-and-intellectual-theory/blob/main/research-ethics/EOL_SITE_HYDRATION_AND_REHYDRATION_ROADMAP.md).
+**Public-facing Stage 0 — asymmetric and ongoing:** publish eligible research theory, proof-of-concept records, links, statuses, and evidence boundaries. The operator plans a **temporary pause for ancillary-site retooling**, not permanent completion. **All projects have independent stage histories and numbering; there is no global prior stage or shared next Stage 1.** The separate code-rehydration workstream plans expert-system- and rule-led reconstruction from admissible evidence, with synthetic generative text only as a separately qualified last resort. Existing bounded prototypes such as Code-Lexigraph are **not** general Stage 1 admission. Private data is excluded from the public corpus. [Read the public roadmap](https://github.com/alia-june/ethical-and-intellectual-theory/blob/main/research-ethics/EOL_SITE_HYDRATION_AND_REHYDRATION_ROADMAP.md).
 
 ## Project directory
 
