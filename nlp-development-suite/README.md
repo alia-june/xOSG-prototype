@@ -69,6 +69,28 @@ give us the moral access required for that relationship. Where we cannot
 confidently claim such moral access, we will leave the material intact rather
 than treat availability or an open license as an obligation to consume it.
 
+Our preferred organic route is to travel a common road down history: encounter
+past works in sequence, understand later language in relation to earlier
+language, and let that accumulated reading alter the system slowly. That route
+depends on access we can defend both legally and morally. We will not force a
+continuous historical account where the necessary material is unavailable to
+us on those terms.
+
+When we cannot learn responsibly from the past sources needed to travel that
+common road, we will induct from public-education sources. Induction here means
+learning general forms, distinctions, vocabulary, and relationships from
+materials prepared for shared education, then testing what we have understood
+through ordinary use. It does not mean scraping textbooks, copying curricular
+content into a database, or treating an educational source as unrestricted
+merely because it serves the public. Each source retains its own provenance,
+access conditions, and rights boundary.
+
+Public-education sources therefore provide an alternate common road—not proof
+of final meaning and not a claim of institutional endorsement. They allow the
+project to rejoin knowledge intended for broad learning when direct historical
+growth is unavailable, while keeping the resulting interpretation
+non-authoritative and open to correction.
+
 This choice does not promise a more complete language. The resulting language
 may remain partial, idiosyncratic, archaic, ordinary, and peculiar to its path
 of reading and use. Those qualities are not failures to disguise. They are
