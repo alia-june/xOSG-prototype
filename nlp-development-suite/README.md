@@ -45,6 +45,42 @@ verification.
 All continuation, contribution, fold-back, and future-research language below
 is retained as historical context and is superseded by that decision.
 
+## Meaning, growth, and closure
+
+Is there meaning in what we did? **Yes and no.**
+
+The experiment has meaning as a bounded observation and as a record of a route
+we examined. It also helped reveal the method's own limit. Any meaning
+extracted from a prepared source remains limited by that source: its selection,
+categories, absences, period, editorial history, and assumptions. More
+extraction cannot, by itself, remove that inheritance.
+
+We therefore want a different route—an organic and everyday route developed
+through sustained encounter with everyday sources. Extracted language and
+grown language are not the same thing. Extraction asks what structures can be
+recovered from material already organized by someone else. Growth includes the
+slower work of reading, use, misunderstanding, reconsideration, forgetting,
+recombination, and invention. Its meaning arises through an ongoing
+relationship rather than from the size of a harvested collection.
+
+Growth also requires material to be decomposed: absorbed, questioned, broken
+apart, and allowed to become something different. Legal access does not always
+give us the moral access required for that relationship. Where we cannot
+confidently claim such moral access, we will leave the material intact rather
+than treat availability or an open license as an obligation to consume it.
+
+This choice does not promise a more complete language. The resulting language
+may remain partial, idiosyncratic, archaic, ordinary, and peculiar to its path
+of reading and use. Those qualities are not failures to disguise. They are
+conditions of the route we have chosen.
+
+Nor must the project succeed. It is not required to produce a comprehensive
+lexicon, prove a theory, or arrive at a predetermined system. Research can
+close an avenue without replacing it. Learning that we should not proceed is
+itself a legitimate result. The retired experiment therefore matters partly
+because it marks a boundary: this is an avenue we explored, understood more
+clearly, and chose to close.
+
 ## Former intended outcome: contribute upstream — superseded
 
 The intended outcome of this work is to identify small, well-supported lexical
