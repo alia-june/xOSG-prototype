@@ -1,21 +1,58 @@
-# Matched-Signal Lexicon Reference Build
+# DEFUNCT: Matched-Signal Lexicon Reference Build
 
 ## An ethical framework for using Roget, UniMorph, Open English WordNet, and Wiktionary in deterministic NLP
 
 **Project:** NLP Development Suite  
-**Current research lane:** Roget derivation-signal measurement  
-**Status:** **REFERENCE BUILD — HELD HERE FOR REVIEW**  
+**Former research lane:** Roget derivation-signal measurement  
+**Status:** **DEFUNCT AS A GROWTH PATH — PRESERVED AS HISTORICAL EVIDENCE**  
 **Authority:** verified internal test result; not production, publication authority, accepted lexical canon, an upstream submission, or permission to merge source content  
 **Date:** 2026-11-13
 
-## Intended outcome: contribute upstream
+## Retirement notice
+
+On 2026-11-13 the user retired the Roget matched-signal lane and the proposed
+collaborative-dictionary fold-back path. The project will not use this work to
+grow the first-party lexicon, prepare upstream contributions, or justify mining
+collaborative lexical resources. Existing scripts, reports, receipts, tests,
+and hashes remain only so the research and its retirement can be audited.
+
+The closing recalculation did not erase the measured association: 7,354 of
+12,355 eligible Roget/UniMorph rows shared a Roget head (59.5225%); the
+410-pair recorded sample rate was 54.3902%; and the stricter diagnostic control
+rate was 4.1463%, for a descriptive lift of 13.117647. The controls remain
+imperfect and the numbers establish neither semantic derivation nor cause. The
+lane is retired regardless of this numerical signal.
+
+The 410 recorded pairs and 410 controls were deliberately a conservative,
+disputable, non-authoritative sample. Its scale was chosen so that the same
+kind of source lookup and comparison could theoretically be done by one
+careful person by hand over roughly a year. That is a human-legibility
+principle, not a claim that such a manual replication occurred or that manual
+work would be authoritative. Automation supplied speed and reproducibility,
+not semantic standing.
+
+The successor direction is human reading of progressively later,
+item-verified public-domain works without lexical harvesting. The resulting
+language is expected to be idiosyncratic, archaic, and historically uneven.
+Where inherited language is insufficient, new words may be coined ad hoc, but
+every coinage must remain visibly generated rather than represented as
+attested or standard.
+
+The readable public explanation is
+[`RETIREMENT_RECORD.md`](review/roget-growth-retirement-2026-11-13/RETIREMENT_RECORD.md).
+The binding machine-readable decision remains local pending external
+verification.
+All continuation, contribution, fold-back, and future-research language below
+is retained as historical context and is superseded by that decision.
+
+## Former intended outcome: contribute upstream — superseded
 
 The intended outcome of this work is to identify small, well-supported lexical
 improvements that may be offered back to UniMorph, Open English WordNet,
 Wiktionary, or another appropriate upstream project **under that project's
 license, contributor terms, technical format, and community review process**.
 
-This repository is a **Reference Build**. It will sit here for review while its
+This repository was a **Reference Build**. It was intended to sit here for review while its
 method, evidence, licensing, controls, and proposed contribution path are
 examined. It is not an upstream patch, pull request, wiki edit, or claim that an
 upstream community has accepted any result.
@@ -33,17 +70,19 @@ a proposed improvement is accurate, useful, appropriately licensed, in scope,
 and suitable for inclusion. Rejection, correction, or a request to redesign the
 work is a valid and valuable outcome.
 
-### README-only publication boundary
+### Two-document publication boundary
 
-The online update publishes **this white paper only**. The current measurement
-script, authorization decision, generated pair records, reports, receipt, and
-new regression tests remain in the local Reference Build for review. They are
-not included in the online suite by this update.
+The online update publishes **this README and the retirement explanation
+only**. The machine-readable retirement decision, retirement manifest, current
+measurement script, authorization decision, generated pair records, reports,
+receipts, probe, and regression tests remain in the local Reference Build
+pending external verification. They are not included in the online suite by
+this update.
 
 Accordingly, the measurements below report the verified local Reference Build
 but are not independently reproducible from the present online checkout. No
-code, lexical data, generated evidence, license bundle, or upstream submission
-is published or implied by this README-only change.
+code, lexical data, generated evidence bundle, license bundle, or upstream
+submission is published or implied by this two-document change.
 
 ## Abstract
 
@@ -171,7 +210,7 @@ calibration set from which to estimate a semantic probability. A transparent
 absence of confidence is ethically preferable to an attractive but unsupported
 number.
 
-## Current result
+## Archived result and closing recalculation
 
 | Measurement | Result |
 |---|---:|
@@ -186,14 +225,27 @@ number.
 | Recorded pairs with exact OEWN lemmas on both sides | 352 |
 | Recorded targets with local Wiktionary etymology fields | 393 |
 | Target etymology fields mechanically mentioning the source token | 364 |
+| Full eligible Roget/UniMorph rows | 12,355 |
+| Full eligible rows sharing a Roget head | 7,354 (59.5225%) |
+| Stricter diagnostic controls sharing a Roget head | 17 of 410 (4.1463%) |
+| Recorded-minus-stricter-control difference | 50.2439 percentage points |
+| Stricter diagnostic descriptive lift | 13.117647 |
 
-The result supports continued investigation of Roget co-heading as a feature.
-It does not measure precision, recall, semantic accuracy, fairness, or
-etymological correctness. The sample is stratified rather than
-population-weighted, and controls are matched on source form and target POS
-signature—not on frequency, spelling distance, affix productivity, word length,
-Roget head degree, period, or register. No inferential significance test or
-human adjudication has yet been performed.
+Before retirement, the original result supported further investigation of
+Roget co-heading as a feature. The closing probe found that the original
+controls were poorly matched on spelling similarity. A stricter diagnostic
+matched part-of-speech signature, nearest available spelling similarity,
+absolute length difference, and target Roget head degree; it reduced but did
+not erase the descriptive separation. Even those controls remained less
+spelling-similar than the recorded pairs and were not human-verified negatives.
+
+The result does not measure precision, recall, semantic accuracy, fairness, or
+etymological correctness. No inferential significance test or completed human
+adjudication exists. The 410 recorded pairs and 410 controls are a
+conservative, disputable, non-authoritative sample kept at a scale whose class
+of comparison could theoretically be performed by one careful person by hand
+over roughly a year. No such full manual replication is claimed, and manual
+work would not become authoritative merely by being manual.
 
 ## Ethical analysis
 
@@ -276,7 +328,10 @@ thresholds, source-level time buckets, and deletion of personal identifiers.
 Private communications, deleted material, and vulnerable-community spaces
 require separate authority and review.
 
-## Safe folding back into upstream dictionaries
+## Retired proposal: safe folding back into upstream dictionaries
+
+> **Superseded:** no fold-back or upstream contribution will proceed from this
+> lane. This section is preserved to show the former proposal and its safeguards.
 
 The intended outcome is reciprocal: where review finds a genuine correction,
 coverage improvement, or relation that belongs in an upstream project, the
@@ -404,7 +459,7 @@ Recommended controls are:
 6. independent review before promotion;
 7. periodic audits for circular evidence.
 
-## Emergent-word research
+## Superseded proposal: emergent-word research
 
 The matched-signal architecture can help investigate emerging words, but the
 current dictionary stack cannot by itself prove that a word is new. An
@@ -430,7 +485,10 @@ No emergent term should be promoted solely because it is frequent, surprising,
 or absent from a conventional dictionary. The system should report evidence
 and uncertainty, not decide which language is legitimate.
 
-## Required next research gates
+## Cancelled next research gates
+
+The following gates were required by the former roadmap. They are preserved as
+historical review criteria, not as an active work queue.
 
 1. **Source-dependency audit** — determine whether comparator agreement is
    independent or inherited.
@@ -452,7 +510,7 @@ and uncertainty, not decide which language is legitimate.
    contributor terms, schema, review channel, attribution format, and accepted
    patch granularity before preparing submissions.
 
-## Local Reference Build reproduction
+## Archival local reproduction
 
 The commands in this section apply to the complete local Reference Build. The
 required current-work files are deliberately absent from the README-only online
@@ -492,7 +550,7 @@ records are byte-stable across repeated runs.
 ## Evidence and implementation
 
 The following current-work artifacts are held in the local Reference Build and
-are **not published by this README-only update**:
+are **not published by this two-document update**:
 
 - `development/generative-relational-lexicon/ROGET_DERIVATION_SIGNAL_DECISION.json`
 - `development/generative-relational-lexicon/measure_roget_derivation_signal.py`
@@ -508,27 +566,22 @@ The online suite already contains these background materials:
 - [Suite orientation](README_FIRST.md)
 - [External data boundaries](DATA_DEPENDENCIES.md)
 
-## Conclusion
+## Retirement conclusion
 
-The present result justifies treating Roget co-heading as a promising feature
-for derivation research. It does not justify treating Roget as a derivational
-dictionary or automatically feeding its associations into other lexicons.
-Reviewed improvements should be folded back into the relevant upstream work
-under that upstream project's license and governance, with incompatible source
-content excluded and upstream acceptance kept distinct from local proposal.
+The closing probe preserves a measurable association and also preserves its
+limits. Neither result governs the decision. The Roget collaborative-growth
+path is defunct because this project declines to treat license permission alone
+as sufficient relationship permission for mining, transforming, and folding
+work into living lexical communities, and because obtaining and carrying the
+additional explicit permission is too high a burden for this project.
 
-For now, this is a Reference Build held for review. Its proper posture is that
-of an informatics student and respectful outsider: show the work, preserve the
-evidence, invite correction, and allow each upstream community to decide what—
-if anything—should enter its project.
+The next lexicon will therefore not claim comprehensive modern coverage or
+dictionary consensus. It will develop slowly from human reading of
+item-verified public-domain works, moving chronologically toward later works as
+rights permit. It will preserve the reader's interpretation separately from
+the work itself, avoid automated harvesting, disclose its archaic and
+idiosyncratic character, and mark every ad hoc coinage as generated.
 
-The ethical value of this project lies as much in its restraints as in its
-signal: sources remain separate, licenses remain attached, historical context
-is not modernized silently, missingness remains source-scoped, controls remain
-explicit, confidence remains null without calibration, and no generated result
-becomes canonical merely because several dictionaries appear to agree.
-
-That architecture also provides a responsible foundation for emergent-word
-research. The system can surface questions, preserve evidence, and show where
-lexicons agree or diverge. It must leave the final semantic, historical, and
-community judgment visible, reviewable, and reversible.
+The former contribution framework remains in this file solely as an audit
+trail. It is not a dormant roadmap and cannot be resumed by completing its old
+gates. Reactivation would require a new explicit canon decision.
