@@ -1,8 +1,8 @@
 {
   "schema": "nlp-suite-prototype-manifest/1",
   "status": "GENERATED",
-  "member_count": 319,
-  "total_bytes": 2728924,
+  "member_count": 320,
+  "total_bytes": 2758802,
   "members": [
     {
       "path": ".gitattributes",
@@ -415,11 +415,6 @@
       "sha256": "2df25f54745dda849b45987d3d971dca9178903c9fe721b2c3c1aac2131ee3ca"
     },
     {
-      "path": "development/nlp-offline-interpreter/pyproject.toml",
-      "bytes": 530,
-      "sha256": "ce49a52b17eb00f954453096a426d31c7c3df02c63c5702e45266ce55b1c89a5"
-    },
-    {
       "path": "development/nlp-offline-interpreter/LICENSES/Apache-2.0.txt",
       "bytes": 11358,
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
@@ -433,6 +428,11 @@
       "path": "development/nlp-offline-interpreter/LICENSES/NOTICE.txt",
       "bytes": 345,
       "sha256": "82473d4772a4a9e767356e38b7e7733253714e04d40bb7eb5f5c3ea8ce9f1312"
+    },
+    {
+      "path": "development/nlp-offline-interpreter/pyproject.toml",
+      "bytes": 530,
+      "sha256": "ce49a52b17eb00f954453096a426d31c7c3df02c63c5702e45266ce55b1c89a5"
     },
     {
       "path": "development/nlp-offline-interpreter/README.md",
@@ -1345,14 +1345,14 @@
       "sha256": "d901f9b1f1e65433b57e290e977e60834f05911e9a95122765b9ad66f77f84d4"
     },
     {
-      "path": "projects/natural-language-front-end/FRONTEND_PROMPT_CANDIDATES.receipt.json",
-      "bytes": 845,
-      "sha256": "320d1916282eda34a44977228837b199e14e5c1504900730158fb0425745a012"
-    },
-    {
       "path": "projects/natural-language-front-end/FRONTEND_PROMPT_CANDIDATES.previous.json",
       "bytes": 582189,
       "sha256": "7bf2b760cfe4fa8425bf3e48493b914a593c03e573e23d09d05bf7abd4c34dee"
+    },
+    {
+      "path": "projects/natural-language-front-end/FRONTEND_PROMPT_CANDIDATES.receipt.json",
+      "bytes": 845,
+      "sha256": "320d1916282eda34a44977228837b199e14e5c1504900730158fb0425745a012"
     },
     {
       "path": "projects/natural-language-front-end/grammar_parser.py",
@@ -1541,8 +1541,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9601,
-      "sha256": "9ab2b417222502b35b64734d879c07eb6542ed906406da6cf1bde5773afb8bb1"
+      "bytes": 33081,
+      "sha256": "97a978fcbd700ec7887b505f1f34b148a4a70553fcbab91daa3f2e8db83c4a73"
     },
     {
       "path": "README_FIRST.md",
@@ -1558,6 +1558,11 @@
       "path": "requirements-prototype.txt",
       "bytes": 19,
       "sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
+      "path": "review/roget-growth-retirement-2026-11-13/RETIREMENT_RECORD.md",
+      "bytes": 6398,
+      "sha256": "346fe9167ad2587823e336cd05e0ab6c8223ffbf0fe327caed01952dc57ded87"
     },
     {
       "path": "RUN_PROTOTYPE_CHECKS.py",

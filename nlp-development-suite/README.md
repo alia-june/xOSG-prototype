@@ -577,7 +577,7 @@ publication.
 Set the shared lexical data root on the original Windows machine:
 
 ```powershell
-$env:LEXICON_DATA_ROOT = 'C:\Users\privateuser-5\Documents\Workbench\Lexicon Data'
+$env:LEXICON_DATA_ROOT = Join-Path $PWD 'lexicon-data'
 ```
 
 Run the deterministic measurement from the suite root:
