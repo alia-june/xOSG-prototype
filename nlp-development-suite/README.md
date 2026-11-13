@@ -580,6 +580,10 @@ Set the shared lexical data root on the original Windows machine:
 $env:LEXICON_DATA_ROOT = Join-Path $PWD 'lexicon-data'
 ```
 
+This generic workspace-relative example replaces an internal documentation
+example that was specific to one machine. The public prototype does not expose
+or prescribe an internal account name, user directory, or storage layout.
+
 Run the deterministic measurement from the suite root:
 
 ```powershell
