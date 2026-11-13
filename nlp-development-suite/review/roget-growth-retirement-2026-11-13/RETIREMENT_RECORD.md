@@ -1,15 +1,29 @@
-# Roget growth lane retirement record
+# Roget research branch closure record
 
 Date: 2026-11-13  
 Decision: `RLX-ROGET-RETIREMENT-001`  
 Truth state: **ACCEPTED CANON FOR DEVELOPMENT**  
-Status: **DEFUNCT AS A GROWTH PATH**
+Suite status: **ACTIVE — NLP IS ALIVE AND WELL**  
+Branch status: **CLOSED AS A GROWTH PATH**
 
 Publication boundary: this explanation and the project README may be published
 for external review. The machine-readable decision, manifest, probe, code,
 data, reports, receipts, and tests remain local pending external verification.
 This explanation does not make the withheld evidence independently
 reproducible from the public repository.
+
+## Scope erratum
+
+An earlier public heading used **DEFUNCT** without placing the branch boundary
+first. It could therefore be misread as declaring the NLP Development Suite—or
+NLP itself—defunct. That was not the decision.
+
+The NLP Development Suite remains active. Only the Roget matched-signal and
+collaborative-dictionary growth research branch is closed. The deterministic
+NLP system, parsers, command front end, lexical exploration tools, and other
+research branches continue under their own status and evidence boundaries.
+This correction does not reactivate the closed branch or authorize release of
+the supporting artifacts held for external verification.
 
 ## Outcome
 

@@ -2,7 +2,7 @@
   "schema": "nlp-suite-prototype-manifest/1",
   "status": "GENERATED",
   "member_count": 320,
-  "total_bytes": 2759031,
+  "total_bytes": 2760670,
   "members": [
     {
       "path": ".gitattributes",
@@ -1541,8 +1541,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 33310,
-      "sha256": "1182bc9e3741ff755b77bb198367a60cfbd8d246a5f2b28d5c83e76662bb3ae2"
+      "bytes": 34220,
+      "sha256": "525df5004e07d4c678490d8771d737540f6cd06bdafd8b34e5cb02e4dca1f594"
     },
     {
       "path": "README_FIRST.md",
@@ -1561,8 +1561,8 @@
     },
     {
       "path": "review/roget-growth-retirement-2026-11-13/RETIREMENT_RECORD.md",
-      "bytes": 6398,
-      "sha256": "346fe9167ad2587823e336cd05e0ab6c8223ffbf0fe327caed01952dc57ded87"
+      "bytes": 7127,
+      "sha256": "3d2ccc5007ce3c6760128e2fb9d69c095b0a49a0950e2d549de9ccd4b50ad59a"
     },
     {
       "path": "RUN_PROTOTYPE_CHECKS.py",

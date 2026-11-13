@@ -1,12 +1,30 @@
-# DEFUNCT: Matched-Signal Lexicon Reference Build
+# NLP Development Suite: Roget research branch closure
 
 ## An ethical framework for using Roget, UniMorph, Open English WordNet, and Wiktionary in deterministic NLP
 
 **Project:** NLP Development Suite  
+**Suite status:** **ACTIVE — NLP IS ALIVE AND WELL**  
 **Former research lane:** Roget derivation-signal measurement  
-**Status:** **DEFUNCT AS A GROWTH PATH — PRESERVED AS HISTORICAL EVIDENCE**  
+**Branch status:** **CLOSED AS A GROWTH PATH — PRESERVED AS HISTORICAL EVIDENCE**  
 **Authority:** verified internal test result; not production, publication authority, accepted lexical canon, an upstream submission, or permission to merge source content  
 **Date:** 2026-11-13
+
+## Erratum: the NLP project is active
+
+Earlier wording placed **DEFUNCT** at the beginning of this README. That scope
+was too broad and could be read as closing the NLP Development Suite or
+describing NLP itself as defunct. That reading is incorrect.
+
+**NLP is alive and well. The NLP Development Suite remains active.** Only the
+Roget matched-signal and collaborative-dictionary growth research branch is
+closed. Its closure does not retire the deterministic NLP architecture,
+parsing work, command front end, lexical exploration tools, or other research
+and development branches. Each of those retains its own recorded status and
+authority boundary.
+
+This erratum narrows the retirement statement; it does not reopen the closed
+branch, promote any component to production, or release any artifact currently
+held for external verification.
 
 ## Retirement notice
 
