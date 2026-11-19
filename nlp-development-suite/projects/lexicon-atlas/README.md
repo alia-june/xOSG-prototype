@@ -4,6 +4,14 @@ Lexicon Atlas is a source-aware graphical explorer for words, senses, definition
 
 **Prototype boundary:** code only; approved lexical data must be supplied separately.
 
+## Current reference build
+
+This identity-neutral `main`-branch copy is the current xOSG reference build for the Lexicon Atlas data path. Its builder, deterministic `finalize_data.py` stage, validator, and synthetic regression fixtures match the standalone implementation, while xOSG-specific documentation and identity boundaries remain local to this prototype.
+
+The corpus-free suite exercises deterministic gzip output, rollback, path confinement, incomplete and stale-family rejection, synthetic structural validation, and loopback HTTP retrieval. Passing it establishes only those tested transport and structural properties. It does not establish external-corpus correctness, semantic authority, licensing permission, hosted-site equivalence, or visual-browser acceptance.
+
+The standalone project’s latest tagged release, `v0.1.1`, predates this finalization repair. Review the current `main` branches for the repaired build contract; do not infer that the earlier release contains these changes.
+
 ## Repository boundary
 
 This is a **code-only repository**. It contains the interface, data builders, import/export adapters, desktop scaffold, project notes, and artwork. It does not contain dictionaries, WordNet databases, downloaded archives, generated lexical shards, or an automatic data downloader.
