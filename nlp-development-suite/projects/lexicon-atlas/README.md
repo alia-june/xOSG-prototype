@@ -10,7 +10,7 @@ This identity-neutral `main`-branch copy is the current xOSG reference build for
 
 The corpus-free suite exercises deterministic gzip output, rollback, path confinement, incomplete and stale-family rejection, synthetic structural validation, and loopback HTTP retrieval. Passing it establishes only those tested transport and structural properties. It does not establish external-corpus correctness, semantic authority, licensing permission, hosted-site equivalence, or visual-browser acceptance.
 
-The standalone project’s latest tagged release, `v0.1.1`, predates this finalization repair. Review the current `main` branches for the repaired build contract; do not infer that the earlier release contains these changes.
+The standalone project’s current code-only release is `v0.1.4`. It contains deterministic finalization, the synthetic validation profile, rollback and stale-output guards, loopback data-path coverage, and the corrected build sequence. Its standalone README and release record carry the exact download link, archive size, and SHA-256 digest; this identity-neutral mirror records the version without duplicating account-specific hosting metadata.
 
 ## Repository boundary
 
