@@ -18,6 +18,7 @@ The omission is deliberate: each lexical source has its own provenance, version,
 | `dist/modules/synthesis-engine.js` | Pure heuristic synthesis module |
 | `build_data.py` | Converts a prepared OEWN database and approved supplements into browser shards |
 | `lexical_pipeline.py` | Local import/export adapters for Wiktionary, GCIDE, StarDict, and ODict |
+| `finalize_data.py` | Deterministically and atomically finalizes staged JSON as browser gzip assets |
 | `odict_bridge.cjs` | Optional ODict compile/query bridge |
 | `desktop/` | Loopback-only Electron development shell |
 | `MODULE_ARCHITECTURE.md` | Component boundaries and extraction plan |
@@ -49,6 +50,9 @@ machine-local lexical sources
 build_data.py + lexical_pipeline.py
           |
           v
+finalize_data.py
+          |
+          v
 dist/data/  (generated, ignored by Git)
           |
           v
@@ -65,6 +69,9 @@ The browser reads deterministic hash-sharded JSON assets. The relation graph fol
 After installing data as described in [DATA_INSTALLATION.md](DATA_INSTALLATION.md):
 
 ```powershell
+python build_data.py
+python finalize_data.py
+python validate_build.py
 python -m http.server 8000 --directory dist
 ```
 
@@ -79,6 +86,14 @@ npm start
 ```
 
 The shell is a scaffold, not a packaged installer.
+
+Repository regression tests do not use external lexical sources. They generate a deliberately tiny set of invented records inside a temporary directory, finalize it twice, validate its structure, and retrieve the browser paths through a loopback HTTP server:
+
+```powershell
+python -B -m unittest discover -s tests -v
+```
+
+Passing that suite establishes only the tested synthetic data-path contract. It does not validate an installed dictionary, its semantics, its license, or a hosted application.
 
 ## Truth and authority boundary
 
