@@ -9,7 +9,7 @@ IF a required reference fails to resolve THEN stop the dependent step AND report
 
 # xOSG-prototype
 
-Public research prototypes for inspectable AI-assisted work, reference-native documents, and deterministic computation. Each project identifies its own authority, evidence, validation, and release boundaries.
+AI instrumentation and human-led research prototypes for inspectable AI-assisted work, expert-system orchestration, durable workspaces, natural-language processing, code reconstruction, reference-native documents, and deterministic computation. Each project identifies its own authority, evidence, validation, and release boundaries.
 
 **Working on tool instrumentation?** Start with [How to Instrument a Tool](Instrumentation/README.md) and the [living tooling workspace guide](Instrumentation/WORKSPACE_HOW_TO.md). The [existing-controller how-to](Instrumentation/HOW_TO_USE.md) applies after a controller has been fitted to a declared tool and approved.
 
@@ -433,3 +433,9 @@ Each project retains its own decisions, contracts, compatibility boundaries, evi
 **Prototype systems should make their limits easier to inspect, not easier to forget.**
 
 </div>
+
+## Related alia-june repositories
+
+- [ethical-and-intellectual-theory](https://github.com/alia-june/ethical-and-intellectual-theory) — Research ethics, consent, attribution, AI collaboration, and programming doctrine.
+- [Lunar-Flower](https://github.com/alia-june/Lunar-Flower) — Twin Lanterns ReShade shaders, screen-space indirect lighting, presets, and downloads.
+- [this-repository-machine-interface](https://github.com/alia-june/this-repository-machine-interface) — Machine-readable repository orientation, JSON landing pads, ingress, launch, and egress.
