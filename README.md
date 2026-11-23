@@ -7,6 +7,8 @@ IF a required reference fails to resolve THEN stop the dependent step AND report
 
 [Heuristic engine landing pad](ai.landing.pad.json) · [AI landing germ](ai.landing.pad.low-mem.json)
 
+**Public cross-repository research catalog:** [human research map](https://alia-june.github.io/research.html) · [machine-oriented discovery](https://alia-june.github.io/machine.html) · [structured public index](https://alia-june.github.io/research-index.json). This dated, read-only directory points to public entry points; it is not a runtime control, a substitute for current source verification, or permission to mine personal methodological profiles.
+
 # xOSG-prototype
 
 AI instrumentation and human-led research prototypes for inspectable AI-assisted work, expert-system orchestration, durable workspaces, natural-language processing, code reconstruction, reference-native documents, and deterministic computation. Each project identifies its own authority, evidence, validation, and release boundaries.
