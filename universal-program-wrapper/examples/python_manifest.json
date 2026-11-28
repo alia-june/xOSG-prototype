@@ -1,0 +1,33 @@
+{
+  "manifest_version": "upw-manifest/0.1",
+  "program": {
+    "program_id": "example.python",
+    "alias": "Python example",
+    "evidence_level": "declared"
+  },
+  "operations": [
+    {
+      "operation_id": "EXAMPLE-001",
+      "evidence_level": "declared",
+      "input": {
+        "allow_extra": false,
+        "fields": {}
+      },
+      "side_effects": [],
+      "adapter": {
+        "type": "legacy_cli",
+        "executable": "/replace/with/exact/python/path",
+        "argv": [
+          {"literal": "--version"}
+        ],
+        "inherit_env": [],
+        "env": {},
+        "stdout": "text",
+        "timeout_ms": 5000,
+        "exit_map": {
+          "0": "SUCCESS"
+        }
+      }
+    }
+  ]
+}

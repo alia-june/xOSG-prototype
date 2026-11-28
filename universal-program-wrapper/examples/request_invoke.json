@@ -1,0 +1,10 @@
+{
+  "protocol": "upw/0.1",
+  "request_id": "R-INVOKE-1",
+  "kind": "invoke",
+  "operation_id": "EXAMPLE-001",
+  "input": {},
+  "provenance": {"source": "example"},
+  "authority_context": {},
+  "options": {"timeout_ms": 5000}
+}

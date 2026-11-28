@@ -23,6 +23,7 @@ AI instrumentation and human-led research prototypes for inspectable AI-assisted
 
 | Project | What you will find | Architecture or design | Run or read first |
 | --- | --- | --- | --- |
+| [Universal Program Wrapper](universal-program-wrapper/README.md) | JSON operation boundary for explicitly declared programs, legacy CLI adapters and embedded native handlers | [Wrapper architecture](universal-program-wrapper/ARCHITECTURE.md) | [Read publication status and limits](universal-program-wrapper/PUBLICATION_NOTES.md) |
 | [xOSG instrumentation family](docs/xosg/README.md) | DWSK R4 source, Naked Shell identity, Synthetic Simulations documentation, and related deterministic tool instrumentation | [Family and member boundaries](docs/xosg/README.md) | [Choose a member](docs/xosg/README.md) or [set up a tooling workspace](Instrumentation/WORKSPACE_HOW_TO.md) |
 | [xOSG-0](syn-xOSG-0/README.md) | Developmental orchestration research from ES-xOSG-7 through Seed | [Developmental architecture](syn-xOSG-0/ARCHITECTURE.md) | [Read the source ledger](syn-xOSG-0/docs/SOURCE_LEDGER.md) |
 | [Mill Factory](mill-factory/README.md) | PowerShell work batches with evidence, gates, and fail-closed promotion | [Batch architecture](mill-factory/ARCHITECTURE.md) | [Create a disposable batch](mill-factory/HOW_TO.md) |
