@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:upw:manifest:0.1",
+  "type": "object",
+  "required": ["manifest_version", "program", "operations"],
+  "properties": {
+    "manifest_version": {"const": "upw-manifest/0.1"},
+    "program": {
+      "type": "object",
+      "required": ["program_id"],
+      "properties": {
+        "program_id": {"type": "string", "minLength": 1},
+        "alias": {"type": "string"},
+        "version": {"type": "string"},
+        "evidence_level": {"enum": ["declared", "discovered", "tested", "observed", "attested"]}
+      },
+      "additionalProperties": true
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["operation_id", "adapter"],
+        "properties": {
+          "operation_id": {"type": "string", "minLength": 1},
+          "alias": {"type": "string"},
+          "evidence_level": {"enum": ["declared", "discovered", "tested", "observed", "attested"]},
+          "input": {"type": "object"},
+          "side_effects": {"type": "array"},
+          "adapter": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

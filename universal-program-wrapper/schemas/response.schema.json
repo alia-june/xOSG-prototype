@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:upw:response:0.1",
+  "type": "object",
+  "required": ["protocol", "request_id", "wrapper_outcome", "diagnostics", "evidence"],
+  "properties": {
+    "protocol": {"const": "upw/0.1"},
+    "request_id": {"type": "string"},
+    "wrapper_outcome": {"enum": ["SUCCESS", "NO_CHANGE", "PARTIAL", "FAILED", "ABORTED", "UNKNOWN", "WRAPPER_ERROR"]},
+    "operation_id": {"type": ["string", "null"]},
+    "result": {},
+    "raw": {"type": ["object", "null"]},
+    "diagnostics": {"type": "array"},
+    "evidence": {"type": "array"}
+  },
+  "additionalProperties": true
+}
