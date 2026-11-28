@@ -58,3 +58,28 @@ later repository development
 ```
 
 No later success should be used to retroactively certify the unavailable historical source.
+
+## Original-source recovery — 2026-11-28
+
+The user has now supplied `holoquary_nonrecursive_v1_3_source.zip`, identified
+by the user as the original nonrecursive v1.3 source. The archive is retained
+unchanged beside the November 8 reconstruction:
+
+[Recovered original source](releases/holoquary_nonrecursive_v1_3_source.zip).
+
+- Size: **540,314 bytes**
+- Files: **158**
+- SHA-256: `c0a111eef7fa49c12eba954665083541660515fee585e61c580e368c0c998414`
+- Git blob: `167baf75d1f4697618825b72557067252261c91f`
+
+The earlier statements above describe what was available at reconstitution
+time and remain part of that historical record. Recovery does not replace the
+reconstruction or retroactively establish that it matched the original.
+
+The recovered-source designation follows the user's identification. ZIP
+integrity and byte-identity checks establish the supplied artifact's contents,
+not independent historical authenticity. The original README and its existing
+reports are retained within the ZIP. The historical v1.3 assertion count and the
+reconstitution assertion count remain evidence for their respective artifacts.
+This publication pass did not import, execute, compile or test the original,
+and it does not establish source-level equivalence between the two versions.

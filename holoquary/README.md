@@ -3,17 +3,38 @@
 Holoquary is a bounded C99 research substrate for deterministic logic, typed numerical computation, explicit uncertainty, higher functions, small transactional state, LESSONS/feedback, recovery experiments, and optional neural components.
 
 **Project direction:** `m.A.R.S.`  
-**Current repository line:** **RECONSTITUTED v1.3 candidate**  
+**Current repository artifacts:** **Recovered original v1.3 source and preserved November 8 reconstituted candidate**  
 **Reconstitution date:** 2026-11-08  
 **Deployment status:** host-tested prototype; not independently attested, production-certified, or board-specific firmware.
 
-> **Provenance notice:** the original October 2, 2026 v1.3 source archive is not available in the current source set. The published v1.3 source was reconstructed from the complete preserved v1.2 source plus the surviving v1.3 contract, historical test report, AI error log, and TODO material. It is **not claimed to be byte-identical** to the lost original. See [RECONSTITUTION.md](RECONSTITUTION.md).
+> **Provenance update — 2026-11-28:** the user supplied the recovered original nonrecursive v1.3 source archive, now preserved unchanged as a separate download below. At the time of the November 8 reconstitution, the original was unavailable; that candidate was rebuilt from preserved v1.2 source and surviving v1.3 documents. Both artifacts remain available and distinct. The reconstruction is **not claimed to be byte-identical** to the original. See [RECONSTITUTION.md](RECONSTITUTION.md) for the historical record and dated recovery note.
 
 ---
 
 ## Downloads
 
 The complete artifacts are stored in this repository.
+
+### Holoquary v1.3 — recovered original nonrecursive source
+
+**[Download the original source ZIP](releases/holoquary_nonrecursive_v1_3_source.zip)**
+
+- Recovery recorded: **2026-11-28**
+- Size: **540,314 bytes**
+- Files: **158**
+- SHA-256: `c0a111eef7fa49c12eba954665083541660515fee585e61c580e368c0c998414`
+- Git blob: `167baf75d1f4697618825b72557067252261c91f`
+
+The user identified this supplied archive as the original nonrecursive v1.3
+source. It is preserved byte-for-byte, including its existing source, tests,
+examples, baselines, documentation and recorded results. The checksums identify
+the supplied bytes; they do not independently authenticate its historical origin.
+
+This recovery/publication pass checked ZIP integrity and byte identity. It did
+not execute the original code or rerun its tests. The original's recorded
+results and the November 8 reconstruction's results remain separate; neither
+artifact's test results certify the other. No source-level equivalence or
+implementation comparison is asserted by this addition.
 
 ### Holoquary v1.3 — reconstituted source
 
